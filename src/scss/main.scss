@@ -1,0 +1,42 @@
+@import "_color";
+
+* {
+  outline: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+li {
+  font-size: 14px;
+}
+

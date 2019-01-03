@@ -1,0 +1,212 @@
+@import "_color";
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  background: $light;
+
+  overflow: hidden;
+
+  & .header {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 0 1rem;
+
+    height: 70px;
+
+    background: $secondary;
+    box-shadow: 0 0 10px 5px rgba($dark, 0.1);
+
+    z-index: 9;
+
+    & .left {
+      margin-left: 0.5rem;
+      width: 300px;
+    }
+
+    & .right {
+      display: flex;
+      align-items: center;
+
+      margin-left: auto;
+
+      list-style-type: none;
+
+      & .header-item {
+        margin: 0 5px;
+        padding: 5px 8px;
+
+        border-radius: 100%;
+
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: $primary;
+
+          color: white;
+        }
+
+        & span {
+          position: relative;
+
+          & sup {
+            position: absolute;
+            top: -6px;
+            right: -10px;
+
+            padding: 2.3px 0.5px;
+
+            width: 15px;
+
+            background: $dark;
+            border-radius: 100%;
+
+            font-size: 0.5rem;
+            text-align: center;
+            color: $light;
+          }
+        }
+      }
+
+      & .header-item-searchbox {
+        position: relative;
+
+        &.active {
+          & i {
+            background: $primary;
+
+            color: white;
+          }
+        }
+
+        & input[type="text"] {
+          position: absolute;
+          top: 4px;
+          right: 15px;
+
+          padding: 6px 14px;
+
+          height: 22.5px;
+          width: 0;
+
+          border: none;
+          background: white;
+          border-radius: 20px 2px 2px 20px;
+
+          opacity: 0;
+          
+          z-index: -1;
+
+          &.show {
+            animation: search-input-show .7s 1 forwards;
+
+            @keyframes search-input-show {
+              from {
+                width: 0;
+
+                opacity: .3;
+              }
+              to {
+                width: 220px;
+                
+                opacity: 1;
+              }
+            }
+          }
+
+          &.hide {
+            animation: search-input-hide .7s 1 forwards;
+
+            @keyframes search-input-hide {
+              from {
+                width: 220px;
+                opacity: 1;
+              }
+              to {
+                width: 0;
+                opacity: 0;
+              }
+            }
+          }
+        }
+
+        & i {
+          margin: 0 5px;
+          padding: 7.5px;
+
+          border-radius: 100%;
+
+          cursor: pointer;
+
+          &:hover {
+            background: $primary;
+
+            color: white;
+          }
+        }
+      }
+
+      & .user-photo {
+        margin-left: 2rem;
+
+        & .user-img {
+          height: 35px;
+          width: 35px;
+
+          border-radius: 100%;
+        }
+      }
+    }
+
+    & .breadcrumb {
+      position: absolute;
+      bottom: -12px;
+      left: 0.8rem;
+
+      margin-left: 8px;
+      padding: 2px 8px 4px;
+
+      background: $primary;
+      border-radius: 40px;
+
+      z-index: 10;
+
+      & span {
+        padding: 2px;
+
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: white;
+
+        &:last-child {
+          font-weight: normal;
+          color: $light;
+        }
+
+        &:not(:last-child) {
+          cursor: pointer;
+
+          &::after {
+            content: "/";
+
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  & .content-wrapper {
+    flex: 1;
+
+    padding: 1rem 2rem;
+
+    overflow-y: auto;
+  }
+}

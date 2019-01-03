@@ -1,0 +1,55 @@
+@import "_color";
+
+.list-group {
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+
+  & .list-group-item {
+    display: flex;
+    align-items: center;
+
+    padding: 14px 20px;
+
+    background: white;
+
+    border-bottom: 1px dotted $primary;
+
+    &:hover {
+      background: $light;
+    }
+
+    &:last-child {
+      border: none;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .center-item {
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+
+      & h5 {
+        margin: 0;
+
+        font-size: .8rem;
+      }
+
+      & span {
+        font-size: .7rem;
+        color: $accent;
+      }
+    }
+
+    & img {
+      margin-right: 1rem;
+
+      height: 33px;
+      width: 33px;
+
+      border-radius: 100%;
+    }
+  }
+}

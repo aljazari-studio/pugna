@@ -1,0 +1,59 @@
+@import "_color";
+
+.btn {
+  position: relative;
+
+  padding: 4px 7px;
+
+  background: $light;
+  border: none;
+  border-radius: 3px;
+  border: 2px solid transparent;
+
+  color: $dark;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:active::after,
+  &:focus::after {
+    animation: animate-button .5s 1;
+
+    @keyframes animate-button {
+      from {
+        width: 0;
+        background: rgba($light, 1);
+      }
+      to {
+        width: 100%;
+        background: rgba($light, 0);
+      }
+    }
+  }
+
+  &.btn-primary {
+    background: $primary;
+  }
+
+  &.btn-secondary {
+    background: $secondary;
+
+    &:hover {
+      filter: contrast(0.9);
+    }
+  }
+}

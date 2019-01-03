@@ -1,0 +1,60 @@
+.sidebar
+  include sidebar-header
+  .sidebar-wrapper
+    ul.list-menu
+      each val in [{active: true, text: "Dashboard", icon: "dashboard"}, {active: false, text: "Widgets", icon: "star", notification: 3}]
+        li(class=val)
+          a(href="/")
+            i(class="fa fa-" + val.icon)
+            span=val.text
+            if val.notification
+              span(class=val.notification ? "notification" : null)=val.notification
+      li.has-children
+        a(href="javascript:;")
+          i(class="fa fa-laptop")
+          span Components
+          i(class="fa fa-chevron-right tree-icon")
+        ul.tree
+          li.tree-item
+            i(class="fa fa-circle")
+            span Icons
+          li.tree-item
+            i(class="fa fa-circle")
+            span Buttons
+          li.tree-item
+            i(class="fa fa-circle")
+            span Sliders
+      li.has-children
+        a(href="javascript:;")
+          i(class="fa fa-pencil-square-o")
+          span Forms
+          i(class="fa fa-chevron-right tree-icon")
+        ul.tree
+          li.tree-item
+            i(class="fa fa-circle")
+            span General
+          li.tree-item
+            i(class="fa fa-circle")
+            span Advanceda
+          li.tree-item
+            i(class="fa fa-circle")
+            span Validation
+      li.has-children
+        a(href="javascript:;")
+          i(class="fa fa-th-large")
+          span Tables
+          i(class="fa fa-chevron-right tree-icon")
+        ul.tree
+          li.tree-item
+            i(class="fa fa-circle")
+            span Icons
+          li.tree-item
+            i(class="fa fa-circle")
+            span Buttons
+          li.tree-item
+            i(class="fa fa-circle")
+            span Sliders
+      li
+        a(href="/")
+          i(class="fa fa-cog")
+          span Setting

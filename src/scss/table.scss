@@ -1,0 +1,31 @@
+@import "_color";
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  font-size: .8rem;
+
+  & thead {
+    text-align: left;
+
+    & tr {
+      background: rgba($primary, .1);
+    }
+  }
+
+  & tbody {
+    & tr {
+      &:hover {
+        background: rgba($dark, .05);
+      }
+    }
+  }
+
+  & th,
+  & td {
+    padding: .75rem 1rem;
+  }
+}

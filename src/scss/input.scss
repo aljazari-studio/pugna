@@ -1,0 +1,32 @@
+@import "_color";
+
+.list-group-item {
+  input[type="checkbox"].pgn-checkbox {
+    position: relative;
+
+    margin-right: 1rem;
+
+    // visibility: hidden;
+
+    &:checked::before {
+      content: "\2713";
+      background: $secondary;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+
+      padding: 1px 3px;
+
+      height: 20px;
+      width: 20px;
+
+      background: $light;
+      border: 2px solid $secondary;
+      border-radius: 20px;
+    }
+  }
+}

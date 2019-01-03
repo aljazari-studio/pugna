@@ -1,0 +1,294 @@
+@import "_color";
+
+.card {
+  margin: 1rem 0;
+
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px 1px rgba($dark, 0.1);
+
+  &.card-simple-1 {
+    display: flex;
+
+    & .card-body {
+      display: flex;
+
+      height: fit-content;
+      width: 100%;
+
+      border-radius: 4px;
+
+      & i {
+        padding: 1rem;
+
+        background: $primary;
+        border-radius: 4px;
+
+        font-size: 2rem;
+        color: $light;
+      }
+
+      & .card-content {
+        padding: 3px 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        & h3,
+        & p {
+          margin: 0;
+        }
+
+        & p {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  &.card-sales {
+    display: flex;
+    flex-direction: column;
+
+    &.card-with-list .card-body {
+      padding: 0;
+
+      & > div {
+        padding: 0.25rem 1rem;
+
+        background: rgba($primary, 0.1);
+
+        & > i {
+          background: $primary;
+
+          color: $light;
+        }
+      }
+
+      & .list-group {
+        & .list-group-item {
+          padding: 14px 20px;
+
+          & .count {
+            padding: 2px 6px;
+
+            background: slateblue;
+            border-radius: 20px;
+
+            font-weight: bold;
+            font-size: 0.7rem;
+            color: $light;
+          }
+        }
+      }
+    }
+
+    & .canvas-wrapper {
+      height: 99px;
+    }
+
+    & .card-body {
+      display: flex;
+      flex-direction: column;
+
+      padding: 0 1rem 0.5rem 1rem;
+
+      height: fit-content;
+      width: 100%;
+
+      border-radius: 4px;
+
+      & > div {
+        display: flex;
+        align-items: center;
+
+        & > i {
+          padding: 0.5rem 0.6rem;
+
+          height: fit-content;
+
+          background: $primary;
+          border-radius: 4px;
+
+          font-size: 1.5rem;
+          color: $light;
+          text-align: center;
+        }
+
+        & .card-content {
+          padding: 3px 1rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          & h3,
+          & p {
+            margin: 0;
+          }
+
+          & p {
+            color: $accent;
+          }
+
+          & span {
+            margin-left: 3px;
+            color: $dark;
+          }
+        }
+      }
+
+      & .list-group-item {
+        padding: 14px 0;
+      }
+    }
+  }
+
+  &.card-with-list {
+    padding: 0;
+
+    & .list-group {
+      max-height: 320px;
+
+      overflow-y: auto;
+    }
+
+    &.sm {
+      & .list-group {
+        max-height: 195px;
+
+        overflow-y: auto;
+      }
+    }
+  }
+
+  & .card-header {
+    display: flex;
+    align-items: center;
+
+    padding: 0.75rem 1rem;
+
+    border-radius: 4px 4px 0 0;
+
+    & h3 {
+      position: relative;
+
+      display: inline;
+
+      margin: 0;
+
+      color: $dark;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        height: 3px;
+        width: 95%;
+
+        background: $primary;
+        border-radius: 30px;
+      }
+    }
+
+    & > div {
+      position: relative;
+
+      margin-left: auto;
+      cursor: pointer;
+
+      & i {
+        padding: 6px;
+
+        background: white;
+        border-radius: 100%;
+
+        &.active,
+        &:hover {
+          background: $light;
+        }
+      }
+    }
+
+    & .dropdown-box {
+      position: absolute;
+      top: calc(2.25rem + 10px);
+      right: 10px;
+
+      display: none;
+
+      margin: 0;
+      padding: 0;
+
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 0 10px 1px rgba($dark, 0.15);
+
+      list-style-type: none;
+
+      animation: show-dropdown 0.5s 1 forwards;
+
+      @keyframes show-dropdown {
+        from {
+          opacity: .9;
+          z-index: 0;
+        }
+        to {
+          transform: translateY(-10px);
+          opacity: 1;
+          z-index: 7;
+        }
+      }
+
+      & li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &:hover {
+          background: $light;
+        }
+
+        & a {
+          flex: 1;
+
+          display: flex;
+          align-items: center;
+
+          padding: 0.4rem 1rem 0.4rem 0.5rem;
+
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+
+          &:hover i {
+            background: inherit;
+          }
+
+          & span {
+            margin-left: 8px;
+
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  & .card-body {
+    padding: 1rem;
+
+    height: fit-content;
+
+    background: white;
+    border-radius: 0 0 4px 4px;
+
+    & p {
+      margin: 0;
+    }
+  }
+}
