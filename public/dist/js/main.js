@@ -1,94 +1,39 @@
-var primaryColor = window
-  .getComputedStyle(document.querySelector(".sidebar-control"), null)
-  .getPropertyValue("background-color");
+/**
+ * Manipulate class of element
+ * with forward direction
+ * @param {node} element
+ * @param {string} from is a default/start selector
+ * @param {string} to as target
+ */
+function ManipulateClass(element) {
+  this.element = element;
 
-// Line Chart
-var ctxLine = document.getElementsByClassName("line-chart");
-
-var lineData1 = [42, 31, 15, 64, 61, 72, 70, 84];
-var lineData2 = [13, 19, 34, 57, 72, 73, 78, 65];
-
-function setOption(arr) {
-  var options = {
-    type: "line",
-    data: {
-      labels: [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August"
-      ],
-      datasets: [
-        {
-          data: arr,
-          backgroundColor: "rgba(0, 0, 0, 0)",
-          borderColor: primaryColor,
-          borderWidth: 2
-        }
-      ]
-    },
-    options: {
-      maintainAspectRatio: false,
-      scales: {
-        yAxes: [
-          {
-            display: false
-          }
-        ],
-        xAxes: [
-          {
-            display: false
-          }
-        ]
-      },
-      legend: {
-        display: false
-      }
-    }
+  this.switchClass = function(from, to) {
+    element.classList.remove(from);
+    element.classList.add(to);
   };
 
-  return options;
+  this.toggleClass = function(from, to) {
+    element.classList.toggle(from);
+    element.classList.toggle(to);
+  };
+
+  this.toggleChildClass = function(from, to) {
+    element.firstElementChild.classList.toggle(from);
+    element.firstElementChild.classList.toggle(to);
+  };
+
+  this.showAlert = function() {
+    alert("ea");
+  };
+
+  return this;
 }
 
-new Chart(ctxLine[0].getContext("2d"), setOption(lineData1));
-new Chart(ctxLine[1].getContext("2d"), setOption(lineData2));
-
-var ctxPie = document.getElementsByClassName("pie-chart")[0];
-var pieData = {
-  type: "pie",
-  data: {
-    datasets: [
-      {
-        data: [10, 20, 30, 23],
-        backgroundColor: ["#FF3907", "#371F72", "#3CBA9F", "#FEAD32"]
-      }
-    ],
-    labels: ["Sports", "Fashion", "Electronics", "Home & Garden"]
-  }
+var mpc = function(element) {
+  return new ManipulateClass(element);
 };
 
-new Chart(ctxPie.getContext("2d"), pieData);
-
-var switchClass = function(element, from, to) {
-  element.classList.remove(from);
-  element.classList.add(to);
-};
-
-var toggleClass = function(element, from, to) {
-  element.classList.toggle(from);
-  element.classList.toggle(to);
-};
-
-var toggleChildClass = function(element, from, to) {
-  element.firstElementChild.classList.toggle(from);
-  element.firstElementChild.classList.toggle(to);
-};
-
-// Searchbox
 var searchboxNav = document.querySelector(".header-item-searchbox");
 var searchbox = searchboxNav.children[0];
 var searchboxTrigger = searchboxNav.children[1];
@@ -97,9 +42,9 @@ searchboxTrigger.addEventListener("click", function() {
   searchboxNav.classList.toggle("active");
 
   if (!searchbox.classList.contains("show")) {
-    switchClass(searchbox, "hide", "show");
+    mpc(searchbox).switchClass("hide", "show");
   } else {
-    switchClass(searchbox, "show", "hide");
+    mpc(searchbox).switchClass("show", "hide");
   }
 });
 
@@ -109,13 +54,13 @@ var sidebarTrigger = document.querySelector(".sidebar-control");
 
 sidebarTrigger.addEventListener("click", function() {
   if (sidebar.classList.contains("collapsed")) {
-    switchClass(sidebar, "collapsed", "expanded");
+    mpc(sidebar).switchClass("collapsed", "expanded");
 
     setTimeout(function() {
       sidebar.classList.remove("expanded");
     }, 1000);
   } else {
-    switchClass(sidebar, "expanded", "collapsed");
+    mpc(sidebar).switchClass("expanded", "collapsed");
   }
 });
 
@@ -124,8 +69,7 @@ var liChildrenTrigger = document.getElementsByClassName("has-children");
 for (var i = 0; i < liChildrenTrigger.length; i++) {
   liChildrenTrigger[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    toggleClass(
-      this.children[0].children[2],
+    mpc(this.children[0].children[2]).toggleClass(
       "fa-chevron-right",
       "fa-chevron-down"
     );
@@ -140,16 +84,16 @@ var chatboxFile = document.querySelector(".chat-form input[type=file]");
 var chatboxFileTrigger = document.querySelector(".chat-form .btn-attach");
 
 if (chatbox.classList.contains("show")) {
-  toggleChildClass(chatboxTrigger, "fa-times", "fa-comments");
+  mpc(chatboxTrigger).toggleChildClass("fa-times", "fa-comments");
 }
 
 chatboxTrigger.addEventListener("click", function() {
-  toggleChildClass(this, "fa-comments", "fa-times");
+  mpc(chatboxTrigger).toggleChildClass("fa-comments", "fa-times");
 
   if (!chatbox.classList.contains("show")) {
-    switchClass(chatbox, "hide", "show");
+    mpc(chatbox).switchClass("hide", "show");
   } else if (chatbox.classList.contains("show")) {
-    switchClass(chatbox, "show", "hide");
+    mpc(chatbox).switchClass("show", "hide");
 
     setTimeout(function() {
       chatbox.classList.remove("hide");
@@ -172,3 +116,44 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
       siblingDisplay == "block" ? "none" : "block";
   });
 }
+
+// Form
+(function HoldLabelFloat() {
+  var fromLabelFloat = document.getElementsByClassName("label--floating");
+
+  for (var i = 0; i < fromLabelFloat.length; i++) {
+    fromLabelFloat[i].children[1].addEventListener("click", function() {
+      this.previousSibling.focus();
+    });
+
+    fromLabelFloat[i].children[0].addEventListener("focus", function() {
+      this.nextElementSibling.classList.add("float");
+    });
+
+    fromLabelFloat[i].children[0].addEventListener("blur", function() {
+      if (this.value === "") { 
+        let that = this;
+        mpc(this.nextElementSibling).toggleClass("float", "default");
+
+        setTimeout(function() {
+          that.nextElementSibling.classList.remove("default");
+        }, 500);
+      }
+    });
+  }
+})();
+
+/**
+ * Trigger input file
+ * @param {node} element
+ */
+(function TriggerInpFile() {
+  var inpFileTrigger = document.getElementsByClassName("btn-file");
+
+  for (var i = 0; i < inpFileTrigger.length; i++) {
+    inpFileTrigger[i].addEventListener("click", function() {
+      this.nextElementSibling.click();
+    });
+  }
+})();
+

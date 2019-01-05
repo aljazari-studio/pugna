@@ -1,32 +1,265 @@
 @import "_color";
 
-.list-group-item {
-  input[type="checkbox"].pgn-checkbox {
-    position: relative;
+input[type="checkbox"].pgn-checkbox {
+  position: relative;
 
-    margin-right: 1rem;
+  margin: 0;
 
-    // visibility: hidden;
+  &:checked::before {
+    content: "\2713";
 
-    &:checked::before {
-      content: "\2713";
-      background: $secondary;
+    background: $primary;
+
+    font-weight: bold;
+    color: white;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+
+    padding: 1px 3px;
+
+    height: 20px;
+    width: 20px;
+
+    background: $light;
+    border: 2px solid $primary;
+    border-radius: 20px;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1rem;
+
+  &.form-group--sm {
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      height: 25px;
+    }
+  }
+
+  &.form-group--lg {
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      height: 45px;
+    }
+  }
+
+  &.w-50 {
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      width: 50%;
+    }
+  }
+
+  &.w-75 {
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      width: 75%;
+    }
+  }
+
+  &.horizontal {
+    flex-direction: row;
+    align-items: center;
+
+    & label {
+      margin: 0;
     }
 
-    &::before {
-      content: "";
+    & input {
+      flex: 1;
+
+      margin-left: 6px;
+    }
+  }
+
+  &.label--floating {
+    position: relative;
+
+    padding-top: 0.5rem;
+
+    & label {
       position: absolute;
-      top: -5px;
-      left: -5px;
+      top: 22px;
+      left: 10px;
 
-      padding: 1px 3px;
+      &.float {
+        animation: label-float 0.5s 1 forwards;
+      }
 
-      height: 20px;
-      width: 20px;
+      &.default {
+        animation: label-default 0.5s 1 forwards;
+      }
+    }
 
-      background: $light;
-      border: 2px solid $secondary;
-      border-radius: 20px;
+    @keyframes label-float {
+      to {
+        top: -1px;
+        left: 8px;
+
+        padding: 1px 8px;
+
+        background: $primary;
+        border-radius: 20px;
+
+        font-weight: normal;
+        color: white;
+      }
+    }
+
+    @keyframes label-default {
+      from {
+        top: -1px;
+        left: 8px;
+
+        padding: 1px 8px;
+
+        background: $primary;
+        border-radius: 20px;
+
+        font-weight: normal;
+        color: white;
+      }
+      to {
+        display: none;
+      }
+    }
+
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      padding: 5px 10px 0 10px;
+      height: 42px;
+
+      &:active,
+      &:focus,
+      &:target {
+        & + label {
+          animation: label-float 0.5s 1 forwards;
+        }
+      }
+    }
+  }
+
+  &.with-addon {
+    display: flex;
+    flex-direction: row;
+
+    &.addon--right {
+      flex-direction: row-reverse;
+
+      & span {
+        border-radius: 0 3px 3px 0;
+      }
+
+      & input[type="text"],
+      & input[type="email"],
+      & input[type="password"] {
+        border-radius: 3px 0 0 3px;
+        border-left: 1.3px solid rgba($dark, 0.2);
+        border-right: $primary;
+      }
+    }
+
+    & span {
+      padding: 0 8px 0 8px;
+
+      height: 33px;
+      min-width: 33px;
+      width: fit-content;
+
+      background: $primary;
+      border-radius: 3px 0 0 3px;
+
+      font-size: 12px;
+      color: white;
+      line-height: 33px;
+      text-align: center;
+
+      & i {
+        margin-top: 8px;
+
+        font-size: 16px;
+      }
+
+      & input[type="checkbox"] {
+        &::before {
+          top: -1px;
+          left: -4px;
+        }
+      }
+    }
+
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      flex: 1;
+
+      border-radius: 0 3px 3px 0;
+      border-left: $primary;
+
+      &:active,
+      &:focus {
+        border-color: $primary;
+      }
+    }
+  }
+
+  & label {
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba($dark, 0.6);
+  }
+
+  & input[type="text"],
+  & input[type="email"],
+  & input[type="password"] {
+    padding: 3px 10px;
+
+    height: 33px;
+
+    border: 1.3px solid rgba($dark, 0.2);
+    border-radius: 3px;
+
+    font-size: 0.9rem;
+    font-family: "Roboto";
+    color: $dark;
+
+    &:active,
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  & input[type="file"] {
+    display: none;
+  }
+
+  & button.btn-file {
+    height: 38px;
+    width: 38px;
+
+    background: $light;
+    border: 1px solid rgba($dark, 0.2);
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    &:active {
+      background: rgba($dark, 0.1);
     }
   }
 }

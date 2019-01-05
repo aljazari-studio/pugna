@@ -37,6 +37,8 @@
 
       list-style-type: none;
 
+      z-index: 0;
+
       & .header-item {
         margin: 0 5px;
         padding: 5px 8px;
@@ -87,17 +89,17 @@
 
         & input[type="text"] {
           position: absolute;
-          top: 4px;
+          top: 2.5px;
           right: 15px;
 
-          padding: 6px 14px;
+          padding: 6px 28px 6px 14px;
 
-          height: 22.5px;
+          height: 25px;
           width: 0;
 
           border: none;
           background: white;
-          border-radius: 20px 2px 2px 20px;
+          border-radius: 20px;
 
           opacity: 0;
           

@@ -3,10 +3,10 @@
 
 <head>
   <meta name="theme-color" content="#b5d43c">
-  <title>Pugna</title>
+  <title>Pugna | Ecommerce Dashboard</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto">
   <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
-  <link rel="stylesheet" href="dist/css/main.css" type="text/css">
+  <link rel="stylesheet" href="../../dist/css/main.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
@@ -19,27 +19,32 @@
     </div>
     <div class="sidebar-wrapper">
       <ul class="list-menu">
-        <li class="active text icon"><a href="/"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-        <li class="text icon notification"><a href="/"><i class="fa fa-star"></i><span>Widgets</span><span class="notification">3</span></a></li>
-        <li class="has-children"><a href="javascript:;"><i class="fa fa-laptop"></i><span>Components</span><i class="fa fa-chevron-right tree-icon"></i></a>
+        <li class="has-children"><a href="javascript:;"><i class="fa fa-dashboard"></i><span>Dashboards</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Icons</span></li>
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Buttons</span></li>
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Sliders</span></li>
+            <li class="tree-item"><a href="../../dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Ecommerce</span></a></li>
+            <li class="tree-item"><a href="../../dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Analytic</span></a></li>
           </ul>
         </li>
-        <li class="has-children"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i><span>Forms</span><i class="fa fa-chevron-right tree-icon"></i></a>
+        <li><a href="/"><i class="fa fa-star"></i><span>Widgets</span><span class="notification">3</span></a></li>
+        <li class="has-children"><a href="javascript:;"><i class="fa fa-laptop"></i><span>Components</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><i class="fa fa-circle"></i><span>General</span></li>
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Advanceda</span></li>
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Validation</span></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Icons</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Buttons</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Sliders</span></a></li>
+          </ul>
+        </li>
+        <li class="has-children active"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i><span>Forms</span><i class="fa fa-chevron-down tree-icon"></i></a>
+          <ul class="tree">
+            <li class="tree-item"><a class="active" href="../forms/general.html"><i class="fa fa-circle"></i><span>General</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Advanced</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Validation</span></a></li>
           </ul>
         </li>
         <li class="has-children"><a href="javascript:;"><i class="fa fa-th-large"></i><span>Tables</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Icons</span></li>
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Buttons</span></li>
-            <li class="tree-item"><i class="fa fa-circle"></i><span>Sliders</span></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Icons</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Buttons</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Sliders</span></a></li>
           </ul>
         </li>
         <li><a href="/"><i class="fa fa-cog"></i><span>Setting</span></a></li>
@@ -49,8 +54,8 @@
   <div class="main-content">
     <div class="header">
       <div class="left">
-        <p>Dashboard</p>
-        <div class="breadcrumb"><span>Home</span><span>Dashboard</span></div>
+        <p>General Form</p>
+        <div class="breadcrumb"><span>Home</span><span>Forms</span><span>General</span></div>
       </div>
       <ul class="right">
         <li class="header-item-searchbox"><input type="text" name=""><i class="fa fa-search"></i></li>
@@ -265,7 +270,7 @@
               </div>
             </div>
           </div>
-          <div class="card card-with-list sm p-0">
+          <div class="card card-with-list sm mt-4 p-0">
             <div class="card-header">
               <h3>Recent Purchase</h3>
               <div><a class="trigger-dropdown"><i class="fa fa-ellipsis-h"></i></a>
@@ -432,7 +437,8 @@
       </div>
     </div>
   </div>
-  <script src="dist/js/main.js"></script>
+  <script src="../../dist/js/main.js"></script>
+  <script src="../../dist/js/chartDemo.js"></script>
 </body>
 
 </html>

@@ -183,6 +183,7 @@
 
     color: $light;
 
+    overflow-x: hidden;
     overflow-y: auto;
 
     & .list-menu {
@@ -274,16 +275,23 @@
             margin: 0;
             padding: 0;
 
-            background: $secondary;
+            background: $light;
 
             & .tree-item {
-              padding: 12px 16px;
-
               border: none;
 
-              & span,
-              & i {
-                color: $dark;
+              & a {
+                padding: 12px 16px;
+                background: white;
+
+                &.active {
+                  background: $secondary;
+                }
+
+                & span,
+                & i {
+                  color: $dark;
+                }
               }
             }
           }

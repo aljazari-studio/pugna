@@ -1,0 +1,101 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | General Form"
+- var youAreUsingPug=true
+
+doctype html
+html(lang="en")
+  head
+    meta(name="theme-color", content="#b5d43c")
+    title=pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-md-6
+            .box
+              .box-header
+                h3 Quick Example
+              .box-body.pt-0
+                .form-group.label--floating
+                  input(type="text", name="")
+                  label Full name
+                .form-group.label--floating
+                  input(type="email", name="")
+                  label Email address
+                .form-group.label--floating
+                  input(type="password", name="")
+                  label Password
+                .form-group
+                  label File input
+                  button.btn-file
+                    i.fa.fa-plus
+                  input(type="file", name="")
+              .box-footer
+                button.btn.btn-md.btn-primary Submit
+            
+            .box.mt-4
+              .box-header
+                h3 Custom
+              .box-body.pt-0
+                .form-group.label--floating
+                  input(type="text", name="")
+                  label Floating label
+                .form-group.with-addon
+                  span Referral code
+                  input(type="text", name="")
+                .form-group.with-addon
+                  span
+                    i.fa.fa-dollar
+                  input(type="text", name="")
+                .form-group.with-addon
+                  span 
+                    input(class="pgn-checkbox", type="checkbox", name="")
+                  input(type="text", name="")
+                .form-group.with-addon.addon--right
+                  span .00
+                  input(type="text", name="")
+          
+          .col-md-6
+            .box
+              .box-header
+                h3 Input Size
+              .box-body.pt-0
+                hr(data-hr="height").mt-0
+                .form-group.form-group--lg
+                  label Large
+                  input(type="text", name="")
+                .form-group
+                  label Default
+                  input(type="text", name="")
+                .form-group.form-group--sm
+                  label Small
+                  input(type="text", name="")
+                hr(data-hr="width")
+                .form-group.w-50
+                  label 50%
+                  input(type="text", name="")
+                .form-group.w-75
+                  label 75%
+                  input(type="text", name="")
+
+            .box.mt-4
+              .box-header
+                h3 Alignment
+              .box-body.pt-0
+                .form-group
+                  label Vertical (default)
+                  input(type="text", name="")
+                .form-group.horizontal
+                  label Horizontal
+                  input(type="text", name="")
+
+    script(src=baseDir +"dist/js/main.js")

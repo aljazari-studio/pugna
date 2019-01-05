@@ -7,7 +7,7 @@ const concat = require("gulp-concat");
 
 gulp.task("pug", function() {
   return gulp
-    .src("src/pug/index.pug")
+    .src("src/pug/views/*/*.pug")
     .pipe(pug())
     .pipe(
       prettyHtml({
@@ -30,7 +30,7 @@ gulp.task("sass", function() {
 gulp.task("js", function() {
   return gulp
     .src("src/js/*.js")
-    .pipe(concat("main.js"))
+    // .pipe(concat("main.js"))
     .pipe(gulp.dest("public/dist/js"))
     .pipe(browserSync.stream());
 });
@@ -38,13 +38,14 @@ gulp.task("js", function() {
 gulp.task("serve", function() {
   browserSync.init({
     server: {
-      baseDir: "./public"
+      baseDir: "public",
+      index: "dashboards/ecommerce.html",
     },
     port: 3000
   });
 
   gulp.watch(
     ["src/pug/**", "src/scss/**", "src/js/**"],
-    gulp.series("pug", "sass", "js")
+    gulp.parallel("pug", "sass", "js")
   );
 });

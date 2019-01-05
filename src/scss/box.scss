@@ -53,10 +53,13 @@
   }
 
   & .box-body {
-    padding: 0.75rem 1rem;
+    padding: .75rem 1rem;
+  }
 
-    & * {
-      margin: 0;
-    }
+  & .box-footer {
+    padding: .75rem 1rem;
+
+    background: rgba($primary, .1);
+    border-radius: 0 0 4px 4px;
   }
 }

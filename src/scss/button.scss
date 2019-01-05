@@ -45,8 +45,13 @@
     }
   }
 
+  &.btn-md {
+    padding: 7px 10px;
+  }
+
   &.btn-primary {
     background: $primary;
+    color: white;
   }
 
   &.btn-secondary {
