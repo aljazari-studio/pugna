@@ -6,7 +6,11 @@ doctype html
 html(lang="en")
   head
     meta(name="theme-color", content="#b5d43c")
+    meta(charset="UTF-8")
+    meta(content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport")
+    
     title=pageTitle
+
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
     link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
@@ -20,68 +24,37 @@ html(lang="en")
       .content-wrapper
         include ../../main-content/chatbox
         .row
-          .col-3
+          .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-user
                 .card-content
                   h3 User
                   p 90
-          .col-3
+          .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-newspaper-o
                 .card-content
                   h3 Order
                   p 252
-          .col-3
+          .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-calendar
                 .card-content
                   h3 Task
                   p 19
-          .col-3
+          .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-shopping-cart
                 .card-content
                   h3 Pending
                   p 32
+                  
         .row
-          .col-4
-            .card.card-sales.card-with-list.sm
-              .card-header
-              div.canvas-wrapper
-                canvas(class="line-chart")
-              .card-body
-                div
-                  i.fa.fa-dollar
-                  .card-content
-                    h3 Sales
-                    p 439
-                      span 
-                        i.fa.fa-level-up
-                ul.list-group
-                  li.list-group-item
-                    img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
-                    .center-item
-                      h5 Product 1
-                      span ABC Shop
-                    span.count 202
-                  li.list-group-item
-                    img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
-                    .center-item
-                      h5 Product 1
-                      span ABC Shop
-                    span.count 154
-                  li.list-group-item
-                    img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
-                    .center-item
-                      h5 Product 1
-                      span ABC Shop
-                    span.count 127
-          .col-4
+          .col-md-4
             .card.card-sales
               div.canvas-wrapper
                 canvas(class="line-chart")
@@ -94,7 +67,7 @@ html(lang="en")
             .card.card-with-list.sm.mt-4.p-0
               .card-header
                 h3 Recent Purchase
-                div
+                .toolbox
                   a.trigger-dropdown
                     i.fa.fa-ellipsis-h
                   ul.dropdown-box
@@ -145,11 +118,45 @@ html(lang="en")
                       h5 Product 5
                       span GHI Shop
                     button.btn.btn-secondary DETAIL
-          .col-4
+
+          .col-md-4
+            .card.card-sales.card-with-list.sm
+              .card-header
+              div.canvas-wrapper
+                canvas(class="line-chart")
+              .card-body
+                div
+                  i.fa.fa-dollar
+                  .card-content
+                    h3 Sales
+                    p 439
+                      span 
+                        i.fa.fa-level-up
+                ul.list-group
+                  li.list-group-item
+                    img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
+                    .center-item
+                      h5 Product 1
+                      span ABC Shop
+                    span.count 202
+                  li.list-group-item
+                    img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
+                    .center-item
+                      h5 Product 1
+                      span ABC Shop
+                    span.count 154
+                  li.list-group-item
+                    img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
+                    .center-item
+                      h5 Product 1
+                      span ABC Shop
+                    span.count 127
+          
+          .col-md-4
             .card.card-with-list.p-0
               .card-header
                 h3 To do List
-                div
+                .toolbox
                   a.trigger-dropdown
                     i.fa.fa-ellipsis-h
                   ul.dropdown-box
@@ -168,58 +175,77 @@ html(lang="en")
               .card-body.p-0
                 ul.list-group
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Send Mail to User 1
                       span by John Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="", checked=true)
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Prepare Docs for Meeting on Friday
                       span by Jane Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Maintain Web Server
                       span by Janet Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Review Task A for Wednesday
                       span by Jenny Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Fix Networking Cable
                       span by Jill Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Fix Networking Cable
                       span by Jill Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Fix Networking Cable
                       span by Jill Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Fix Networking Cable
                       span by Jill Doe
                   li.list-group-item
-                    input(class="pgn-checkbox",type="checkbox", name="")
+                    .pgn-checkbox
+                      input(type="checkbox", name="", checked=true)
+                      span
                     .center-item
                       h5 Fix Networking Cable
                       span by Jill Doe
         .row
-          .col-8
+          .col-md-8
             .box
               .box-header
                 h3 Invoices
-                a
-                  i.fa.fa-print
-              .box-body.pt-0.px-0
+                .toolbox
+                  a
+                    i.fa.fa-print
+              .box-body.pt-0.px-0.responsive
                 table
                   thead
                     tr
@@ -229,7 +255,7 @@ html(lang="en")
                       th Due Date
                       th Action
                   tbody
-                    each val in [{id: "79012370123", customer: "Fathur Hidayat", status: "Paid", date: "January 2, 2019"}, {id: "72063370192", customer: "Nabil Fayyadh Ar Rasyid", status: "Unpaid", date: "January 3, 2019"}, {id: "79032370849", customer: "Akhmad Su'udin", status: "Paid", date: "January 3, 2019"}]
+                    each val in [{id: "79012370123", customer: "John Doe", status: "Paid", date: "January 2, 2019"}, {id: "72063370192", customer: "Jill Doe", status: "Unpaid", date: "January 3, 2019"}, {id: "79032370849", customer: "Jane Doe", status: "Paid", date: "January 3, 2019"}]
                       tr
                         td=val.id
                         td=val.customer
@@ -241,13 +267,26 @@ html(lang="en")
                         td=val.date
                         td 
                           button.btn.btn-secondary DETAIL
-          .col-4
+          .col-md-4
             .box
-              .box-header
+              .box-header.no-border
                 h5.chip--floating Category Popularity
               .box-body.pt-0
                 div.canvas-wrapper
                   canvas(class="pie-chart")
+
+        //- .row
+        //-   .col-6
+        //-     .box
+        //-       .box-header
+        //-         h3 All Products
+        //-       .box-body.pt-0
+
+        //-   .col-6
+        //-     .box
+        //-       .box-header
+        //-         h3 Flash Sale
+        //-       .box-body.pt-0
 
     script(src=baseDir +"dist/js/main.js")
     script(src=baseDir +"dist/js/chartDemo.js")

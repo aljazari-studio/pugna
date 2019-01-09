@@ -15,6 +15,10 @@
 
   cursor: pointer;
 
+  &:hover {
+    opacity: .8;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -49,6 +53,21 @@
     padding: 7px 10px;
   }
 
+  &.btn-lg {
+    padding: 10px 15px;
+  }
+
+  &.btn-block {
+    width: 100%;
+  }
+
+  &.btn-disabled {
+    opacity: .6;
+    filter: contrast(.7);
+
+    cursor: not-allowed;
+  }
+
   &.btn-primary {
     background: $primary;
     color: white;
@@ -56,9 +75,117 @@
 
   &.btn-secondary {
     background: $secondary;
+  }
 
-    &:hover {
-      filter: contrast(0.9);
+  &.btn-light {
+    background: $light;
+    color: $dark;
+  }
+
+  &.btn-dark {
+    background: $dark;
+    color: $light;
+  }
+
+  &.btn-c-primary {
+    background: $c-primary;
+    color: white;
+
+    &.btn-invert {
+      background: white;
+      border-color: $c-primary;
+
+      color: $c-primary;
+    }
+  }
+
+  &.btn-c-info {
+    background: $c-info;
+    color: #434738;
+
+    &.btn-invert {
+      background: white;
+      border-color: $c-info;
+
+      color: $c-info;
+    }
+  }
+
+  &.btn-c-success {
+    background: $c-success;
+    color: white;
+
+    &.btn-invert {
+      background: white;
+      border-color: $c-success;
+
+      color: $c-success;
+    }
+  }
+
+  &.btn-c-warning {
+    background: $c-warning;
+    color: #434738;
+
+    &.btn-invert {
+      background: white;
+      border-color: $c-warning;
+
+      color: $c-warning;
+    }
+  }
+
+  &.btn-c-danger {
+    background: $c-danger;
+    color: white;
+
+    &.btn-invert {
+      background: white;
+      border-color: $c-danger;
+
+      color: $c-danger;
+    }
+  }
+
+  &.btn-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+    min-width: 30px;
+
+    border-radius: 50%;
+
+    &.btn-icon--lg {
+      height: 40px;
+      min-width: 40px;
+    }
+
+    &.btn-icon--square {
+      border-radius: 2px;
+    }
+
+    & i {
+      padding: 0 !important;
+    }
+  }
+}
+
+.btn-group {
+  & .btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:not(.active) {
+      opacity: .6;
     }
   }
 }

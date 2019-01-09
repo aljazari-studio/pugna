@@ -1,33 +1,326 @@
 @import "_color";
 
-input[type="checkbox"].pgn-checkbox {
+.pgn-checkbox {
   position: relative;
 
   margin: 0;
 
-  &:checked::before {
-    content: "\2713";
+  & input[type="checkbox"] {
+    position: relative;
 
-    background: $primary;
+    height: 16px;
+    width: 16px;
 
-    font-weight: bold;
-    color: white;
+    z-index: 100;
+
+    opacity: 0;
+
+    &:checked ~ span::before {
+      content: "\2713";
+
+      background: $primary;
+
+      color: white;
+    }
+
+    &[disabled] ~ span::before {
+      background: #efefef;
+      border-color: #ccc;
+    }
   }
 
-  &::before {
+  & span {
+    margin: 0 !important;
+
+    font-size: 0.8rem;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 1px;
+      left: 3px;
+
+      height: 18px;
+      width: 18px;
+
+      background: $light;
+      border: 2px solid $primary;
+      border-radius: 4px;
+
+      font-weight: bold;
+      color: white;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+}
+
+.pgn-radio {
+  position: relative;
+
+  margin: 0;
+
+  & input[type="radio"] {
+    position: relative;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    &:checked ~ span::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 7px;
+
+      height: 8px;
+      width: 8px;
+      background: $primary;
+      border-radius: 20px;
+    }
+
+    &[disabled] ~ span::before {
+      background: #efefef;
+      border-color: #ccc;
+    }
+  }
+
+  & span {
+    margin: 0 !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 2px;
+
+      padding: 0.1px 1.5px;
+
+      height: 18px;
+      width: 18px;
+
+      background: $light;
+      border: 2px solid $primary;
+      border-radius: 20px;
+    }
+  }
+}
+
+.pgn-select {
+  position: relative;
+
+  padding: 5px 10px;
+
+  height: 35.6px;
+  width: 100%;
+
+  background: white;
+  border: 1px solid rgba($dark, 0.2);
+  border-radius: 3px;
+
+  &.clicked {
+    border-color: $primary;
+  }
+
+  &::after {
     content: "";
+
     position: absolute;
-    top: -5px;
-    left: -5px;
+    top: calc(50% - 3px);
+    right: 10px;
 
-    padding: 1px 3px;
+    border-top: 6px solid $primary;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-radius: 4px;
+  }
 
-    height: 20px;
-    width: 20px;
+  & .pgn-select-selected {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 
-    background: $light;
-    border: 2px solid $primary;
-    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 0.8rem;
+  }
+
+  & ul.pgn-select-dropdown {
+    list-style-type: none;
+
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -1px;
+
+    margin: 0 0 1rem 0;
+    padding: 0;
+
+    height: fit-content;
+    max-height: 190.95px;
+    width: calc(100% + 2px);
+
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px rgba($dark, 0.15);
+
+    animation: show-dropdown 0.8s 1 forwards;
+
+    overflow: hidden auto;
+
+    &.hide {
+      display: none;
+    }
+
+    & li {
+      padding: 0.6rem 1rem;
+
+      cursor: pointer;
+
+      &:first-child {
+        border-radius: 4px 4px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 4px 4px;
+      }
+
+      &:hover {
+        background: $light;
+      }
+
+      &.selected {
+        background: $primary;
+
+        color: white;
+      }
+    }
+  }
+
+  & select,
+  & select option {
+    visibility: hidden;
+  }
+}
+
+.pgn-switch {
+  position: relative;
+
+  margin: 0;
+
+  & input[type="checkbox"] {
+    position: relative;
+
+    height: 25px;
+    width: 25px;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    &:checked ~ span {
+      &::before {
+        background: $secondary;
+      }
+
+      &::after {
+        animation: switch-on 0.5s 1 forwards;
+
+        @keyframes switch-on {
+          from {
+            left: .5px;
+
+            background: #EDEDED;
+          }
+          to {
+            left: 16px;
+
+            background: $primary;
+          }
+        }
+      }
+    }
+
+    &:not(:checked) ~ span {
+      &::before {
+        background: #BBBBBB;
+      }
+
+      &::after {
+        animation: switch-off 0.5s 1 forwards;
+
+        @keyframes switch-off {
+          from {
+            left: 16px;
+
+            background: $primary;
+          }
+          to {
+            left: .5px;
+
+            background: #EDEDED;
+          }
+        }
+      }
+    }
+
+    // &[disabled] ~ span::before {
+    //   background: #efefef;
+    //   border-color: #ccc;
+    // }
+  }
+
+  & span {
+    margin: 0 !important;
+
+    font-size: 0.8rem;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 5.5px;
+      left: -2.5px;
+
+      height: 22px;
+      width: 40px;
+
+      background: #ededed;
+      border-radius: 50px;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 6.75px;
+      // left: 0.5px;
+
+      height: 18px;
+      width: 18px;
+
+      // background: #bbbbbb;
+      border-radius: 50px;
+    }
+
+    // &::before {
+    //   content: "";
+
+    //   position: absolute;
+    //   top: 1px;
+    //   left: 3px;
+
+    //   height: 18px;
+    //   width: 18px;
+
+    //   background: $light;
+    //   border: 2px solid $primary;
+    //   border-radius: 4px;
+
+    //   font-weight: bold;
+    //   color: white;
+    //   line-height: 18px;
+    //   text-align: center;
+    // }
   }
 }
 
@@ -42,6 +335,8 @@ input[type="checkbox"].pgn-checkbox {
     & input[type="email"],
     & input[type="password"] {
       height: 25px;
+
+      font-size: 0.7rem;
     }
   }
 
@@ -50,6 +345,16 @@ input[type="checkbox"].pgn-checkbox {
     & input[type="email"],
     & input[type="password"] {
       height: 45px;
+
+      font-size: 0.9rem;
+    }
+  }
+
+  &.w-25 {
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"] {
+      width: 25%;
     }
   }
 
@@ -75,6 +380,9 @@ input[type="checkbox"].pgn-checkbox {
 
     & label {
       margin: 0;
+
+      min-width: 25%;
+      max-width: 25%;
     }
 
     & input {
@@ -159,8 +467,12 @@ input[type="checkbox"].pgn-checkbox {
     &.addon--right {
       flex-direction: row-reverse;
 
-      & span {
+      & > span {
         border-radius: 0 3px 3px 0;
+      }
+
+      & i {
+        padding: 0 2px;
       }
 
       & input[type="text"],
@@ -172,8 +484,8 @@ input[type="checkbox"].pgn-checkbox {
       }
     }
 
-    & span {
-      padding: 0 8px 0 8px;
+    & > span {
+      padding: 0 8px;
 
       height: 33px;
       min-width: 33px;
@@ -189,15 +501,19 @@ input[type="checkbox"].pgn-checkbox {
 
       & i {
         margin-top: 8px;
+        padding: 0 2px;
 
         font-size: 16px;
       }
 
-      & input[type="checkbox"] {
-        &::before {
-          top: -1px;
-          left: -4px;
-        }
+      & .pgn-checkbox {
+        top: 6px;
+        left: -3px;
+      }
+
+      & .pgn-radio {
+        top: 8px;
+        left: -1px;
       }
     }
 
@@ -226,21 +542,90 @@ input[type="checkbox"].pgn-checkbox {
 
   & input[type="text"],
   & input[type="email"],
+  & input[type="password"],
+  & textarea,
+  & select {
+    background: white;
+    border: 1.3px solid rgba($dark, 0.2);
+    border-radius: 3px;
+
+    font-size: 0.8rem;
+    font-family: "Roboto";
+    color: $dark;
+
+    &:active:not([disabled]),
+    &:focus:not([disabled]) {
+      border-color: $primary;
+    }
+  }
+
+  & input[type="text"],
+  & input[type="email"],
+  & input[type="password"],
+  & textarea,
+  & select,
+  & input[type="checkbox"],
+  & input[type="radio"] {
+    &[disabled] {
+      background: #efefef;
+
+      cursor: not-allowed;
+    }
+  }
+
+  & input[type="text"],
+  & input[type="email"],
   & input[type="password"] {
     padding: 3px 10px;
 
     height: 33px;
+  }
 
-    border: 1.3px solid rgba($dark, 0.2);
-    border-radius: 3px;
+  & textarea {
+    padding: 8px 10px;
+  }
 
-    font-size: 0.9rem;
-    font-family: "Roboto";
-    color: $dark;
+  & select {
+    position: relative;
 
-    &:active,
-    &:focus {
-      border-color: $primary;
+    padding: 8px 4px;
+
+    font-size: 0.8rem;
+  }
+
+  & .form-checkbox {
+    & label {
+      align-items: center;
+    }
+  }
+
+  & .form-checkbox,
+  & .form-radio {
+    display: flex;
+    flex-direction: row;
+
+    &.vertical {
+      flex-direction: column;
+
+      & label {
+        margin: 0.4rem 0;
+      }
+    }
+
+    & label {
+      display: flex;
+      flex-direction: row;
+
+      margin: 0;
+
+      & input[type="checkbox"],
+      & input[type="radio"] {
+        margin: 0;
+      }
+
+      & > span {
+        margin: 0 1.5rem 0 1rem;
+      }
     }
   }
 
@@ -260,6 +645,89 @@ input[type="checkbox"].pgn-checkbox {
 
     &:active {
       background: rgba($dark, 0.1);
+    }
+  }
+
+  & .form-file {
+    display: flex;
+    flex-direction: row;
+
+    & .file-container {
+      display: flex;
+      flex-direction: column;
+
+      padding: 6px 8px;
+
+      height: 38px;
+      width: 100%;
+
+      background: rgba($secondary, 0.2);
+      border-radius: 0 3px 3px 0;
+
+      // animation: file-container-show 1s 1 forwards;
+
+      @keyframes file-container-show {
+        from {
+          width: 0;
+        }
+        to {
+          flex: 1;
+        }
+      }
+
+      & p {
+        display: inline;
+
+        margin: 0 0 4px 0;
+
+        font-size: 0.7rem;
+        color: $dark;
+      }
+    }
+  }
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  height: 6px;
+  width: 100%;
+
+  &::-webkit-progress-bar {
+    background: $dark;
+    border-radius: 5px;
+  }
+
+  &::-webkit-progress-value {
+    background: $primary;
+    border-radius: 5px;
+  }
+}
+
+.choices {
+  margin-bottom: 1rem !important;
+
+  .choices__item.choices__item--selectable {
+    margin-bottom: 6px !important;
+    padding: 2px 2px 2px 9px !important;
+
+    background: $primary !important;
+    border: 1px solid $primary !important;
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+    color: white;
+
+    & .choices__button {
+      margin-right: 2px !important;
+      padding: 0 3px;
+
+      height: 20px;
+      width: 20px;
+
+      border: none !important;
+      border-radius: 20px !important;
     }
   }
 }

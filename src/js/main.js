@@ -110,6 +110,8 @@ var dropdownTrigger = document.getElementsByClassName("trigger-dropdown");
 
 for (var i = 0; i < dropdownTrigger.length; i++) {
   dropdownTrigger[i].addEventListener("click", function() {
+    this.firstElementChild.classList.toggle("active");
+
     var siblingDisplay = getComputedStyle(this.nextElementSibling, null)
       .display;
     this.nextElementSibling.style.display =
@@ -131,7 +133,7 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
     });
 
     fromLabelFloat[i].children[0].addEventListener("blur", function() {
-      if (this.value === "") { 
+      if (this.value === "") {
         let that = this;
         mpc(this.nextElementSibling).toggleClass("float", "default");
 
@@ -142,18 +144,3 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
     });
   }
 })();
-
-/**
- * Trigger input file
- * @param {node} element
- */
-(function TriggerInpFile() {
-  var inpFileTrigger = document.getElementsByClassName("btn-file");
-
-  for (var i = 0; i < inpFileTrigger.length; i++) {
-    inpFileTrigger[i].addEventListener("click", function() {
-      this.nextElementSibling.click();
-    });
-  }
-})();
-

@@ -7,6 +7,9 @@ var ctxLine = document.getElementsByClassName("line-chart");
 
 var lineData1 = [42, 31, 15, 64, 61, 72, 70, 84];
 var lineData2 = [13, 19, 34, 57, 72, 73, 78, 65];
+var lineData3 = [42, 31, 15, 64, 61, 72, 70, 84];
+var lineData4 = [13, 19, 34, 57, 72, 73, 78, 65];
+var lineData5 = [13, 19, 34, 57, 72, 73, 78, 65];
 
 function setOption(arr) {
   var options = {
@@ -56,33 +59,6 @@ function setOption(arr) {
 
 new Chart(ctxLine[0].getContext("2d"), setOption(lineData1));
 new Chart(ctxLine[1].getContext("2d"), setOption(lineData2));
-
-var ctxPie = document.getElementsByClassName("pie-chart")[0];
-ctxPie.width = 229;
-ctxPie.height = 229;
-
-var pieData = {
-  type: "pie",
-  data: {
-    datasets: [
-      {
-        data: [10, 20, 30, 23],
-        backgroundColor: ["#FF3907", "#371F72", "#3CBA9F", "#FEAD32"]
-      }
-    ],
-    labels: ["Sports", "Fashion", "Electronics", "Home & Garden"]
-  },
-  options: {
-    maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 0,
-        right: 0,
-        top: 10,
-        bottom: 10
-      }
-    }
-  }
-};
-
-new Chart(ctxPie.getContext("2d"), pieData);
+new Chart(ctxLine[2].getContext("2d"), setOption(lineData3));
+new Chart(ctxLine[3].getContext("2d"), setOption(lineData4));
+new Chart(ctxLine[4].getContext("2d"), setOption(lineData5));

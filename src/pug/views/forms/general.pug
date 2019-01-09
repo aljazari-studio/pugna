@@ -10,6 +10,7 @@ html(lang="en")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
     link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href=baseDir + "dist/css/choices.min.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
@@ -24,7 +25,7 @@ html(lang="en")
             .box
               .box-header
                 h3 Quick Example
-              .box-body.pt-0
+              .box-body
                 .form-group.label--floating
                   input(type="text", name="")
                   label Full name
@@ -36,39 +37,145 @@ html(lang="en")
                   label Password
                 .form-group
                   label File input
-                  button.btn-file
-                    i.fa.fa-plus
-                  input(type="file", name="")
+                  .form-file
+                    button.btn-file
+                      i.fa.fa-upload
+                    input(type="file", name="")
+                    .file-container
+                      p Namafile.ext
+                      progress(value="22", max="100")
               .box-footer
                 button.btn.btn-md.btn-primary Submit
             
             .box.mt-4
               .box-header
-                h3 Custom
-              .box-body.pt-0
-                .form-group.label--floating
+                h3 General Elements
+              .box-body
+                hr(data-hr="text").mt-0
+                .form-group
+                  label Default
                   input(type="text", name="")
-                  label Floating label
-                .form-group.with-addon
-                  span Referral code
-                  input(type="text", name="")
-                .form-group.with-addon
-                  span
-                    i.fa.fa-dollar
-                  input(type="text", name="")
-                .form-group.with-addon
-                  span 
-                    input(class="pgn-checkbox", type="checkbox", name="")
-                  input(type="text", name="")
-                .form-group.with-addon.addon--right
-                  span .00
-                  input(type="text", name="")
+                .form-group
+                  label Disabled
+                  input(type="text", name="", disabled=true)
+                hr(data-hr="textarea")
+                .form-group
+                  label Default
+                  textarea(name="", cols="30", rows="4")
+                .form-group
+                  label Disabled
+                  textarea(name="", cols="30", rows="4", disabled=true)
+                hr(data-hr="select")
+                .form-group
+                  label Default
+                  select(name="")
+                    option(value="") Option 1
+                    option(value="") Option 2
+                    option(value="") Option 3
+                .form-group
+                  label Disabled
+                  select(name="", disabled=true)
+                    option(value="", selected=true) Option 1
+                    option(value="") Option 2
+                    option(value="") Option 3
+                hr(data-hr="checkbox")
+                .form-group
+                  .form-checkbox
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="", checked=true)
+                        span
+                      span Default horizontal
+
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="")
+                        span
+                      span Checkbox 2
+
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="")
+                        span
+                      span Checkbox 3
+                .form-group
+                  .form-checkbox.vertical
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="", checked=true)
+                        span
+                      span Vertical
+
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="")
+                        span
+                      span Checkbox 2
+
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="")
+                        span
+                      span Checkbox 3
+                .form-group
+                  .form-checkbox
+                    label
+                      .pgn-checkbox
+                        input(type="checkbox", name="", disabled=true)
+                        span
+                      span Disabled
+                hr(data-hr="radio")
+                .form-group
+                  .form-radio
+                    label
+                      .pgn-radio
+                        input(type="radio", name="horizontal", checked=true)
+                        span
+                      span Default horizontal
+
+                    label
+                      .pgn-radio
+                        input(type="radio", name="horizontal")
+                        span
+                      span Radio 2
+
+                    label
+                      .pgn-radio
+                        input(type="radio", name="horizontal")
+                        span
+                      span Radio 3
+                .form-group
+                  .form-radio.vertical
+                    label
+                      .pgn-radio
+                        input(type="radio", name="vertical", checked=true)
+                        span
+                      span Vertical
+
+                    label
+                      .pgn-radio
+                        input(type="radio", name="vertical")
+                        span
+                      span Radio 2
+
+                    label
+                      .pgn-radio
+                        input(type="radio", name="vertical")
+                        span
+                      span Radio 3
+                .form-group
+                  .form-radio
+                    label
+                      .pgn-radio
+                        input(type="radio", name="", disabled=true)
+                        span
+                      span Disabled
           
           .col-md-6
             .box
               .box-header
-                h3 Input Size
-              .box-body.pt-0
+                h3 Input Size & Alignment
+              .box-body
                 hr(data-hr="height").mt-0
                 .form-group.form-group--lg
                   label Large
@@ -80,17 +187,19 @@ html(lang="en")
                   label Small
                   input(type="text", name="")
                 hr(data-hr="width")
-                .form-group.w-50
-                  label 50%
+                .form-group
+                  label 100% (default)
                   input(type="text", name="")
                 .form-group.w-75
                   label 75%
                   input(type="text", name="")
-
-            .box.mt-4
-              .box-header
-                h3 Alignment
-              .box-body.pt-0
+                .form-group.w-50
+                  label 50%
+                  input(type="text", name="")
+                .form-group.w-25
+                  label 25%
+                  input(type="text", name="")
+                hr(data-hr="alignment")
                 .form-group
                   label Vertical (default)
                   input(type="text", name="")
@@ -98,4 +207,68 @@ html(lang="en")
                   label Horizontal
                   input(type="text", name="")
 
+            //- .box.mt-4
+            //-   .box-header
+            //-     h3 Input Masking
+            //-   .box-body.pt-0
+            //-     .form-group
+            //-       label Phone number (US format)
+            //-       input(type="text", name="")
+            //-     .form-group
+            //-       label Currency
+            //-       input(type="text", name="")
+            //-     .form-group
+            //-       label Invoice
+            //-       input(type="text", name="")
+            //-     .form-group
+            //-       label Date
+            //-       input(type="text", name="")
+            
+            .box.mt-4
+              .box-header
+                h3 Custom Elements
+              .box-body
+                hr(data-hr="custom input").mt-0
+                .form-group.label--floating
+                  input(type="text", name="")
+                  label Floating label
+                .form-group.with-addon
+                  span Referral code
+                  input(type="text", name="")
+                .form-group.with-addon
+                  span
+                    i.fa.fa-dollar
+                  input(type="text", name="")
+                .form-group.with-addon.addon--right
+                  span .00
+                  input(type="text", name="")
+                .form-group.with-addon
+                  span 
+                    .pgn-checkbox
+                      input(type="checkbox", name="")
+                      span
+                  input(type="text", name="")
+                hr(data-hr="custom select dropdown")
+                .form-group
+                  .form-select.pgn-select
+                    select(name="")
+                      option(value="1") Option 1
+                      option(value="2") Option 2
+                      option(value="3") Option 3
+                      option(value="4") Option 4
+                      option(value="5", selected=true) Option 5
+                      option(value="6") Option 6
+                      option(value="7") Option 7
+                      option(value="8") Option 8
+                hr(data-hr="file upload with progress")
+                .form-group
+                  .form-file
+                    button.btn-file
+                      i.fa.fa-upload
+                    input(type="file", name="")
+                    .file-container
+                      p Namafile.ext
+                      progress(value="22", max="100")
+
     script(src=baseDir +"dist/js/main.js")
+    script(src=baseDir +"dist/js/formDemo.js")

@@ -1,0 +1,83 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | Colors"
+- var youAreUsingPug=true
+
+doctype html
+html(lang="en")
+  head
+    meta(name="theme-color", content="#b5d43c")
+    title=pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-12
+            .box
+              .box-header
+                h3 Color Scheme
+              .box-body
+                .row.p-3
+                  .color-scheme
+                    .color-inner(style="background: #B5D43C; color: #F7F7F7;") #B5D43C
+                    .color-inner(style="background: #D9EF81; color: #434738;") #D9EF81
+                    .color-inner(style="background: #F7F7F7; color: #434738;") #F7F7F7
+                    .color-inner(style="background: #434738; color: #F7F7F7;") #434738
+
+                  .color-scheme
+                    .color-inner(style="background: #F752A7; color: #FFFFFF;") #F752A7
+                    .color-inner(style="background: #FBDDEC; color: #131E77;") #FBDDEC
+                    .color-inner(style="background: #FFFFFF; color: #131E77;") #FFFFFF
+                    .color-inner(style="background: #131E77; color: #FFFFFF;") #131E77
+
+                  .color-scheme
+                    .color-inner(style="background: #EB6E3D; color: #F2EFF1;") #EB6E3D
+                    .color-inner(style="background: #FFD764; color: #2D2B36;") #FFD764
+                    .color-inner(style="background: #F2EFF1; color: #2D2B36;") #F2EFF1
+                    .color-inner(style="background: #2D2B36; color: #F2EFF1;") #2D2B36
+                  
+                  .color-scheme
+                    .color-inner(style="background: #5BD3C7; color: #FFFFFF;") #5BD3C7
+                    .color-inner(style="background: #ECECEC; color: #3B3B3B;") #ECECEC
+                    .color-inner(style="background: #FFFFFF; color: #3B3B3B;") #FFFFFF
+                    .color-inner(style="background: #3B3B3B; color: #FFFFFF;") #3B3B3B
+
+                  .color-scheme
+                    .color-inner.no-center Primary
+                    .color-inner.no-center Secondary
+                    .color-inner.no-center Light
+                    .color-inner.no-center Dark
+
+                .row.px-3
+                  .col-12 
+                    hr(data-hr="opacity rule")
+
+                .row.px-3
+                  .color-box(style="background: rgb(181, 212, 60, 1); color: #FFFFFF;") 100% 
+                  .color-box(style="background: rgb(181, 212, 60, .2); color: #434738;") 20%
+                  .color-box(style="background: rgb(181, 212, 60, .1); color: #434738;") 10%
+                  
+                .row.px-3
+                  .col-12 
+                    hr(data-hr="additional")
+
+                .row.px-3
+                  .color-box(style="background: #4FA4F3; color: #F7F7F7;") #4FA4F3
+                  .color-box(style="background: #C8E3F5; color: #434738;") #C8E3F5
+                  .color-box(style="background: #009A59; color: #F7F7F7;") #009A59
+                  .color-box(style="background: #FFCC54; color: #434738;") #FFCC54
+                  .color-box(style="background: #F6554D; color: #F7F7F7;") #F6554D
+                  .color-box(style="background: #D1B18E; color: #F7F7F7;") #D1B18E
+                  .color-box(style="background: #FF8B35; color: #F7F7F7;") #FF8B35
+                  .color-box(style="background: #FF2F6C; color: #F7F7F7;") #FF2F6C
+                  .color-box(style="background: #612D90; color: #F7F7F7;") #612D90
+
+    script(src=baseDir +"dist/js/main.js")

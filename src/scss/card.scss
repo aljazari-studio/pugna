@@ -5,7 +5,7 @@
 
   background: white;
   border-radius: 4px;
-  box-shadow: 0 3px 10px 1px rgba($dark, 0.1);
+  box-shadow: 0 1px 5px 1px rgba($dark, 0.05);
 
   &.card-simple-1 {
     display: flex;
@@ -192,7 +192,7 @@
       }
     }
 
-    & > div {
+    & > .toolbox {
       position: relative;
 
       margin-left: auto;
@@ -205,75 +205,9 @@
         border-radius: 100%;
 
         &.active,
+        &:focus,
         &:hover {
-          background: $light;
-        }
-      }
-    }
-
-    & .dropdown-box {
-      position: absolute;
-      top: calc(2.25rem + 10px);
-      right: 10px;
-
-      display: none;
-
-      margin: 0;
-      padding: 0;
-
-      background: white;
-      border-radius: 4px;
-      box-shadow: 0 0 10px 1px rgba($dark, 0.15);
-
-      list-style-type: none;
-
-      animation: show-dropdown 0.5s 1 forwards;
-
-      @keyframes show-dropdown {
-        from {
-          opacity: .9;
-          z-index: 0;
-        }
-        to {
-          transform: translateY(-10px);
-          opacity: 1;
-          z-index: 7;
-        }
-      }
-
-      & li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        &:hover {
-          background: $light;
-        }
-
-        & a {
-          flex: 1;
-
-          display: flex;
-          align-items: center;
-
-          padding: 0.4rem 1rem 0.4rem 0.5rem;
-
-          -webkit-touch-callout: none;
-          -webkit-user-select: none;
-          -khtml-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-
-          &:hover i {
-            background: inherit;
-          }
-
-          & span {
-            margin-left: 8px;
-
-            white-space: nowrap;
-          }
+          background: rgba($primary, .3);
         }
       }
     }

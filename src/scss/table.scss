@@ -6,26 +6,156 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
+
+  &.table--dark {
+    & thead {
+      & tr {
+        background: rgba($light, 0.1);
+
+        color: white;
+      }
+    }
+
+    & tbody {
+      & tr {
+        background: $dark;
+
+        color: $light;
+
+        &:hover {
+          background: rgba($light, 0.1);
+        }
+      }
+    }
+  }
+
+  &.table--bordered {
+    & td {
+      border: 1px solid rgba($primary, 0.3);
+    }
+  }
+
+  &.table--stripped {
+    & tr:nth-of-type(even) {
+      background: rgba($primary, 0.2);
+
+      &:hover {
+        background: rgba($primary, 0);
+      }
+    }
+  }
 
   & thead {
     text-align: left;
 
     & tr {
-      background: rgba($primary, .1);
+      background: rgba($primary, 0.2);
     }
   }
 
   & tbody {
     & tr {
       &:hover {
-        background: rgba($dark, .05);
+        background: rgba($primary, 0.07);
       }
     }
   }
 
   & th,
   & td {
-    padding: .75rem 1rem;
+    padding: 0.75rem 1rem;
+
+    border: 1px solid transparent;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.table-row-handle {
+  display: flex;
+  justify-content: center;
+
+  height: 20px;
+  min-width: 20px;
+  max-width: 100%;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+.pagination-wrapper {
+  width: 100%;
+
+  background: white;
+  border-radius: 0 0 4px 4px;
+
+  &.clearfix {
+    &::before,
+    &::after {
+      content: "";
+      display: table;
+    }
+
+    &::after {
+      clear: both;
+    }
+  }
+
+  & .float--left {
+    float: left;
+  }
+
+  & .float--right {
+    float: right;
+  }
+
+  & .data-info {
+    padding: 0.75rem 1rem;
+  }
+
+  & ul.pagination {
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0.75rem 1rem;
+
+    width: fit-content;
+
+    & li.pagination-item {
+      display: inline-block;
+
+      a {
+        padding: 4px 9px;
+
+        background: $primary;
+        border-radius: 2px;
+
+        font-size: 0.7rem;
+        color: white;
+        text-align: center;
+        line-height: 22.5px;
+
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          background: rgba($primary, 0.8);
+        }
+
+        &.active {
+          background: $secondary;
+
+          color: $dark;
+        }
+      }
+    }
   }
 }

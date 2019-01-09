@@ -1,0 +1,47 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | General Form"
+- var youAreUsingPug=true
+
+doctype html
+html(lang="en")
+  head
+    meta(name="theme-color", content="#b5d43c")
+    title=pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href=baseDir + "dist/css/choices.min.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-md-6
+            .box
+              .box-header
+                h3 Choices.js
+                a(href="https://github.com/jshjohnson/Choices", target="_blank")
+                  i.fa.fa-github
+              .box-body
+                div.pt-1
+                  input(id="js-choice", type="text", name="")
+                  .form-group
+                    label Result
+                    input(id="js-choice-res", type="text", name="", disabled=true)
+          
+          //- .col-md-6
+          //-   .box
+          //-     .box-header
+          //-       h3 Select2
+          //-       a(href="https://github.com/select2/select2", target="_blank")
+          //-         i.fa.fa-github
+          //-     .box-body.pt-0
+
+    script(src=baseDir +"dist/js/main.js")
+    script(src=baseDir +"dist/js/choices.min.js")
+    script(src=baseDir +"dist/js/choicesDemo.js")

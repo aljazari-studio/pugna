@@ -3,6 +3,8 @@
 
 <head>
   <meta name="theme-color" content="#b5d43c">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Pugna | Ecommerce Dashboard</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto">
   <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
@@ -19,43 +21,47 @@
     </div>
     <div class="sidebar-wrapper">
       <ul class="list-menu">
-        <li class="has-children"><a href="javascript:;"><i class="fa fa-dashboard"></i><span>Dashboards</span><i class="fa fa-chevron-right tree-icon"></i></a>
+        <li class="has-children active"><a href="javascript:;"><i class="fa fa-dashboard"></i><span>Dashboards</span><i class="fa fa-chevron-down tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a href="../../dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Ecommerce</span></a></li>
-            <li class="tree-item"><a href="../../dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Analytic</span></a></li>
+            <li class="tree-item"><a href="../dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Ecommerce</span></a></li>
+            <li class="tree-item"><a class="active" href="../dashboards/iot.html"><i class="fa fa-circle"></i><span>IoT</span></a></li>
           </ul>
         </li>
-        <li><a href="/"><i class="fa fa-star"></i><span>Widgets</span><span class="notification">3</span></a></li>
         <li class="has-children"><a href="javascript:;"><i class="fa fa-laptop"></i><span>Components</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Icons</span></a></li>
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Buttons</span></a></li>
+            <li class="tree-item"><a href="../components/colors.html"><i class="fa fa-circle"></i><span>Colors</span></a></li>
+            <li class="tree-item"><a href="../components/buttons.html"><i class="fa fa-circle"></i><span>Buttons</span></a></li>
             <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Sliders</span></a></li>
           </ul>
         </li>
-        <li class="has-children active"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i><span>Forms</span><i class="fa fa-chevron-down tree-icon"></i></a>
+        <li><a href="/"><i class="fa fa-star"></i><span>Widgets</span><span class="notification">3</span></a></li>
+        <li class="has-children"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i><span>Forms</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a class="active" href="../forms/general.html"><i class="fa fa-circle"></i><span>General</span></a></li>
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Advanced</span></a></li>
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Validation</span></a></li>
+            <li class="tree-item"><a href="../forms/general.html"><i class="fa fa-circle"></i><span>General</span></a></li>
+            <li class="tree-item"><a href="../forms/advanced.html"><i class="fa fa-circle"></i><span>Advanced</span></a></li>
           </ul>
         </li>
         <li class="has-children"><a href="javascript:;"><i class="fa fa-th-large"></i><span>Tables</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Icons</span></a></li>
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Buttons</span></a></li>
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Sliders</span></a></li>
+            <li class="tree-item"><a href="../tables/simple.html"><i class="fa fa-circle"></i><span>Simple</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Datatable</span></a></li>
           </ul>
         </li>
-        <li><a href="/"><i class="fa fa-cog"></i><span>Setting</span></a></li>
+        <li class="has-children"><a href="javascript:;"><i class="fa fa-columns"></i><span>Pages</span><i class="fa fa-chevron-right tree-icon"></i></a>
+          <ul class="tree">
+            <li class="tree-item"><a><i class="fa fa-circle"></i><span>Login</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Register</span></a></li>
+            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>404</span></a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
   <div class="main-content">
     <div class="header">
       <div class="left">
-        <p>General Form</p>
-        <div class="breadcrumb"><span>Home</span><span>Forms</span><span>General</span></div>
+        <p>IoT Dashboard</p>
+        <div class="breadcrumb"><span>Home</span><span>Dashboards</span><span>IoT</span></div>
       </div>
       <ul class="right">
         <li class="header-item-searchbox"><input type="text" name=""><i class="fa fa-search"></i></li>
@@ -185,7 +191,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="card card-simple-1">
             <div class="card-body"><i class="fa fa-user"></i>
               <div class="card-content">
@@ -195,7 +201,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="card card-simple-1">
             <div class="card-body"><i class="fa fa-newspaper-o"></i>
               <div class="card-content">
@@ -205,7 +211,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="card card-simple-1">
             <div class="card-body"><i class="fa fa-calendar"></i>
               <div class="card-content">
@@ -215,7 +221,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="card card-simple-1">
             <div class="card-body"><i class="fa fa-shopping-cart"></i>
               <div class="card-content">
@@ -227,38 +233,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-4">
-          <div class="card card-sales card-with-list sm">
-            <div class="card-header"></div>
-            <div class="canvas-wrapper"><canvas class="line-chart"></canvas></div>
-            <div class="card-body">
-              <div><i class="fa fa-dollar"></i>
-                <div class="card-content">
-                  <h3>Sales</h3>
-                  <p>439<span> <i class="fa fa-level-up"></i></span></p>
-                </div>
-              </div>
-              <ul class="list-group">
-                <li class="list-group-item"><img src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$" alt="">
-                  <div class="center-item">
-                    <h5>Product 1</h5><span>ABC Shop</span>
-                  </div><span class="count">202</span>
-                </li>
-                <li class="list-group-item"><img src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$" alt="">
-                  <div class="center-item">
-                    <h5>Product 1</h5><span>ABC Shop</span>
-                  </div><span class="count">154</span>
-                </li>
-                <li class="list-group-item"><img src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$" alt="">
-                  <div class="center-item">
-                    <h5>Product 1</h5><span>ABC Shop</span>
-                  </div><span class="count">127</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="card card-sales">
             <div class="canvas-wrapper"><canvas class="line-chart"></canvas></div>
             <div class="card-body">
@@ -273,7 +248,7 @@
           <div class="card card-with-list sm mt-4 p-0">
             <div class="card-header">
               <h3>Recent Purchase</h3>
-              <div><a class="trigger-dropdown"><i class="fa fa-ellipsis-h"></i></a>
+              <div class="toolbox"><a class="trigger-dropdown"><i class="fa fa-ellipsis-h"></i></a>
                 <ul class="dropdown-box">
                   <li><a><i class="fa fa-eye"></i><span>Show all</span></a></li>
                   <li><a><i class="fa fa-filter"></i><span>Filter</span></a></li>
@@ -316,11 +291,42 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
+          <div class="card card-sales card-with-list sm">
+            <div class="card-header"></div>
+            <div class="canvas-wrapper"><canvas class="line-chart"></canvas></div>
+            <div class="card-body">
+              <div><i class="fa fa-dollar"></i>
+                <div class="card-content">
+                  <h3>Sales</h3>
+                  <p>439<span> <i class="fa fa-level-up"></i></span></p>
+                </div>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item"><img src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$" alt="">
+                  <div class="center-item">
+                    <h5>Product 1</h5><span>ABC Shop</span>
+                  </div><span class="count">202</span>
+                </li>
+                <li class="list-group-item"><img src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$" alt="">
+                  <div class="center-item">
+                    <h5>Product 1</h5><span>ABC Shop</span>
+                  </div><span class="count">154</span>
+                </li>
+                <li class="list-group-item"><img src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$" alt="">
+                  <div class="center-item">
+                    <h5>Product 1</h5><span>ABC Shop</span>
+                  </div><span class="count">127</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
           <div class="card card-with-list p-0">
             <div class="card-header">
               <h3>To do List</h3>
-              <div><a class="trigger-dropdown"><i class="fa fa-ellipsis-h"></i></a>
+              <div class="toolbox"><a class="trigger-dropdown"><i class="fa fa-ellipsis-h"></i></a>
                 <ul class="dropdown-box">
                   <li><a><i class="fa fa-sort-alpha-asc"></i><span>a to z</span></a></li>
                   <li><a><i class="fa fa-sort-alpha-desc"></i><span>z to a</span></a></li>
@@ -330,47 +336,56 @@
             </div>
             <div class="card-body p-0">
               <ul class="list-group">
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Send Mail to User 1</h5><span>by John Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="" checked>
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Prepare Docs for Meeting on Friday</h5><span>by Jane Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Maintain Web Server</h5><span>by Janet Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Review Task A for Wednesday</h5><span>by Jenny Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Fix Networking Cable</h5><span>by Jill Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Fix Networking Cable</h5><span>by Jill Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Fix Networking Cable</h5><span>by Jill Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Fix Networking Cable</h5><span>by Jill Doe</span>
                   </div>
                 </li>
-                <li class="list-group-item"><input class="pgn-checkbox" type="checkbox" name="">
+                <li class="list-group-item">
+                  <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div>
                   <div class="center-item">
                     <h5>Fix Networking Cable</h5><span>by Jill Doe</span>
                   </div>
@@ -381,12 +396,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-8">
+        <div class="col-md-8">
           <div class="box">
             <div class="box-header">
-              <h3>Invoices</h3><a><i class="fa fa-print"></i></a>
+              <h3>Invoices</h3>
+              <div class="toolbox"><a><i class="fa fa-print"></i></a></div>
             </div>
-            <div class="box-body pt-0 px-0">
+            <div class="box-body pt-0 px-0 responsive">
               <table>
                 <thead>
                   <tr>
@@ -400,21 +416,21 @@
                 <tbody>
                   <tr>
                     <td>79012370123</td>
-                    <td>Fathur Hidayat</td>
+                    <td>John Doe</td>
                     <td><label class="badge badge-green">Paid</label></td>
                     <td>January 2, 2019</td>
                     <td> <button class="btn btn-secondary">DETAIL</button></td>
                   </tr>
                   <tr>
                     <td>72063370192</td>
-                    <td>Nabil Fayyadh Ar Rasyid</td>
+                    <td>Jill Doe</td>
                     <td><label class="badge badge-red"> Unpaid</label></td>
                     <td>January 3, 2019</td>
                     <td> <button class="btn btn-secondary">DETAIL</button></td>
                   </tr>
                   <tr>
                     <td>79032370849</td>
-                    <td>Akhmad Su'udin</td>
+                    <td>Jane Doe</td>
                     <td><label class="badge badge-green">Paid</label></td>
                     <td>January 3, 2019</td>
                     <td> <button class="btn btn-secondary">DETAIL</button></td>
@@ -424,9 +440,9 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="box">
-            <div class="box-header">
+            <div class="box-header no-border">
               <h5 class="chip--floating">Category Popularity</h5>
             </div>
             <div class="box-body pt-0">

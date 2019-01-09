@@ -1,0 +1,264 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | General Form"
+- var youAreUsingPug=true
+
+doctype html
+html(lang="en")
+  head
+    meta(name="theme-color", content="#b5d43c")
+    title=pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href=baseDir + "dist/css/choices.min.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-6
+            .box
+              .box-header
+                h3 Default
+                .toolbox
+                  a
+                    i.fa.fa-print
+              .box-body.pt-0.px-0.responsive
+                table
+                  thead
+                    tr
+                      th SKU
+                      th Name
+                      th Stock
+                      th Price
+                      th Action
+                  tbody
+                    each val in [{sku: "PRD-001", name: "Product 1", stock: "34", price: "30000"}, {sku: "PRD-002", name: "Product 2", stock: "142", price: "35000"}, {sku: "PRD-003", name: "Product 3", stock: "79", price: "87000"}]
+                      tr
+                        td=val.sku
+                        td=val.name
+                        td=val.stock
+                        td=val.price
+                        td 
+                          button.btn.btn-secondary.mr-1
+                            i.fa.fa-pencil
+                          button.btn.btn-secondary
+                            i.fa.fa-trash
+                    
+          .col-6
+            .box.box--dark
+              .box-header
+                h3 Dark
+                .toolbox
+                  a
+                    i.fa.fa-print
+              .box-body.pt-0.px-0.responsive
+                table.table--dark
+                  thead
+                    tr
+                      th SKU
+                      th Name
+                      th Stock
+                      th Price
+                      th Action
+                  tbody
+                    each val in [{sku: "PRD-001", name: "Product 1", stock: "34", price: "30000"}, {sku: "PRD-002", name: "Product 2", stock: "142", price: "35000"}]
+                      tr
+                        td=val.sku
+                        td=val.name
+                        td=val.stock
+                        td=val.price
+                        td 
+                          button.btn.btn-light.mr-1
+                            i.fa.fa-pencil
+                          button.btn.btn-secondary
+                            i.fa.fa-trash
+              div.pagination-wrapper.clearfix
+                ul.pagination.float--right
+                  li.pagination-item
+                    a.active 1
+                  li.pagination-item 
+                    a 2
+                  li.pagination-item 
+                    a 3
+                  li.pagination-item 
+                    a Next
+      
+        .row
+          .col-md-6
+            .box
+              .box-header
+                h3 Bordered
+                .toolbox
+                  a.trigger-dropdown
+                    i.fa.fa-ellipsis-h
+                  ul.dropdown-box
+                    li
+                      a
+                        i.fa.fa-sort-alpha-asc
+                        span a to z
+                    li
+                      a
+                        i.fa.fa-sort-alpha-desc
+                        span z to a
+                    li
+                      a
+                        i.fa.fa-filter
+                        span Custom filter
+                    li
+                      a
+                        i.fa.fa-print
+                        span Print
+
+              .box-body.pt-0.px-0.responsive
+                table.table--bordered
+                  thead
+                    tr
+                      th Username
+                      th Date Registered
+                      th Role
+                      th Status
+                  tbody
+                    each val in [{username: "johndoe", date: "06/01/2019", role: "Staff", status: "active"}, {username: "jeandoe", date: "07/01/2019", role: "Member", status: "active"}, {username: "jilldoe", date: "07/01/2019", role: "Staff", status: "pending"}, {username: "janettdoe", date: "08/01/2019", role: "Member", status: "pending"}]
+                      tr
+                        td=val.username
+                        td=val.date
+                        td=val.role
+                        td=val.status
+              div.pagination-wrapper
+                ul.pagination
+                  li.pagination-item 
+                    a 1
+                  li.pagination-item 
+                    a.active 2
+                  li.pagination-item 
+                    a 3
+                  li.pagination-item 
+                    a Next
+
+          .col-md-6
+            .box
+              .box-header
+                h3 Stripped
+              .box-body.pt-0.px-0.responsive
+                table.table--stripped
+                  thead
+                    tr
+                      th Username
+                      th Date Registered
+                      th Role
+                      th Status
+                  tbody
+                    each val in [{username: "johndoe", date: "06/01/2019", role: "Staff", status: "active"}, {username: "jeandoe", date: "07/01/2019", role: "Member", status: "active"}, {username: "jilldoe", date: "07/01/2019", role: "Staff", status: "pending"}, {username: "janettdoe", date: "08/01/2019", role: "Member", status: "pending"}]
+                      tr
+                        td=val.username
+                        td=val.date
+                        td=val.role
+                        td=val.status
+              div.pagination-wrapper.clearfix
+                .data-info.float--left
+                  small.helper-text Showing 
+                    b 5 
+                    span data of 
+                    b 100
+                ul.pagination.float--right
+                  li.pagination-item 
+                    a.active 1
+                  li.pagination-item 
+                    a 2
+                  li.pagination-item 
+                    a 3
+                  li.pagination-item 
+                    a Next
+        
+        .row
+          .col-12
+            .box
+              .box-header
+                h3 Full Features
+                .toolbox
+                  form.searchbox
+                    input(type="text", name="")
+                  a
+                    i.fa.fa-plus
+                  a.trigger-dropdown
+                    i.fa.fa-ellipsis-h
+                  ul.dropdown-box
+                    li
+                      a
+                        i.fa.fa-sort-alpha-asc
+                        span a to z
+                    li
+                      a
+                        i.fa.fa-sort-alpha-desc
+                        span z to a
+                    li
+                      a
+                        i.fa.fa-filter
+                        span Custom filter
+                    li
+                      a
+                        i.fa.fa-print
+                        span Print
+
+              .box-body.pt-0.px-0
+                table
+                  thead
+                    tr
+                      th
+                      th 
+                        .pgn-checkbox
+                          input(type="checkbox", name="")
+                          span
+                      th Task Name
+                      th Progress
+                      th Members
+                      th Due Date
+                      th Status
+                  tbody#sortable
+                    each val in [{taskname: "Fix Networking Cable", progress: "45", members: "John Doe", date: "06/01/2019", status: "in progress"}, {taskname: "Maintain Web Server", progress: "83", members: "Jean Doe", date: "06/01/2019", status: "in progress"}, {taskname: "Review Task A for Wednesday", progress: "100", members: "Jenny Doe", date: "06/01/2019", status: "completed"}]
+                      tr
+                        td
+                          .table-row-handle
+                            i.fa.fa-navicon
+                        td
+                          .pgn-checkbox
+                            input(type="checkbox", name="")
+                            span
+                        td=val.taskname
+                        td
+                          progress(class="valign-middle", value=val.progress, max="100")
+                        td=val.members
+                        td=val.date
+                        td
+                          if val.status == "completed"
+                            label.badge.badge-green Completed
+                          else 
+                            label.badge.badge-red In Progress
+                
+              div.pagination-wrapper.clearfix
+                .data-info.float--left
+                  small.helper-text Showing data 
+                    b 7 
+                    span to 
+                    b 9 
+                    span data of 
+                    b 100
+                ul.pagination.float--right
+                  li.pagination-item 
+                    a 1
+                  li.pagination-item 
+                    a 2
+                  li.pagination-item 
+                    a.active 3
+                  li.pagination-item 
+                    a Next
+
+    script(src=baseDir +"dist/js/main.js")
+    script(src=baseDir +"dist/js/Sortable.min.js")
+    script(src=baseDir +"dist/js/sortableDemo.js")

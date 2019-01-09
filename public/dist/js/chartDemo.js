@@ -58,6 +58,9 @@ new Chart(ctxLine[0].getContext("2d"), setOption(lineData1));
 new Chart(ctxLine[1].getContext("2d"), setOption(lineData2));
 
 var ctxPie = document.getElementsByClassName("pie-chart")[0];
+ctxPie.width = 229;
+ctxPie.height = 229;
+
 var pieData = {
   type: "pie",
   data: {
@@ -68,6 +71,17 @@ var pieData = {
       }
     ],
     labels: ["Sports", "Fashion", "Electronics", "Home & Garden"]
+  },
+  options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        top: 10,
+        bottom: 10
+      }
+    }
   }
 };
 

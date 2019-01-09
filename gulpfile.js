@@ -14,7 +14,7 @@ gulp.task("pug", function() {
         indent_size: 2
       })
     )
-    .pipe(gulp.dest("public"))
+    .pipe(gulp.dest("public/demo"))
     .pipe(browserSync.stream());
 });
 
@@ -27,10 +27,25 @@ gulp.task("sass", function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task("sass-pkg", function() {
+  return gulp
+    .src(["node_modules/choices.js/public/assets/styles/choices.min.css"])
+    .pipe(gulp.dest("public/dist/css"));
+});
+
 gulp.task("js", function() {
   return gulp
     .src("src/js/*.js")
-    // .pipe(concat("main.js"))
+    .pipe(gulp.dest("public/dist/js"))
+    .pipe(browserSync.stream());
+});
+
+gulp.task("js-pkg", function() {
+  return gulp
+    .src([
+      "node_modules/choices.js/public/assets/scripts/choices.min.js",
+      "node_modules/sortablejs/Sortable.min.js"
+    ])
     .pipe(gulp.dest("public/dist/js"))
     .pipe(browserSync.stream());
 });
@@ -39,7 +54,7 @@ gulp.task("serve", function() {
   browserSync.init({
     server: {
       baseDir: "public",
-      index: "dashboards/ecommerce.html",
+      index: "demo/dashboards/ecommerce.html"
     },
     port: 3000
   });

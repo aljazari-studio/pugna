@@ -1,0 +1,147 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | Ecommerce Dashboard"
+- var youAreUsingPug=true
+
+doctype html
+html(lang="en")
+  head
+    meta(name="theme-color", content="#b5d43c")
+    title=pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-4
+            .box
+              .box-body.p-0
+                .form-select.pgn-select.no-border.no-shadow
+                  select(name="")
+                    option(value="1", selected=true) Garden A
+                    option(value="2") Garden B
+                    option(value="3") Garden C
+                    option(value="4") Garden D
+
+            .box.mt-4.mb-2
+              .box-header
+                h3 Basic Info
+              .box-body.p-0.pb-3
+                .img-wrapper.p-3
+                  img(src="https://ae01.alicdn.com/kf/HTB1XppcIXXXXXarXXXXq6xXFXXXB/30-Pieces-Bag-Hot-Selling-Bonsai-Sweet-Orange-Tree-Seeds-Organic-Fruit-Tree-Seeds-Free-Shipping.jpg_640x640.jpg", alt="")
+                table.table--bordered
+                  tbody 
+                    tr
+                      td Area Size 
+                        span.helper-text (m2)
+                      td.font-weight-bold 1820
+                    tr
+                      td Batches
+                      td.font-weight-bold 24
+                    tr
+                      td Location
+                      td.font-weight-bold Outdoor
+                    tr
+                      td Connected Device
+                      td.font-weight-bold 7
+
+            .row
+              .col-6
+                .box.mb-0
+                  .box-body
+                    .form-group.horizontal.mb-0
+                      h5.m-0 Lamp
+                      .pgn-switch.ml-auto
+                        input(type="checkbox", name="", checked=true)
+                        span
+              
+              .col-6
+                .box.mb-0
+                  .box-body
+                    .form-group.horizontal.mb-0
+                      h5.m-0 Pump
+                      .pgn-switch.ml-auto
+                        input(type="checkbox", name="")
+                        span
+              
+            .row
+              .col-6
+                .box
+                  .box-body
+                    .form-group.horizontal.mb-0
+                      h5.m-0 Fan
+                      .pgn-switch.ml-auto
+                        input(type="checkbox", name="")
+                        span
+              
+              .col-6
+                .box
+                  .box-body
+                    .form-group.horizontal.mb-0
+                      h5.m-0 Misting Pump
+                      .pgn-switch.ml-auto
+                        input(type="checkbox", name="", checked=true)
+                        span
+
+          .col-8
+            .box
+              .box-header
+                h3 Current Status
+                .toolbox
+                  a.trigger-dropdown
+                    i.fa.fa-cogs
+                  ul.dropdown-box
+                    li
+                      a
+                        i.fa.fa-cog
+                        span Configure device
+                    li
+                      a
+                        i.fa.fa-history
+                        span Data log
+              .box-body
+                .row.p-2
+                  .col-6
+                    h5.canvas-header Air Temperature
+                      span.overview 87%
+                    div.canvas-wrapper
+                      canvas(class="line-chart")
+
+                  .col-6
+                    h5.canvas-header Air Humidity
+                      span.overview 27.1C
+                    div.canvas-wrapper
+                      canvas(class="line-chart")
+
+                .row.mt-4.p-2
+                  .col-6
+                    h5.canvas-header Soil Moisture
+                      span.overview 29%
+                    div.canvas-wrapper
+                      canvas(class="line-chart")
+
+                  .col-6
+                    h5.canvas-header Soil Fertility 
+                      span.helper-text (uS/cm)
+                      span.overview 409
+                    div.canvas-wrapper
+                      canvas(class="line-chart")
+
+                .row.mt-4.p-2
+                  .col-6
+                    h5.canvas-header Light Intensity 
+                      span.helper-text (lux)
+                      span.overview 36761
+                    div.canvas-wrapper
+                      canvas(class="line-chart")
+
+    script(src=baseDir +"dist/js/main.js")
+    script(src=baseDir +"dist/js/formDemo.js")
+    script(src=baseDir +"dist/js/chartDemo2.js")

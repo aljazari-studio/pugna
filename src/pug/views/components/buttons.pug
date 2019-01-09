@@ -1,0 +1,167 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | Colors"
+- var youAreUsingPug=true
+
+doctype html
+html(lang="en")
+  head
+    meta(name="theme-color", content="#b5d43c")
+    title=pageTitle
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-12
+            .box
+              .box-header
+                h3 Buttons
+              .box-body.responsive
+                .row.p-3
+                  div
+                    button.btn.btn-primary.btn-lg.btn-block Pugna Primary
+                  .ml-3
+                    button.btn.btn-secondary.btn-lg Pugna Secondary
+                  .ml-3
+                    button.btn.btn-light.btn-lg Pugna Light
+                  .ml-3
+                    button.btn.btn-dark.btn-lg Pugna Dark
+
+                .row.p-0
+                  .col-12 
+                    hr(data-hr="bootstrap button color")
+                    table
+                      thead
+                        tr
+                          th Default
+                          th Medium
+                          th Large
+                          th Block
+                          th Invert
+                          th Disabled
+                      tbody
+                        tr
+                          td
+                            button.btn.btn-c-primary Primary
+                          td
+                            button.btn.btn-c-primary.btn-md Primary
+                          td
+                            button.btn.btn-c-primary.btn-lg Primary
+                          td
+                            button.btn.btn-c-primary.btn-block Primary
+                          td
+                            button.btn.btn-c-primary.btn-invert Primary
+                          td
+                            button.btn.btn-c-primary.btn-disabled(disabled=true) Primary
+                        tr
+                          td
+                            button.btn.btn-c-info Info
+                          td
+                            button.btn.btn-c-info.btn-md Info
+                          td
+                            button.btn.btn-c-info.btn-lg Info
+                          td
+                            button.btn.btn-c-info.btn-block Info
+                          td
+                            button.btn.btn-c-info.btn-invert Info
+                          td
+                            button.btn.btn-c-info.btn-disabled(disabled=true) Info
+                        tr
+                          td
+                            button.btn.btn-c-success Success
+                          td
+                            button.btn.btn-c-success.btn-md Success
+                          td
+                            button.btn.btn-c-success.btn-lg Success
+                          td
+                            button.btn.btn-c-success.btn-block Success
+                          td
+                            button.btn.btn-c-success.btn-invert Success
+                          td
+                            button.btn.btn-c-success.btn-disabled(disabled=true) Success
+                        tr
+                          td
+                            button.btn.btn-c-warning Warning
+                          td
+                            button.btn.btn-c-warning.btn-md Warning
+                          td
+                            button.btn.btn-c-warning.btn-lg Warning
+                          td
+                            button.btn.btn-c-warning.btn-block Warning
+                          td
+                            button.btn.btn-c-warning.btn-invert Warning
+                          td
+                            button.btn.btn-c-warning.btn-disabled(disabled=true) Warning
+                        tr
+                          td
+                            button.btn.btn-c-danger Danger
+                          td
+                            button.btn.btn-c-danger.btn-md Danger
+                          td
+                            button.btn.btn-c-danger.btn-lg Danger
+                          td
+                            button.btn.btn-c-danger.btn-block Danger
+                          td
+                            button.btn.btn-c-danger.btn-invert Danger
+                          td
+                            button.btn.btn-c-danger.btn-disabled(disabled=true) Danger
+
+        .row
+          .col-4
+            .box
+              .box-header
+                h3 Icon Buttons
+              .box-body.responsive
+                .row.p-3
+                  div
+                    button.btn.btn-primary.btn-icon.btn-icon--lg
+                      i.fa.fa-star
+                  .ml-4
+                    button.btn.btn-c-primary.btn-icon
+                      i.fa.fa-user
+                  .ml-4
+                    button.btn.btn-c-success.btn-invert.btn-icon.btn-icon--lg.btn-icon--square
+                      i.fa.fa-bookmark
+                  .ml-4
+                    button.btn.btn-c-warning.btn-icon.btn-icon--square
+                      i.fa.fa-phone 
+                      span.ml-1 Call
+
+          .col-7
+            .box
+              .box-header
+                h3 Group Buttons
+              .box-body.responsive
+                .row.p-3
+                  .btn-group
+                    button.btn.btn-primary
+                      span Bronze
+                    button.btn.btn-primary
+                      span Silver
+                    button.btn.btn-primary.active
+                      span Gold
+                  .btn-group.ml-4
+                    button.btn.btn-c-info.active
+                      i.fa.fa-align-left
+                    button.btn.btn-c-info
+                      i.fa.fa-align-center
+                    button.btn.btn-c-info
+                      i.fa.fa-align-right
+                  .btn-group.ml-4
+                    button.btn.btn-c-danger.btn-lg
+                      i.fa.fa-align-left
+                    button.btn.btn-c-danger.btn-lg.active
+                      i.fa.fa-align-center
+                    button.btn.btn-c-danger.btn-lg
+                      i.fa.fa-align-right
+
+
+    script(src=baseDir +"dist/js/main.js")
