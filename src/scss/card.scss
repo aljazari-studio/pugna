@@ -207,7 +207,7 @@
         &.active,
         &:focus,
         &:hover {
-          background: rgba($primary, .3);
+          background: rgba($primary, 0.3);
         }
       }
     }
@@ -224,5 +224,11 @@
     & p {
       margin: 0;
     }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card {
+    margin-bottom: 0;
   }
 }

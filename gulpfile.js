@@ -59,8 +59,12 @@ gulp.task("serve", function() {
     port: 3000
   });
 
-  gulp.watch(
-    ["src/pug/**", "src/scss/**", "src/js/**"],
-    gulp.parallel("pug", "sass", "js")
-  );
+  // gulp.watch(
+  //   ["src/pug/**", "src/scss/**", "src/js/**"],
+  //   gulp.parallel("pug", "sass", "js")
+  // );
+
+  gulp.watch("src/pug/**", gulp.series("pug"));
+  gulp.watch("src/scss/**", gulp.series("sass"));
+  gulp.watch("src/js/**", gulp.series("js"));
 });

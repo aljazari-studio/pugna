@@ -19,6 +19,12 @@
   z-index: 7;
 }
 
+@media (max-width: 575.98px) {
+  .trigger-chatbox {
+    display: none;
+  }
+}
+
 .chatbox {
   content: "";
   position: fixed;

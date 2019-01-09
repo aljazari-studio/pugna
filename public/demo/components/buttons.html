@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta name="theme-color" content="#b5d43c">
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#FFD764">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Pugna | Colors</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto">
   <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
@@ -67,6 +69,7 @@
         <li class="header-item"><i class="fa fa-bell"></i><span><sup>3</sup></span></li>
         <li><a class="user-photo"><img class="user-img" src="http://preview.premium-contao-themes.com/quantum2/demo/files/cto_layout/img/placeholder/team_1.jpg"></a></li>
       </ul>
+      <div class="right--mobile"><a class="header-item--mobile sidebar-control"><i class="fa fa-navicon"></i></a><a class="header-item--mobile"><i class="fa fa-comments"></i></a><a class="header-item--mobile"><i class="fa fa-ellipsis-v"></i></a></div>
     </div>
     <div class="content-wrapper">
       <div class="chatbox"><button class="trigger-chatbox"><i class="fa fa-comments"></i></button>
@@ -189,75 +192,77 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <div class="box">
+        <div class="col-md-12">
+          <div class="box responsive">
             <div class="box-header">
               <h3>Buttons</h3>
             </div>
-            <div class="box-body responsive">
+            <div class="box-body">
               <div class="row p-3">
-                <div><button class="btn btn-primary btn-lg btn-block">Pugna Primary</button></div>
-                <div class="ml-3"><button class="btn btn-secondary btn-lg">Pugna Secondary</button></div>
-                <div class="ml-3"><button class="btn btn-light btn-lg">Pugna Light</button></div>
-                <div class="ml-3"><button class="btn btn-dark btn-lg">Pugna Dark</button></div>
+                <div class="col-md-3 mb-2"><button class="btn btn-primary btn-lg btn-block">Pugna Primary</button></div>
+                <div class="col-md-3 mb-2"><button class="btn btn-secondary btn-lg btn-block">Pugna Secondary</button></div>
+                <div class="col-md-3 mb-2"><button class="btn btn-light btn-lg btn-block">Pugna Light</button></div>
+                <div class="col-md-3 mb-2"><button class="btn btn-dark btn-lg btn-block">Pugna Dark</button></div>
               </div>
               <div class="row p-0">
-                <div class="col-12">
+                <div class="col-md-12">
                   <hr data-hr="bootstrap button color">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Default</th>
-                        <th>Medium</th>
-                        <th>Large</th>
-                        <th>Block</th>
-                        <th>Invert</th>
-                        <th>Disabled</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><button class="btn btn-c-primary">Primary</button></td>
-                        <td><button class="btn btn-c-primary btn-md">Primary</button></td>
-                        <td><button class="btn btn-c-primary btn-lg">Primary</button></td>
-                        <td><button class="btn btn-c-primary btn-block">Primary</button></td>
-                        <td><button class="btn btn-c-primary btn-invert">Primary</button></td>
-                        <td><button class="btn btn-c-primary btn-disabled" disabled>Primary</button></td>
-                      </tr>
-                      <tr>
-                        <td><button class="btn btn-c-info">Info</button></td>
-                        <td><button class="btn btn-c-info btn-md">Info</button></td>
-                        <td><button class="btn btn-c-info btn-lg">Info</button></td>
-                        <td><button class="btn btn-c-info btn-block">Info</button></td>
-                        <td><button class="btn btn-c-info btn-invert">Info</button></td>
-                        <td><button class="btn btn-c-info btn-disabled" disabled>Info</button></td>
-                      </tr>
-                      <tr>
-                        <td><button class="btn btn-c-success">Success</button></td>
-                        <td><button class="btn btn-c-success btn-md">Success</button></td>
-                        <td><button class="btn btn-c-success btn-lg">Success</button></td>
-                        <td><button class="btn btn-c-success btn-block">Success</button></td>
-                        <td><button class="btn btn-c-success btn-invert">Success</button></td>
-                        <td><button class="btn btn-c-success btn-disabled" disabled>Success</button></td>
-                      </tr>
-                      <tr>
-                        <td><button class="btn btn-c-warning">Warning</button></td>
-                        <td><button class="btn btn-c-warning btn-md">Warning</button></td>
-                        <td><button class="btn btn-c-warning btn-lg">Warning</button></td>
-                        <td><button class="btn btn-c-warning btn-block">Warning</button></td>
-                        <td><button class="btn btn-c-warning btn-invert">Warning</button></td>
-                        <td><button class="btn btn-c-warning btn-disabled" disabled>Warning</button></td>
-                      </tr>
-                      <tr>
-                        <td><button class="btn btn-c-danger">Danger</button></td>
-                        <td><button class="btn btn-c-danger btn-md">Danger</button></td>
-                        <td><button class="btn btn-c-danger btn-lg">Danger</button></td>
-                        <td><button class="btn btn-c-danger btn-block">Danger</button></td>
-                        <td><button class="btn btn-c-danger btn-invert">Danger</button></td>
-                        <td><button class="btn btn-c-danger btn-disabled" disabled>Danger</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div class="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Default</th>
+                          <th>Medium</th>
+                          <th>Large</th>
+                          <th>Block</th>
+                          <th>Invert</th>
+                          <th>Disabled</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><button class="btn btn-c-primary">Primary</button></td>
+                          <td><button class="btn btn-c-primary btn-md">Primary</button></td>
+                          <td><button class="btn btn-c-primary btn-lg">Primary</button></td>
+                          <td><button class="btn btn-c-primary btn-block">Primary</button></td>
+                          <td><button class="btn btn-c-primary btn-invert">Primary</button></td>
+                          <td><button class="btn btn-c-primary btn-disabled" disabled>Primary</button></td>
+                        </tr>
+                        <tr>
+                          <td><button class="btn btn-c-info">Info</button></td>
+                          <td><button class="btn btn-c-info btn-md">Info</button></td>
+                          <td><button class="btn btn-c-info btn-lg">Info</button></td>
+                          <td><button class="btn btn-c-info btn-block">Info</button></td>
+                          <td><button class="btn btn-c-info btn-invert">Info</button></td>
+                          <td><button class="btn btn-c-info btn-disabled" disabled>Info</button></td>
+                        </tr>
+                        <tr>
+                          <td><button class="btn btn-c-success">Success</button></td>
+                          <td><button class="btn btn-c-success btn-md">Success</button></td>
+                          <td><button class="btn btn-c-success btn-lg">Success</button></td>
+                          <td><button class="btn btn-c-success btn-block">Success</button></td>
+                          <td><button class="btn btn-c-success btn-invert">Success</button></td>
+                          <td><button class="btn btn-c-success btn-disabled" disabled>Success</button></td>
+                        </tr>
+                        <tr>
+                          <td><button class="btn btn-c-warning">Warning</button></td>
+                          <td><button class="btn btn-c-warning btn-md">Warning</button></td>
+                          <td><button class="btn btn-c-warning btn-lg">Warning</button></td>
+                          <td><button class="btn btn-c-warning btn-block">Warning</button></td>
+                          <td><button class="btn btn-c-warning btn-invert">Warning</button></td>
+                          <td><button class="btn btn-c-warning btn-disabled" disabled>Warning</button></td>
+                        </tr>
+                        <tr>
+                          <td><button class="btn btn-c-danger">Danger</button></td>
+                          <td><button class="btn btn-c-danger btn-md">Danger</button></td>
+                          <td><button class="btn btn-c-danger btn-lg">Danger</button></td>
+                          <td><button class="btn btn-c-danger btn-block">Danger</button></td>
+                          <td><button class="btn btn-c-danger btn-invert">Danger</button></td>
+                          <td><button class="btn btn-c-danger btn-disabled" disabled>Danger</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,31 +270,37 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-5">
           <div class="box">
             <div class="box-header">
               <h3>Icon Buttons</h3>
             </div>
             <div class="box-body responsive">
-              <div class="row p-3">
-                <div><button class="btn btn-primary btn-icon btn-icon--lg"><i class="fa fa-star"></i></button></div>
-                <div class="ml-4"><button class="btn btn-c-primary btn-icon"><i class="fa fa-user"></i></button></div>
-                <div class="ml-4"><button class="btn btn-c-success btn-invert btn-icon btn-icon--lg btn-icon--square"><i class="fa fa-bookmark"></i></button></div>
-                <div class="ml-4"><button class="btn btn-c-warning btn-icon btn-icon--square"><i class="fa fa-phone"> </i><span class="ml-1">Call</span></button></div>
+              <div class="row justify-content-between p-3">
+                <div class="col-md-3 col-2 p-0"><button class="btn btn-primary btn-icon btn-icon--lg"><i class="fa fa-star"></i></button></div>
+                <div class="col-md-3 col-2 p-0"><button class="btn btn-c-primary btn-icon"><i class="fa fa-user"></i></button></div>
+                <div class="col-md-3 col-2 p-0"><button class="btn btn-c-success btn-invert btn-icon btn-icon--lg btn-icon--square"><i class="fa fa-bookmark"></i></button></div>
+                <div class="col-md-3 col-3 p-0"><button class="btn btn-c-warning btn-icon btn-icon--square"><i class="fa fa-phone"> </i><span class="ml-1">Call</span></button></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-7">
+        <div class="col-md-7">
           <div class="box">
             <div class="box-header">
               <h3>Group Buttons</h3>
             </div>
             <div class="box-body responsive">
               <div class="row p-3">
-                <div class="btn-group"><button class="btn btn-primary"><span>Bronze</span></button><button class="btn btn-primary"><span>Silver</span></button><button class="btn btn-primary active"><span>Gold</span></button></div>
-                <div class="btn-group ml-4"><button class="btn btn-c-info active"><i class="fa fa-align-left"></i></button><button class="btn btn-c-info"><i class="fa fa-align-center"></i></button><button class="btn btn-c-info"><i class="fa fa-align-right"></i></button></div>
-                <div class="btn-group ml-4"><button class="btn btn-c-danger btn-lg"><i class="fa fa-align-left"></i></button><button class="btn btn-c-danger btn-lg active"><i class="fa fa-align-center"></i></button><button class="btn btn-c-danger btn-lg"><i class="fa fa-align-right"></i></button></div>
+                <div class="col-md-5 mb-3">
+                  <div class="btn-group"><button class="btn btn-primary"><span>Regular</span></button><button class="btn btn-primary active"><span>Premium</span></button></div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="btn-group"><button class="btn btn-c-info active"><i class="fa fa-align-left"></i></button><button class="btn btn-c-info"><i class="fa fa-align-center"></i></button><button class="btn btn-c-info"><i class="fa fa-align-right"></i></button></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="btn-group"><button class="btn btn-c-danger btn-lg"><i class="fa fa-align-left"></i></button><button class="btn btn-c-danger btn-lg active"><i class="fa fa-align-center"></i></button><button class="btn btn-c-danger btn-lg"><i class="fa fa-align-right"></i></button></div>
+                </div>
               </div>
             </div>
           </div>

@@ -154,3 +154,13 @@
     border-radius: 0 0 4px 4px;
   }
 }
+
+@media (max-width: 575.98px) {
+  & form.searchbox {
+    display: inline;
+
+    & input[type="text"] {
+      display: none;
+    }
+  }
+}

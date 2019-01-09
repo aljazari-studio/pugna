@@ -5,14 +5,16 @@
 (function TriggerInpFile() {
   var inpFileTrigger = document.getElementsByClassName("btn-file");
 
-  var progress = document.querySelector(".file-container progress");
-  var progressVal = 1;
-  var id = setInterval(frame, 10);
+  if (inpFileTrigger.length > 0) {
+    var progress = document.querySelector(".file-container progress");
+    var progressVal = 1;
+    var id = setInterval(frame, 10);
 
-  for (var i = 0; i < inpFileTrigger.length; i++) {
-    inpFileTrigger[i].addEventListener("click", function() {
-      this.nextElementSibling.click();
-    });
+    for (var i = 0; i < inpFileTrigger.length; i++) {
+      inpFileTrigger[i].addEventListener("click", function() {
+        this.nextElementSibling.click();
+      });
+    }
   }
 
   function frame() {

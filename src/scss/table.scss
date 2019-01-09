@@ -159,3 +159,18 @@ table {
     }
   }
 }
+
+.table-wrapper {
+  overflow: auto;
+}
+@media (max-width: 575.98px) {
+  & .data-info {
+    max-width: 40%;
+  }
+
+  & ul.pagination {
+    max-width: 60%;
+
+    text-align: right;
+  }
+}

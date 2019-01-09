@@ -1,12 +1,15 @@
 - var baseDir = "../../"
 - var pageTitle="Pugna | Ecommerce Dashboard"
-- var youAreUsingPug=true
 
 doctype html
 html(lang="en")
   head
-    meta(name="theme-color", content="#b5d43c")
+    meta(charset="UTF-8")
+    meta(name="theme-color", content="#FFD764")
+    meta(content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport")
+
     title=pageTitle
+    
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
     link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
@@ -20,7 +23,7 @@ html(lang="en")
       .content-wrapper
         include ../../main-content/chatbox
         .row
-          .col-4
+          .col-md-4
             .box
               .box-body.p-0
                 .form-select.pgn-select.no-border.no-shadow
@@ -53,7 +56,7 @@ html(lang="en")
                       td.font-weight-bold 7
 
             .row
-              .col-6
+              .col-md-6
                 .box.mb-0
                   .box-body
                     .form-group.horizontal.mb-0
@@ -62,7 +65,7 @@ html(lang="en")
                         input(type="checkbox", name="", checked=true)
                         span
               
-              .col-6
+              .col-md-6
                 .box.mb-0
                   .box-body
                     .form-group.horizontal.mb-0
@@ -72,8 +75,8 @@ html(lang="en")
                         span
               
             .row
-              .col-6
-                .box
+              .col-md-6
+                .box.mb-0
                   .box-body
                     .form-group.horizontal.mb-0
                       h5.m-0 Fan
@@ -81,7 +84,7 @@ html(lang="en")
                         input(type="checkbox", name="")
                         span
               
-              .col-6
+              .col-md-6
                 .box
                   .box-body
                     .form-group.horizontal.mb-0
@@ -90,7 +93,7 @@ html(lang="en")
                         input(type="checkbox", name="", checked=true)
                         span
 
-          .col-8
+          .col-md-8
             .box
               .box-header
                 h3 Current Status
@@ -108,26 +111,26 @@ html(lang="en")
                         span Data log
               .box-body
                 .row.p-2
-                  .col-6
+                  .col-md-6
                     h5.canvas-header Air Temperature
                       span.overview 87%
                     div.canvas-wrapper
                       canvas(class="line-chart")
 
-                  .col-6
+                  .col-md-6
                     h5.canvas-header Air Humidity
                       span.overview 27.1C
                     div.canvas-wrapper
                       canvas(class="line-chart")
 
                 .row.mt-4.p-2
-                  .col-6
+                  .col-md-6
                     h5.canvas-header Soil Moisture
                       span.overview 29%
                     div.canvas-wrapper
                       canvas(class="line-chart")
 
-                  .col-6
+                  .col-md-6
                     h5.canvas-header Soil Fertility 
                       span.helper-text (uS/cm)
                       span.overview 409
@@ -135,7 +138,7 @@ html(lang="en")
                       canvas(class="line-chart")
 
                 .row.mt-4.p-2
-                  .col-6
+                  .col-md-6
                     h5.canvas-header Light Intensity 
                       span.helper-text (lux)
                       span.overview 36761

@@ -1,12 +1,15 @@
 - var baseDir = "../../"
-- var pageTitle="Pugna | General Form"
-- var youAreUsingPug=true
+- var pageTitle="Pugna | Simple Table"
 
 doctype html
 html(lang="en")
   head
-    meta(name="theme-color", content="#b5d43c")
+    meta(charset="UTF-8")
+    meta(name="theme-color", content="#FFD764")
+    meta(content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport")
+
     title=pageTitle
+
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
     link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
@@ -21,7 +24,7 @@ html(lang="en")
       .content-wrapper
         include ../../main-content/chatbox
         .row
-          .col-6
+          .col-md-6.col-12
             .box
               .box-header
                 h3 Default
@@ -50,7 +53,7 @@ html(lang="en")
                           button.btn.btn-secondary
                             i.fa.fa-trash
                     
-          .col-6
+          .col-md-6.col-12
             .box.box--dark
               .box-header
                 h3 Dark
@@ -90,7 +93,7 @@ html(lang="en")
                     a Next
       
         .row
-          .col-md-6
+          .col-md-6.col-12
             .box
               .box-header
                 h3 Bordered
@@ -141,7 +144,7 @@ html(lang="en")
                   li.pagination-item 
                     a Next
 
-          .col-md-6
+          .col-md-6.col-12
             .box
               .box-header
                 h3 Stripped
@@ -206,7 +209,7 @@ html(lang="en")
                         i.fa.fa-print
                         span Print
 
-              .box-body.pt-0.px-0
+              .box-body.pt-0.px-0.responsive
                 table
                   thead
                     tr

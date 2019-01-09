@@ -229,7 +229,7 @@
           &.active {
             & .tree {
               max-height: 400px;
-              transition: max-height .7s ease-in;
+              transition: max-height 0.7s ease-in;
             }
           }
 
@@ -250,7 +250,7 @@
             background: $light;
 
             overflow: hidden;
-            transition: max-height .7s ease-out;
+            transition: max-height 0.7s ease-out;
 
             & .tree-item {
               border: none;
@@ -279,6 +279,86 @@
 
 @media (max-width: 575.98px) {
   .sidebar {
-    display: none;
+    position: relative;
+    height: 0;
+    width: 0;
+
+    z-index: 10;
+
+    &.collapsed {
+      animation: unset;
+
+      & .sidebar-header {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      & .sidebar-header,
+      & .sidebar-wrapper {
+        animation: sidebar-collapsed-mobile 1.2s 1 forwards;
+
+        & .brand {
+          animation: unset;
+        }
+      }
+
+      @keyframes sidebar-collapsed-mobile {
+        from {
+          width: 74.5vw;
+        }
+        to {
+          transform: translateX(-100vw);
+        }
+      }
+    }
+
+    &.expanded {
+      animation: unset;
+
+      & .sidebar-header {
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+      }
+
+      & .sidebar-header,
+      & .sidebar-wrapper {
+        animation: sidebar-expanded-mobile 0.7s 1 forwards;
+      }
+
+      @keyframes sidebar-expanded-mobile {
+        from {
+          transform: translateX(-100vw);
+        }
+        to {
+          width: 74.5vw;
+        }
+      }
+    }
+
+    & .sidebar-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      padding-left: 0;
+      padding-right: 0;
+
+      width: 0;
+
+      overflow: hidden;
+
+      & .sidebar-control i::before {
+        content: "\f342";
+      }
+    }
+
+    & .sidebar-wrapper {
+      position: absolute;
+      top: 70px;
+      left: 0;
+
+      height: calc(100vh - 70px);
+      width: 0;
+    }
   }
 }
