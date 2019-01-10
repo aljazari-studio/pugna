@@ -43,9 +43,12 @@
 
       z-index: 0;
 
+      & .dropdown {
+        position: relative;
+      }
+
       & .header-item {
-        margin: 0 5px;
-        padding: 5px 8px;
+        margin: 0 8px;
 
         border-radius: 100%;
 
@@ -63,8 +66,8 @@
 
           & sup {
             position: absolute;
-            top: -6px;
-            right: -10px;
+            top: -9px;
+            right: -7px;
 
             padding: 2.3px 0.5px;
 
@@ -76,6 +79,25 @@
             font-size: 0.5rem;
             text-align: center;
             color: $light;
+          }
+        }
+      }
+
+      & .header-item,
+      & .header-user {
+        & i {
+          padding: 6px;
+
+          border-radius: 100%;
+        }
+
+        & > i,
+        & > a i {
+          &.active,
+          &:hover {
+            background: $primary;
+
+            color: white;
           }
         }
       }
@@ -103,7 +125,7 @@
 
           border: none;
           background: white;
-          border-radius: 20px;
+          border-radius: 3px;
 
           opacity: 0;
 
@@ -158,14 +180,22 @@
         }
       }
 
-      & .user-photo {
-        margin-left: 2rem;
+      & .header-user {
+        position: relative;
+        height: 26px;
 
-        & .user-img {
-          height: 35px;
-          width: 35px;
+        & .user-photo {
+          position: relative;
+          top: -4px;
+        }
 
-          border-radius: 100%;
+        & .dropdown-header {
+          flex-direction: row;
+          justify-content: flex-start;
+
+          & .user-info {
+            padding-left: 0.5rem;
+          }
         }
       }
     }
@@ -238,7 +268,7 @@
       & .left {
         flex: 1;
       }
-  
+
       & .right {
         & .header-item-searchbox,
         & .header-item,
@@ -246,7 +276,7 @@
           display: none;
         }
       }
-  
+
       & .right--mobile {
         display: flex !important;
         flex-direction: row;

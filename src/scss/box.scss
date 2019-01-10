@@ -90,11 +90,6 @@
 
         background: white;
         border-radius: 100%;
-
-        &.active,
-        &:hover {
-          background: $light;
-        }
       }
     }
 
@@ -125,7 +120,7 @@
         margin: 0 5px;
       }
 
-      & i {
+      & > i {
         padding: 6px;
 
         background: white;

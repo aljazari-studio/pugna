@@ -9,17 +9,88 @@
     li.header-item-searchbox
       input(type="text", name="")
       i.fa.fa-search
-    li.header-item
-      i.fa.fa-envelope
-      span
-        sup 10
-    li.header-item
-      i.fa.fa-bell
-      span
-        sup 3
-    li
-      a.user-photo
-        img(src="http://preview.premium-contao-themes.com/quantum2/demo/files/cto_layout/img/placeholder/team_1.jpg").user-img
+    li.header-item.dropdown
+      a.trigger-dropdown
+        i.fa.fa-share-alt-square
+      .dropdown-box.dropdown-box--centered.with-header
+        .dropdown-header
+          h3 Quick Action
+          span.helper-text Shortcut
+        .dropdown-body
+          .row
+            .col-6.p-0
+              a
+                i.fa.fa-folder-o
+                span Generate report
+            .col-6.p-0
+              a
+                i.fa.fa-send
+                span Send mail
+          .row
+            .col-6.p-0
+              a 
+                i.fa.fa-tasks
+                span Create new task
+            .col-6.p-0
+              a
+                i.fa.fa-calendar
+                span Add new event
+
+    li.header-item.dropdown
+      a.trigger-dropdown
+        i.fa.fa-bell
+        span
+          sup 3
+      ul.dropdown-box.with-header
+        .dropdown-header
+          h3 3 new
+          span.helper-text User notification
+        li
+          a
+            i.fa.fa-warning
+            span Suspicious activity on 17 May 09:38
+        li
+          a
+            i.fa.fa-shopping-cart
+            span New order on Jas Hujan 
+        li
+          a
+            i.fa.fa-shopping-cart
+            span New order on Lemari Kayu
+        li
+          a
+            i.fa.fa-envelope
+            span New message from User Jah'rakal
+        li
+          a
+            i.fa.fa-shopping-cart
+            span New order on Tahu Bulat
+        li
+          a
+            i.fa.fa-comment
+            span User Io commented on Kipas Dinding
+    li.header-user.dropdown.ml-4.mr-3
+      a.user-photo.trigger-dropdown
+        img(src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/101e1fb9-0b2e-4f2d-acfb-a777dc48f629/d4sn4w7-2a5d1fdf-2af2-408a-9300-08f28cd12951.png").user-img
+      ul.dropdown-box.with-header
+        .dropdown-header
+          img(src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/101e1fb9-0b2e-4f2d-acfb-a777dc48f629/d4sn4w7-2a5d1fdf-2af2-408a-9300-08f28cd12951.png").user-img.user-img--lg
+          .user-info
+            h3 Pugna
+            span.helper-text pugna@gmail.com
+        li
+          a
+            i.fa.fa-user
+            span My profile
+        li
+          a
+            i.fa.fa-envelope
+            span Messages
+        li
+          a
+            i.fa.fa-power-off
+            span Log out
+        
   .right--mobile
     a.header-item--mobile.sidebar-control
       i.fa.fa-navicon
