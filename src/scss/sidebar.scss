@@ -66,7 +66,7 @@
             position: absolute;
 
             width: 0;
-            
+
             opacity: 0;
 
             z-index: -1;
@@ -207,6 +207,10 @@
 
           text-decoration: none;
           color: $light;
+
+          &:hover {
+            background: rgba($light, .05);
+          }
         }
 
         &.active a {
@@ -275,6 +279,10 @@
                 padding: 12px 16px;
 
                 background: white;
+
+                &:hover {
+                  background: rgba($primary, 0.1);
+                }
 
                 &.active {
                   background: $secondary;

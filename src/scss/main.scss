@@ -125,7 +125,7 @@ hr {
 
   list-style-type: none;
 
-  animation: show-dropdown 0.6s 1 forwards;
+  animation: show-dropdown 0.3s 1 forwards;
 
   &::before {
     content: "";
@@ -388,4 +388,41 @@ hr {
     height: 55px;
     width: 55px;
   }
+}
+
+.bg--primary {
+  background: $primary !important;
+  color: white !important;
+}
+.bg--secondary {
+  background: $secondary !important;
+  color: $dark !important;
+}
+.bg--light {
+  background: $light !important;
+  color: $dark !important;
+}
+.bg--dark {
+  background: $dark !important;
+  color: white !important;
+}
+.bg--c-primary {
+  background: $c-primary !important;
+  color: white !important;
+}
+.bg--c-info {
+  background: $c-info !important;
+  color: white !important;
+}
+.bg--c-success {
+  background: $c-success !important;
+  color: white !important;
+}
+.bg--c-warning {
+  background: $c-warning !important;
+  color: #434738 !important;
+}
+.bg--c-danger {
+  background: $c-danger !important;
+  color: white !important;
 }

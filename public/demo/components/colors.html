@@ -22,32 +22,29 @@
     <div class="sidebar-wrapper">
       <ul class="list-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="has-children active"><a href="javascript:;"><i class="fa fa-dashboard"></i><span>Dashboards</span><i class="fa fa-chevron-down tree-icon"></i></a>
+        <li class="has-children"><a href="javascript:;"><i class="fa fa-dashboard"></i><span>Dashboards</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a href="../dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Ecommerce</span></a></li>
-            <li class="tree-item"><a class="active" href="../dashboards/iot.html"><i class="fa fa-circle"></i><span>IoT</span></a></li>
+            <li class="tree-item"><a href="/dashboards/ecommerce.html"><i class="fa fa-circle"></i><span>Ecommerce</span></a></li>
+            <li class="tree-item"><a href="/dashboards/iot.html"><i class="fa fa-circle"></i><span>IoT</span></a></li>
           </ul>
         </li>
-        <li class="has-children"><a href="javascript:;"><i class="fa fa-laptop"></i><span>Components</span><i class="fa fa-chevron-right tree-icon"></i></a>
-          <ul class="tree">
-            <li class="tree-item"><a href="../components/colors.html"><i class="fa fa-circle"></i><span>Colors</span></a></li>
-            <li class="tree-item"><a href="../components/buttons.html"><i class="fa fa-circle"></i><span>Buttons</span></a></li>
-            <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Sliders</span></a></li>
-          </ul>
-        </li>
-        <li><a href="/"><i class="fa fa-star"></i><span>Widgets</span><span class="notification">3</span></a></li>
+        <li class="header">COMPONENTS</li>
+        <li><a href="/components/colors.html"><i class="fa fa-tint"></i><span>Colors</span></a></li>
+        <li><a href=""><i class="fa fa-star"></i><span>Icons</span></a></li>
+        <li><a href="/components/buttons.html"><i class="fa fa-mouse-pointer"></i><span>Buttons</span></a></li>
         <li class="has-children"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i><span>Forms</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a href="../forms/general.html"><i class="fa fa-circle"></i><span>General</span></a></li>
-            <li class="tree-item"><a href="../forms/advanced.html"><i class="fa fa-circle"></i><span>Advanced</span></a></li>
+            <li class="tree-item"><a href="/components/forms/general.html"><i class="fa fa-circle"></i><span>General</span></a></li>
+            <li class="tree-item"><a href="/components/forms/advanced.html"><i class="fa fa-circle"></i><span>Advanced</span></a></li>
           </ul>
         </li>
         <li class="has-children"><a href="javascript:;"><i class="fa fa-th-large"></i><span>Tables</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
-            <li class="tree-item"><a href="../tables/simple.html"><i class="fa fa-circle"></i><span>Simple</span></a></li>
+            <li class="tree-item"><a href="/components/tables/simple.html"><i class="fa fa-circle"></i><span>Simple</span></a></li>
             <li class="tree-item"><a href=""><i class="fa fa-circle"></i><span>Datatable</span></a></li>
           </ul>
         </li>
+        <li class="active"><a href="/components/widgets.html"><i class="fa fa-calculator"></i><span>Widgets</span><span class="notification">3</span></a></li>
         <li class="header">EXAMPLE</li>
         <li class="has-children"><a href="javascript:;"><i class="fa fa-columns"></i><span>Pages</span><i class="fa fa-chevron-right tree-icon"></i></a>
           <ul class="tree">
@@ -62,8 +59,8 @@
   <div class="main-content">
     <div class="header">
       <div class="left">
-        <p>IoT Dashboard</p>
-        <div class="breadcrumb"><span>Home</span><span>Dashboards</span><span>IoT</span></div>
+        <p>Level 2 Title</p>
+        <div class="breadcrumb"><span>Breadcrumb</span><span>Level 1</span><span>Level 2</span></div>
       </div>
       <ul class="right">
         <li class="header-item-searchbox"><input type="text" name=""><i class="fa fa-search"></i></li>
@@ -84,10 +81,10 @@
             </div>
           </div>
         </li>
-        <li class="header-item dropdown"><a class="trigger-dropdown"><i class="fa fa-bell"></i><span><sup>3</sup></span></a>
+        <li class="header-item dropdown"><a class="trigger-dropdown"><i class="fa fa-bell"></i><span><sup>6</sup></span></a>
           <ul class="dropdown-box with-header">
             <div class="dropdown-header">
-              <h3>3 new</h3><span class="helper-text">User notification</span>
+              <h3>6 new</h3><span class="helper-text">User notification</span>
             </div>
             <li><a><i class="fa fa-warning"></i><span>Suspicious activity on 17 May 09:38</span></a></li>
             <li><a><i class="fa fa-shopping-cart"></i><span>New order on Jas Hujan </span></a></li>
@@ -278,6 +275,7 @@
                   <hr data-hr="opacity rule">
                 </div>
                 <div class="color-box" style="background: rgb(181, 212, 60, 1); color: #FFFFFF;">100% </div>
+                <div class="color-box" style="background: rgb(181, 212, 60, .4); color: #434738;">40%</div>
                 <div class="color-box" style="background: rgb(181, 212, 60, .2); color: #434738;">20%</div>
                 <div class="color-box" style="background: rgb(181, 212, 60, .1); color: #434738;">10%</div>
               </div>

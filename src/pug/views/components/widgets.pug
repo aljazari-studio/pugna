@@ -1,0 +1,150 @@
+- var baseDir = "../../"
+- var pageTitle="Pugna | Widgets"
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="theme-color", content="#B5D43C")
+    meta(content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport")
+
+    title=pageTitle
+    
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    include ../../sidebar/sidebar
+    .main-content
+      include ../../main-content/header
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-area-chart
+                .card-content
+                  h4 Profit
+                  p 45%
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-check-circle
+                .card-content 
+                  h4 Payment
+                  p 1562
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-users
+                .card-content
+                  h4 Verified
+                  p 252
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-bookmark
+                .card-content
+                  h4 Bookmark
+                  p 769
+        
+        .row
+          .col-md-3
+            .card.card-simple-2
+              .card-body
+                i.fa.fa-area-chart
+                .card-content
+                  h4 Profit
+                  p 45%
+          .col-md-3
+            .card.card-simple-2
+              .card-body
+                i.fa.fa-check-circle
+                .card-content 
+                  h4 Payment
+                  p 1562
+          .col-md-3
+            .card.card-simple-2
+              .card-body
+                i.fa.fa-users
+                .card-content
+                  h4 Verified
+                  p 252
+          .col-md-3
+            .card.card-simple-2
+              .card-body
+                i.fa.fa-bookmark
+                .card-content
+                  h4 Bookmark
+                  p 769
+        
+        .row.card-simple-group
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-area-chart.bg--c-primary
+                .card-content
+                  h4 Profit
+                  p 45%
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-check-circle.bg--c-success
+                .card-content 
+                  h4 Payment
+                  p 1562
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-users.bg--c-warning
+                .card-content
+                  h4 Verified
+                  p 252
+          .col-md-3
+            .card.card-simple-1
+              .card-body
+                i.fa.fa-bookmark.bg--c-danger
+                .card-content
+                  h4 Bookmark
+                  p 769
+
+        .row
+          .col-md-4
+            .card.card-sales
+              div.canvas-wrapper
+                canvas(class="line-chart")
+              .card-body
+                div
+                  i.fa.fa-area-chart
+                  .card-content
+                    h4 Sales
+                    p 3418
+          .col-md-4
+            .card.card-sales
+              div.canvas-wrapper
+                canvas(class="line-chart")
+              .card-body
+                div
+                  i.fa.fa-users
+                  .card-content
+                    h4 Visitors
+                    p 5619
+                      span 
+                        i.fa.fa-level-up
+          .col-md-4
+            .card.card-sales
+              div.canvas-wrapper
+                canvas(class="line-chart")
+              .card-body
+                div
+                  i.fa.fa-shopping-cart
+                  .card-content
+                    h4 Product Sold
+                    p 1238
+
+    script(src=baseDir +"dist/js/main.js")
+    script(src=baseDir +"dist/js/chartDemoWidget.js")

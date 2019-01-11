@@ -28,28 +28,28 @@ html(lang="en")
               .card-body
                 i.fa.fa-user
                 .card-content
-                  h3 User
+                  h4 User
                   p 90
           .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-newspaper-o
                 .card-content
-                  h3 Order
+                  h4 Order
                   p 252
           .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-calendar
                 .card-content
-                  h3 Task
+                  h4 Task
                   p 19
           .col-md-3
             .card.card-simple-1
               .card-body
                 i.fa.fa-shopping-cart
                 .card-content
-                  h3 Pending
+                  h4 Pending
                   p 32
                   
         .row
@@ -61,7 +61,7 @@ html(lang="en")
                 div
                   i.fa.fa-comments
                   .card-content
-                    h3 Feedback Activity
+                    h4 Feedback Activity
                     p 2564
             .card.card-with-list.sm.mt-4.p-0
               .card-header
@@ -127,7 +127,7 @@ html(lang="en")
                 div
                   i.fa.fa-dollar
                   .card-content
-                    h3 Sales
+                    h4 Sales
                     p 439
                       span 
                         i.fa.fa-level-up
@@ -240,6 +240,22 @@ html(lang="en")
           .col-md-8
             .box
               .box-header
+                h4 Unique Visits / Page Views
+              .box-body
+                div.canvas-wrapper.pb-2(style="height: 300px;")
+                  canvas(class="line-chart-multi")
+          .col-md-4
+            .box
+              .box-header.no-border
+                h5.chip--floating Category Popularity
+              .box-body.pt-0
+                div.canvas-wrapper
+                  canvas(class="pie-chart")
+
+        .row
+          .col-md-8
+            .box
+              .box-header
                 h3 Invoices
                 .toolbox
                   a
@@ -266,26 +282,6 @@ html(lang="en")
                         td=val.date
                         td 
                           button.btn.btn-secondary DETAIL
-          .col-md-4
-            .box
-              .box-header.no-border
-                h5.chip--floating Category Popularity
-              .box-body.pt-0
-                div.canvas-wrapper
-                  canvas(class="pie-chart")
-
-        //- .row
-        //-   .col-6
-        //-     .box
-        //-       .box-header
-        //-         h3 All Products
-        //-       .box-body.pt-0
-
-        //-   .col-6
-        //-     .box
-        //-       .box-header
-        //-         h3 Flash Sale
-        //-       .box-body.pt-0
 
     script(src=baseDir +"dist/js/main.js")
     script(src=baseDir +"dist/js/chartDemo.js")

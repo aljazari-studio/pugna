@@ -3,46 +3,33 @@
   .sidebar-wrapper
     ul.list-menu
       li.header MAIN NAVIGATION
-      li.has-children.active
+      li.has-children
         a(href="javascript:;")
           i(class="fa fa-dashboard")
           span Dashboards
-          i(class="fa fa-chevron-down tree-icon")
-        ul.tree
-          li.tree-item
-            a(href="../dashboards/ecommerce.html")
-              i(class="fa fa-circle")
-              span Ecommerce
-          li.tree-item
-            a(href="../dashboards/iot.html").active
-              i(class="fa fa-circle")
-              span IoT
-      li.has-children
-        a(href="javascript:;")
-          i(class="fa fa-laptop")
-          span Components
           i(class="fa fa-chevron-right tree-icon")
         ul.tree
           li.tree-item
-            a(href="../components/colors.html")
+            a(href="/dashboards/ecommerce.html")
               i(class="fa fa-circle")
-              span Colors
-            //- a(href="")
-            //-   i(class="fa fa-circle")
-            //-   span Icons
+              span Ecommerce
           li.tree-item
-            a(href="../components/buttons.html")
+            a(href="/dashboards/iot.html")
               i(class="fa fa-circle")
-              span Buttons
-          li.tree-item
-            a(href="")
-              i(class="fa fa-circle")
-              span Sliders
+              span IoT
+      li.header COMPONENTS
       li
-        a(href="/")
+        a(href="/components/colors.html")
+          i(class="fa fa-tint")
+          span Colors
+      li
+        a(href="")
           i(class="fa fa-star")
-          span Widgets
-          span.notification 3
+          span Icons
+      li
+        a(href="/components/buttons.html")
+          i(class="fa fa-mouse-pointer")
+          span Buttons
       li.has-children
         a(href="javascript:;")
           i(class="fa fa-pencil-square-o")
@@ -50,11 +37,11 @@
           i(class="fa fa-chevron-right tree-icon")
         ul.tree
           li.tree-item
-            a(href="../forms/general.html")
+            a(href="/components/forms/general.html")
               i(class="fa fa-circle")
               span General
           li.tree-item
-            a(href="../forms/advanced.html")
+            a(href="/components/forms/advanced.html")
               i(class="fa fa-circle")
               span Advanced
       li.has-children
@@ -64,13 +51,18 @@
           i(class="fa fa-chevron-right tree-icon")
         ul.tree
           li.tree-item
-            a(href="../tables/simple.html")
+            a(href="/components/tables/simple.html")
               i(class="fa fa-circle")
               span Simple
           li.tree-item
             a(href="")
               i(class="fa fa-circle")
               span Datatable
+      li.active
+        a(href="/components/widgets.html")
+          i(class="fa fa-calculator")
+          span Widgets
+          span.notification 3
       li.header EXAMPLE
       li.has-children
         a(href="javascript:;")
