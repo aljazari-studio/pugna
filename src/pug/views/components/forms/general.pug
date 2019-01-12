@@ -1,6 +1,9 @@
 - var baseDir = "../../../"
 - var pageTitle="Pugna | General Form"
 
+include ../../../main-content/header
+include ../../../sidebar/sidebar
+
 doctype html
 html(lang="en")
   head
@@ -11,16 +14,16 @@ html(lang="en")
     title=pageTitle
     
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
-    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
     link(rel="stylesheet", href=baseDir + "dist/css/choices.min.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    include ../../../sidebar/sidebar
+    +sidebar("forms", "general")
     .main-content
-      include ../../../main-content/header
+      +header("General Form", "Components", "Forms", "General")
       .content-wrapper
         include ../../../main-content/chatbox
         .row
@@ -42,7 +45,7 @@ html(lang="en")
                   label File input
                   .form-file
                     button.btn-file
-                      i.fa.fa-upload
+                      i.la.la-upload
                     input(type="file", name="")
                     .file-container
                       p Namafile.ext
@@ -240,7 +243,7 @@ html(lang="en")
                   input(type="text", name="")
                 .form-group.with-addon
                   span
-                    i.fa.fa-dollar
+                    i.la.la-dollar
                   input(type="text", name="")
                 .form-group.with-addon.addon--right
                   span .00
@@ -267,7 +270,7 @@ html(lang="en")
                 .form-group
                   .form-file
                     button.btn-file
-                      i.fa.fa-upload
+                      i.la.la-upload
                     input(type="file", name="")
                     .file-container
                       p Namafile.ext

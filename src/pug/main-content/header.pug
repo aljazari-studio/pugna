@@ -1,100 +1,106 @@
-.header
-  .left
-    p Level 2 Title
-    .breadcrumb
-      span Breadcrumb
-      span Level 1
-      span Level 2
-  ul.right
-    li.header-item-searchbox
-      input(type="text", name="")
-      i.fa.fa-search
-    li.header-item.dropdown
-      a.trigger-dropdown
-        i.fa.fa-share-alt-square
-      .dropdown-box.dropdown-box--centered.with-header
-        .dropdown-header
-          h3 Quick Action
-          span.helper-text Shortcut
-        .dropdown-body
-          .row
-            .col-6.p-0
-              a
-                i.fa.fa-folder-o
-                span Generate report
-            .col-6.p-0
-              a
-                i.fa.fa-send
-                span Send mail
-          .row
-            .col-6.p-0
-              a 
-                i.fa.fa-tasks
-                span Create new task
-            .col-6.p-0
-              a
-                i.fa.fa-calendar
-                span Add new event
+mixin header(titleVal, level0Val, level1Val, level2Val)
+  .header
+    .left
+      p= titleVal
+      .breadcrumb
+        span= level0Val
+        if level1Val
+          span= level1Val
+        if level2Val
+          span= level2Val
+    ul.right
+      li.header-item-searchbox
+        form
+          input(type="text", name="keyword")
+        i.la.la-search
+      li.header-item.dropdown
+        a.trigger-dropdown
+          i.la.la-share-alt-square
+        .dropdown-box.dropdown-box--centered.with-header
+          .dropdown-header
+            h3 Quick Action
+            span.helper-text Shortcut
+          .dropdown-body
+            .row
+              .col-6.p-0
+                a
+                  i.la.la-folder-o
+                  span Generate report
+              .col-6.p-0
+                a
+                  i.la.la-send
+                  span Send mail
+            .row
+              .col-6.p-0
+                a 
+                  i.la.la-tasks
+                  span Create new task
+              .col-6.p-0
+                a
+                  i.la.la-calendar
+                  span Add new event
 
-    li.header-item.dropdown
-      a.trigger-dropdown
-        i.fa.fa-bell
-        span
-          sup 6
-      ul.dropdown-box.with-header
-        .dropdown-header
-          h3 6 new
-          span.helper-text User notification
-        li
-          a
-            i.fa.fa-warning
-            span Suspicious activity on 17 May 09:38
-        li
-          a
-            i.fa.fa-shopping-cart
-            span New order on Jas Hujan 
-        li
-          a
-            i.fa.fa-shopping-cart
-            span New order on Lemari Kayu
-        li
-          a
-            i.fa.fa-envelope
-            span New message from User Jah'rakal
-        li
-          a
-            i.fa.fa-shopping-cart
-            span New order on Tahu Bulat
-        li
-          a
-            i.fa.fa-comment
-            span User Io commented on Kipas Dinding
-    li.header-user.dropdown.ml-4.mr-3
-      a.user-photo.trigger-dropdown
-        img(src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/101e1fb9-0b2e-4f2d-acfb-a777dc48f629/d4sn4w7-2a5d1fdf-2af2-408a-9300-08f28cd12951.png").user-img
-      ul.dropdown-box.with-header
-        .dropdown-header
-          img(src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/101e1fb9-0b2e-4f2d-acfb-a777dc48f629/d4sn4w7-2a5d1fdf-2af2-408a-9300-08f28cd12951.png").user-img.user-img--lg
-          .user-info
-            h3 Pugna
-            span.helper-text pugna@gmail.com
-        li
-          a
-            i.fa.fa-user
-            span My profile
-        li
-          a
-            i.fa.fa-envelope
-            span Messages
-        li
-          a
-            i.fa.fa-power-off
-            span Log out
-        
-  .right--mobile
-    a.header-item--mobile.sidebar-control
-      i.fa.fa-navicon
-    a.header-item--mobile
-      i.fa.fa-comments
-    a.header-item--mobile
-      i.fa.fa-ellipsis-v
+      li.header-item.dropdown
+        a.trigger-dropdown
+          i.la.la-bell
+          span
+            sup 6
+        .dropdown-box.with-header
+          .dropdown-header
+            h3 6 new
+            span.helper-text User notification
+          ul.dropdown-body
+            li
+              a
+                i.la.la-warning
+                span Suspicious activity on 17 May 09:38
+            li
+              a
+                i.la.la-shopping-cart
+                span New order on Jas Hujan 
+            li
+              a
+                i.la.la-shopping-cart
+                span New order on Lemari Kayu
+            li
+              a
+                i.la.la-envelope
+                span New message from User Jah'rakal
+            li
+              a
+                i.la.la-shopping-cart
+                span New order on Tahu Bulat
+            li
+              a
+                i.la.la-comment
+                span User Io commented on Kipas Dinding
+      li.header-user.dropdown.ml-4.mr-3
+        a.user-photo.trigger-dropdown
+          img(src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/101e1fb9-0b2e-4f2d-acfb-a777dc48f629/d4sn4w7-2a5d1fdf-2af2-408a-9300-08f28cd12951.png").user-img
+        .dropdown-box.with-header
+          .dropdown-header
+            img(src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/101e1fb9-0b2e-4f2d-acfb-a777dc48f629/d4sn4w7-2a5d1fdf-2af2-408a-9300-08f28cd12951.png").user-img.user-img--lg
+            .user-info
+              h3 Pugna
+              span.helper-text pugna@gmail.com
+          ul.dropdown-body
+            li
+              a(href="https://github.com/aljazari-studio", target="_blank")
+                i.la.la-user
+                span My profile
+            li
+              a
+                i.la.la-envelope
+                span Messages
+            li
+              a
+                i.la.la-power-off
+                span Log out
+          
+    .right--mobile
+      a.header-item--mobile.sidebar-control
+        i.la.la-navicon
+      a.header-item--mobile
+        i.la.la-comments
+      a.header-item--mobile
+        i.la.la-ellipsis-v

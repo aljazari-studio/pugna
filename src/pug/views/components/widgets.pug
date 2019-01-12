@@ -1,6 +1,9 @@
 - var baseDir = "../../"
 - var pageTitle="Pugna | Widgets"
 
+include ../../main-content/header
+include ../../sidebar/sidebar
+
 doctype html
 html(lang="en")
   head
@@ -11,43 +14,43 @@ html(lang="en")
     title=pageTitle
     
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
-    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    include ../../sidebar/sidebar
+    +sidebar("widgets")
     .main-content
-      include ../../main-content/header
+      +header("Widgets", "Components", "Widgets")
       .content-wrapper
         include ../../main-content/chatbox
         .row
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-area-chart
+                i.la.la-area-chart
                 .card-content
                   h4 Profit
                   p 45%
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-check-circle
+                i.la.la-check-circle
                 .card-content 
                   h4 Payment
                   p 1562
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-users
+                i.la.la-users
                 .card-content
                   h4 Verified
                   p 252
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-bookmark
+                i.la.la-bookmark
                 .card-content
                   h4 Bookmark
                   p 769
@@ -56,28 +59,28 @@ html(lang="en")
           .col-md-3
             .card.card-simple-2
               .card-body
-                i.fa.fa-area-chart
+                i.la.la-area-chart
                 .card-content
                   h4 Profit
                   p 45%
           .col-md-3
             .card.card-simple-2
               .card-body
-                i.fa.fa-check-circle
+                i.la.la-check-circle
                 .card-content 
                   h4 Payment
                   p 1562
           .col-md-3
             .card.card-simple-2
               .card-body
-                i.fa.fa-users
+                i.la.la-users
                 .card-content
                   h4 Verified
                   p 252
           .col-md-3
             .card.card-simple-2
               .card-body
-                i.fa.fa-bookmark
+                i.la.la-bookmark
                 .card-content
                   h4 Bookmark
                   p 769
@@ -86,28 +89,28 @@ html(lang="en")
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-area-chart.bg--c-primary
+                i.la.la-area-chart.bg--c-primary
                 .card-content
                   h4 Profit
                   p 45%
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-check-circle.bg--c-success
+                i.la.la-check-circle.bg--c-success
                 .card-content 
                   h4 Payment
                   p 1562
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-users.bg--c-warning
+                i.la.la-users.bg--c-warning
                 .card-content
                   h4 Verified
                   p 252
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-bookmark.bg--c-danger
+                i.la.la-bookmark.bg--c-danger
                 .card-content
                   h4 Bookmark
                   p 769
@@ -119,7 +122,7 @@ html(lang="en")
                 canvas(class="line-chart")
               .card-body
                 div
-                  i.fa.fa-area-chart
+                  i.la.la-area-chart
                   .card-content
                     h4 Sales
                     p 3418
@@ -129,19 +132,19 @@ html(lang="en")
                 canvas(class="line-chart")
               .card-body
                 div
-                  i.fa.fa-users
+                  i.la.la-users
                   .card-content
                     h4 Visitors
                     p 5619
                       span 
-                        i.fa.fa-level-up
+                        i.la.la-level-up
           .col-md-4
             .card.card-sales
               div.canvas-wrapper
                 canvas(class="line-chart")
               .card-body
                 div
-                  i.fa.fa-shopping-cart
+                  i.la.la-shopping-cart
                   .card-content
                     h4 Product Sold
                     p 1238

@@ -45,7 +45,7 @@
     }
 
     & .sidebar-wrapper {
-        padding-top: 43px;
+      padding-top: 43px;
 
       & li.has-children {
         .tree {
@@ -59,19 +59,7 @@
       & li.header,
       & i.tree-icon,
       & span {
-        animation: span-move-left 0.4s 1 forwards;
-
-        @keyframes span-move-left {
-          to {
-            position: absolute;
-
-            width: 0;
-
-            opacity: 0;
-
-            z-index: -1;
-          }
-        }
+        display: none;
       }
     }
   }
@@ -79,7 +67,7 @@
   &.expanded {
     & .sidebar-header {
       & .brand {
-        animation: brand-move-right 0.9s 1 forwards;
+        animation: brand-move-right 0.6s 1 forwards;
 
         @keyframes brand-move-right {
           from {
@@ -101,21 +89,11 @@
       & li.header,
       & i.tree-icon,
       & span {
-        animation: span-move-fade-out 1.2s 1 forwards;
-
-        @keyframes span-move-fade-out {
-          from {
-            position: absolute;
-
-            opacity: 0;
-
-            z-index: -1;
-          }
-        }
+        display: block;
       }
     }
 
-    animation: sidebar-expanded 1s 1 forwards;
+    animation: sidebar-expanded .6s 1 forwards;
 
     @keyframes sidebar-expanded {
       0% {
@@ -194,22 +172,49 @@
 
           background: $dark;
 
-          font-size: .7rem;
-          color: #FFFFFF99;
+          font-size: 0.7rem;
+          color: #ffffff99;
 
-          filter: brightness(.9);
+          white-space: nowrap;
+
+          filter: brightness(0.9);
         }
 
         & a {
-          display: block;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-          padding: 14px 16px;
+          max-height: 45px;
 
           text-decoration: none;
           color: $light;
 
           &:hover {
-            background: rgba($light, .05);
+            background: rgba($light, 0.05);
+          }
+
+          & i,
+          .right-container {
+            height: 45px;
+            min-width: 50px;
+
+            line-height: 45px;
+            text-align: center;
+          }
+
+          & > span {
+            flex: 1;
+          }
+
+          & .right-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .notification {
+              margin: 0;
+            }
           }
         }
 
@@ -222,34 +227,29 @@
         }
 
         & span {
-          margin-left: 8px;
-        }
-
-        & i.tree-icon {
-          margin-top: 3px;
-        }
-
-        & i.tree-icon,
-        & span.notification {
-          float: right;
+          white-space: nowrap;
         }
 
         & span.notification {
           margin-top: 2px;
           padding: 1px 8px;
 
+          height: 18px;
+          width: fit-content;
+
           background: teal;
           border-radius: 8px;
 
           font-size: 0.7rem;
           color: white;
+          line-height: 18px;
         }
 
         &.has-children {
           &.active {
             & .tree {
               max-height: 400px;
-              transition: max-height 0.7s ease-in;
+              transition: max-height 0.5s ease-in;
             }
           }
 
@@ -270,14 +270,12 @@
             background: $light;
 
             overflow: hidden;
-            transition: max-height 0.7s ease-out;
+            transition: max-height 0.5s ease-out;
 
             & .tree-item {
               border: none;
 
               & a {
-                padding: 12px 16px;
-
                 background: white;
 
                 &:hover {
@@ -319,7 +317,7 @@
 
       & .sidebar-header,
       & .sidebar-wrapper {
-        animation: sidebar-collapsed-mobile 1.2s 1 forwards;
+        animation: sidebar-collapsed-mobile .7s 1 forwards;
 
         & .brand {
           animation: unset;

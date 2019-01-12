@@ -1,6 +1,9 @@
 - var baseDir = "../../../"
 - var pageTitle="Pugna | Simple Table"
 
+include ../../../main-content/header
+include ../../../sidebar/sidebar
+
 doctype html
 html(lang="en")
   head
@@ -11,16 +14,16 @@ html(lang="en")
     title=pageTitle
 
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
-    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
     link(rel="stylesheet", href=baseDir + "dist/css/choices.min.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    include ../../../sidebar/sidebar
+    +sidebar("tables", "simple")
     .main-content
-      include ../../../main-content/header
+      +header("Simple Table", "Components", "Tables", "Simple")
       .content-wrapper
         include ../../../main-content/chatbox
         .row
@@ -30,7 +33,7 @@ html(lang="en")
                 h3 Default
                 .toolbox
                   a
-                    i.fa.fa-print
+                    i.la.la-print
               .box-body.pt-0.px-0.responsive
                 table
                   thead
@@ -49,9 +52,9 @@ html(lang="en")
                         td=val.price
                         td 
                           button.btn.btn-secondary.mr-1
-                            i.fa.fa-pencil
+                            i.la.la-pencil
                           button.btn.btn-secondary
-                            i.fa.fa-trash
+                            i.la.la-trash
                     
           .col-md-6.col-12
             .box.box--dark
@@ -59,7 +62,7 @@ html(lang="en")
                 h3 Dark
                 .toolbox
                   a
-                    i.fa.fa-print
+                    i.la.la-print
               .box-body.pt-0.px-0.responsive
                 table.table--dark
                   thead
@@ -78,9 +81,9 @@ html(lang="en")
                         td=val.price
                         td 
                           button.btn.btn-light.mr-1
-                            i.fa.fa-pencil
+                            i.la.la-pencil
                           button.btn.btn-secondary
-                            i.fa.fa-trash
+                            i.la.la-trash
               div.pagination-wrapper.clearfix
                 ul.pagination.float--right
                   li.pagination-item
@@ -99,23 +102,23 @@ html(lang="en")
                 h3 Bordered
                 .toolbox
                   a.trigger-dropdown
-                    i.fa.fa-ellipsis-h
+                    i.la.la-ellipsis-h
                   ul.dropdown-box
                     li
                       a
-                        i.fa.fa-sort-alpha-asc
+                        i.la.la-sort-alpha-asc
                         span a to z
                     li
                       a
-                        i.fa.fa-sort-alpha-desc
+                        i.la.la-sort-alpha-desc
                         span z to a
                     li
                       a
-                        i.fa.fa-filter
+                        i.la.la-filter
                         span Custom filter
                     li
                       a
-                        i.fa.fa-print
+                        i.la.la-print
                         span Print
 
               .box-body.pt-0.px-0.responsive
@@ -188,25 +191,25 @@ html(lang="en")
                   form.searchbox
                     input(type="text", name="")
                   a
-                    i.fa.fa-plus
+                    i.la.la-plus
                   a.trigger-dropdown
-                    i.fa.fa-ellipsis-h
+                    i.la.la-ellipsis-h
                   ul.dropdown-box
                     li
                       a
-                        i.fa.fa-sort-alpha-asc
+                        i.la.la-sort-alpha-asc
                         span a to z
                     li
                       a
-                        i.fa.fa-sort-alpha-desc
+                        i.la.la-sort-alpha-desc
                         span z to a
                     li
                       a
-                        i.fa.fa-filter
+                        i.la.la-filter
                         span Custom filter
                     li
                       a
-                        i.fa.fa-print
+                        i.la.la-print
                         span Print
 
               .box-body.pt-0.px-0.responsive
@@ -228,7 +231,7 @@ html(lang="en")
                       tr
                         td
                           .table-row-handle
-                            i.fa.fa-navicon
+                            i.la.la-navicon
                         td
                           .pgn-checkbox
                             input(type="checkbox", name="")

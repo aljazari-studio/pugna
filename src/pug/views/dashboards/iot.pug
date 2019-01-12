@@ -1,6 +1,9 @@
 - var baseDir = "../../"
 - var pageTitle="Pugna | IoT Dashboard"
 
+include ../../main-content/header
+include ../../sidebar/sidebar
+
 doctype html
 html(lang="en")
   head
@@ -11,15 +14,15 @@ html(lang="en")
     title=pageTitle
     
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
-    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    include ../../sidebar/sidebar
+    +sidebar("dashboards", "iot")
     .main-content
-      include ../../main-content/header
+      +header("IoT Dashboard", "Main", "Dashboards", "IoT")
       .content-wrapper
         include ../../main-content/chatbox
         .row
@@ -99,15 +102,15 @@ html(lang="en")
                 h3 Current Status
                 .toolbox
                   a.trigger-dropdown
-                    i.fa.fa-cogs
+                    i.la.la-cogs
                   ul.dropdown-box
                     li
                       a
-                        i.fa.fa-cog
+                        i.la.la-cog
                         span Configure device
                     li
                       a
-                        i.fa.fa-history
+                        i.la.la-history
                         span Data log
               .box-body
                 .row.p-2

@@ -35,7 +35,7 @@ var mpc = function(element) {
 };
 
 var searchboxNav = document.querySelector(".header-item-searchbox");
-var searchbox = searchboxNav.children[0];
+var searchbox = searchboxNav.firstElementChild.children[0];
 var searchboxTrigger = searchboxNav.children[1];
 
 searchboxTrigger.addEventListener("click", function() {
@@ -83,9 +83,9 @@ var liChildrenTrigger = document.getElementsByClassName("has-children");
 for (var i = 0; i < liChildrenTrigger.length; i++) {
   liChildrenTrigger[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    mpc(this.children[0].children[2]).toggleClass(
-      "fa-chevron-right",
-      "fa-chevron-down"
+    mpc(this.children[0].children[2].querySelector("i")).toggleClass(
+      "la-chevron-right",
+      "la-chevron-down"
     );
   });
 }
@@ -98,11 +98,11 @@ var chatboxFile = document.querySelector(".chat-form input[type=file]");
 var chatboxFileTrigger = document.querySelector(".chat-form .btn-attach");
 
 if (chatbox.classList.contains("show")) {
-  mpc(chatboxTrigger).toggleChildClass("fa-times", "fa-comments");
+  mpc(chatboxTrigger).toggleChildClass("la-times", "la-comments");
 }
 
 chatboxTrigger.addEventListener("click", function() {
-  mpc(chatboxTrigger).toggleChildClass("fa-comments", "fa-times");
+  mpc(chatboxTrigger).toggleChildClass("la-comments", "la-times");
 
   if (!chatbox.classList.contains("show")) {
     mpc(chatbox).switchClass("hide", "show");
@@ -123,14 +123,48 @@ chatboxFileTrigger.addEventListener("click", function() {
 var dropdownTrigger = document.getElementsByClassName("trigger-dropdown");
 
 for (var i = 0; i < dropdownTrigger.length; i++) {
-  dropdownTrigger[i].addEventListener("click", function() {
+  var currentTrigger = dropdownTrigger[i];
+  var dropdownItems = currentTrigger.nextElementSibling.querySelectorAll("li");
+
+  var dropdownBoxBody = currentTrigger.nextElementSibling.querySelector(
+    ".dropdown-body"
+  );
+  if (dropdownBoxBody) {
+    dropdownBoxItems = dropdownBoxBody.querySelectorAll("a");
+  }
+
+  currentTrigger.addEventListener("click", function() {
     this.firstElementChild.classList.toggle("active");
 
-    var siblingDisplay = getComputedStyle(this.nextElementSibling, null)
+    let siblingDisplay = getComputedStyle(this.nextElementSibling, null)
       .display;
     this.nextElementSibling.style.display =
       siblingDisplay == "block" ? "none" : "block";
   });
+
+  for (let di = 0; di < dropdownItems.length; di++) {
+    dropdownItems[di].addEventListener("click", function() {
+      let dropdownBox = this.closest(".dropdown-box");
+      let trigger = dropdownBox.parentElement.querySelector(
+        ".trigger-dropdown"
+      );
+      trigger.firstElementChild.classList.remove("active");
+
+      dropdownBox.style.display = "none";
+    });
+  }
+
+  for (let dbi = 0; dbi < dropdownBoxItems.length; dbi++) {
+    dropdownBoxItems[dbi].addEventListener("click", function() {
+      let dropdownBox = this.closest(".dropdown-box");
+      let trigger = dropdownBox.parentElement.querySelector(
+        ".trigger-dropdown"
+      );
+      trigger.firstElementChild.classList.remove("active");
+
+      dropdownBox.style.display = "none";
+    });
+  }
 }
 
 // Form

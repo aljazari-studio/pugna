@@ -113,7 +113,7 @@
           }
         }
 
-        & input[type="text"] {
+        & form input[type="text"] {
           position: absolute;
           top: 2.5px;
           right: 15px;
@@ -125,14 +125,14 @@
 
           border: none;
           background: white;
-          border-radius: 3px;
+          border-radius: 25px;
 
           opacity: 0;
 
           z-index: -1;
 
           &.show {
-            animation: search-input-show 0.7s 1 forwards;
+            animation: search-input-show 0.4s 1 forwards;
 
             @keyframes search-input-show {
               from {
@@ -149,7 +149,7 @@
           }
 
           &.hide {
-            animation: search-input-hide 0.7s 1 forwards;
+            animation: search-input-hide 0.4s 1 forwards;
 
             @keyframes search-input-hide {
               from {

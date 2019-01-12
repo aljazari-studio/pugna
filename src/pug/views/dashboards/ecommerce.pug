@@ -1,6 +1,9 @@
 - var baseDir = "../../"
 - var pageTitle="Pugna | Ecommerce Dashboard"
 
+include ../../main-content/header
+include ../../sidebar/sidebar
+
 doctype html
 html(lang="en")
   head
@@ -11,43 +14,43 @@ html(lang="en")
     title=pageTitle
 
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
-    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    include ../../sidebar/sidebar
+    +sidebar("dashboards", "ecommerce")
     .main-content
-      include ../../main-content/header
+      +header("Ecommerce Dashboard", "Main", "Dashboards", "Ecommerce")
       .content-wrapper
         include ../../main-content/chatbox
         .row
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-user
+                i.la.la-user
                 .card-content
                   h4 User
                   p 90
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-newspaper-o
+                i.la.la-newspaper-o
                 .card-content
                   h4 Order
                   p 252
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-calendar
+                i.la.la-calendar
                 .card-content
                   h4 Task
                   p 19
           .col-md-3
             .card.card-simple-1
               .card-body
-                i.fa.fa-shopping-cart
+                i.la.la-shopping-cart
                 .card-content
                   h4 Pending
                   p 32
@@ -59,7 +62,7 @@ html(lang="en")
                 canvas(class="line-chart")
               .card-body
                 div
-                  i.fa.fa-comments
+                  i.la.la-comments
                   .card-content
                     h4 Feedback Activity
                     p 2564
@@ -68,15 +71,15 @@ html(lang="en")
                 h3 Recent Purchase
                 .toolbox
                   a.trigger-dropdown
-                    i.fa.fa-ellipsis-h
+                    i.la.la-ellipsis-h
                   ul.dropdown-box
                     li
                       a
-                        i.fa.fa-eye
+                        i.la.la-eye
                         span Show all
                     li
                       a
-                        i.fa.fa-filter
+                        i.la.la-filter
                         span Filter
                     
               .card-body.p-0
@@ -125,12 +128,12 @@ html(lang="en")
                 canvas(class="line-chart")
               .card-body
                 div
-                  i.fa.fa-dollar
+                  i.la.la-dollar
                   .card-content
                     h4 Sales
                     p 439
                       span 
-                        i.fa.fa-level-up
+                        i.la.la-level-up
                 ul.list-group
                   li.list-group-item
                     img(src="https://ugc.nikeid.com/is/image/nike/ugc/373767244.tif?$DESKTOP_ID_PREBUILD$", alt="")
@@ -157,19 +160,19 @@ html(lang="en")
                 h3 To do List
                 .toolbox
                   a.trigger-dropdown
-                    i.fa.fa-ellipsis-h
+                    i.la.la-ellipsis-h
                   ul.dropdown-box
                     li
                       a
-                        i.fa.fa-sort-alpha-asc
+                        i.la.la-sort-alpha-asc
                         span a to z
                     li
                       a
-                        i.fa.fa-sort-alpha-desc
+                        i.la.la-sort-alpha-desc
                         span z to a
                     li
                       a
-                        i.fa.fa-check
+                        i.la.la-check
                         span Finished
               .card-body.p-0
                 ul.list-group
@@ -259,7 +262,7 @@ html(lang="en")
                 h3 Invoices
                 .toolbox
                   a
-                    i.fa.fa-print
+                    i.la.la-print
               .box-body.pt-0.px-0.responsive
                 table
                   thead

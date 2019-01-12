@@ -56,7 +56,9 @@
       border-color: transparent;
     }
 
-    & * {
+    & h3,
+    & p,
+    & a {
       margin: 0;
     }
 
@@ -85,12 +87,12 @@
       margin-left: auto;
       cursor: pointer;
 
-      & i {
-        padding: 6px;
+      // & i {
+      //   padding: 6px;
 
-        background: white;
-        border-radius: 100%;
-      }
+      //   background: white;
+      //   border-radius: 100%;
+      // }
     }
 
     & .chip--floating {
@@ -116,19 +118,19 @@
       margin-left: auto;
       cursor: pointer;
 
-      & a {
+      & > a {
         margin: 0 5px;
-      }
 
-      & > i {
-        padding: 6px;
+        & > i {
+          padding: 6px;
 
-        background: white;
-        border-radius: 100%;
+          background: white;
+          border-radius: 100%;
 
-        &.active,
-        &:hover {
-          background: rgba($primary, 0.3);
+          &.active,
+          &:hover {
+            background: rgba($primary, 0.3) !important;
+          }
         }
       }
     }

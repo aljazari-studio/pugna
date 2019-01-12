@@ -1,84 +1,91 @@
-.sidebar
-  include sidebar-header
-  .sidebar-wrapper
-    ul.list-menu
-      li.header MAIN NAVIGATION
-      li.has-children
-        a(href="javascript:;")
-          i(class="fa fa-dashboard")
-          span Dashboards
-          i(class="fa fa-chevron-right tree-icon")
-        ul.tree
-          li.tree-item
-            a(href="/dashboards/ecommerce.html")
-              i(class="fa fa-circle")
-              span Ecommerce
-          li.tree-item
-            a(href="/dashboards/iot.html")
-              i(class="fa fa-circle")
-              span IoT
-      li.header COMPONENTS
-      li
-        a(href="/components/colors.html")
-          i(class="fa fa-tint")
-          span Colors
-      li
-        a(href="")
-          i(class="fa fa-star")
-          span Icons
-      li
-        a(href="/components/buttons.html")
-          i(class="fa fa-mouse-pointer")
-          span Buttons
-      li.has-children
-        a(href="javascript:;")
-          i(class="fa fa-pencil-square-o")
-          span Forms
-          i(class="fa fa-chevron-right tree-icon")
-        ul.tree
-          li.tree-item
-            a(href="/components/forms/general.html")
-              i(class="fa fa-circle")
-              span General
-          li.tree-item
-            a(href="/components/forms/advanced.html")
-              i(class="fa fa-circle")
-              span Advanced
-      li.has-children
-        a(href="javascript:;")
-          i(class="fa fa-th-large")
-          span Tables
-          i(class="fa fa-chevron-right tree-icon")
-        ul.tree
-          li.tree-item
-            a(href="/components/tables/simple.html")
-              i(class="fa fa-circle")
-              span Simple
-          li.tree-item
-            a(href="")
-              i(class="fa fa-circle")
-              span Datatable
-      li.active
-        a(href="/components/widgets.html")
-          i(class="fa fa-calculator")
-          span Widgets
-          span.notification 3
-      li.header EXAMPLE
-      li.has-children
-        a(href="javascript:;")
-          i(class="fa fa-columns")
-          span Pages
-          i(class="fa fa-chevron-right tree-icon")
-        ul.tree
-          li.tree-item
-            a
-              i(class="fa fa-circle")
-              span Login
-          li.tree-item
-            a(href="")
-              i(class="fa fa-circle")
-              span Register
-          li.tree-item
-            a(href="")
-              i(class="fa fa-circle")
-              span 404
+mixin sidebar(activeVal, activeChild)
+  .sidebar
+    include sidebar-header
+    .sidebar-wrapper
+      ul.list-menu
+        li.header MAIN NAVIGATION
+        li.has-children(class= activeVal==="dashboards" ? "active" : "")
+          a(href="javascript:;")
+            i(class="la la-dashboard")
+            span Dashboards
+            .right-container
+              i(class= activeVal==="dashboards" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
+          ul.tree
+            li.tree-item
+              a(class= activeChild==="ecommerce" ? "active" : "", href="/dashboards/ecommerce.html")
+                i(class="la la-circle")
+                span Ecommerce
+            li.tree-item
+              a(class= activeChild==="iot" ? "active" : "", href="/dashboards/iot.html")
+                i(class="la la-circle")
+                span IoT
+        li.header COMPONENTS
+        li(class= activeVal==="colors" ? "active" : "")
+          a(href="/components/colors.html")
+            i(class="la la-tint")
+            span Colors
+        li(class= activeVal==="icons" ? "active" : "")
+          a(href="/components/icons.html")
+            i(class="la la-star")
+            span Icons
+        li(class= activeVal==="buttons" ? "active" : "")
+          a(href="/components/buttons.html")
+            i(class="la la-mouse-pointer")
+            span Buttons
+        li.has-children(class= activeVal==="forms" ? "active" : "")
+          a(href="javascript:;")
+            i(class="la la-pencil-square-o")
+            span Forms
+            .right-container
+              i(class= activeVal==="forms" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
+          ul.tree
+            li.tree-item
+              a(class= activeChild==="general" ? "active" : "", href="/components/forms/general.html")
+                i(class="la la-circle")
+                span General
+            li.tree-item
+              a(class= activeChild==="advanced" ? "active" : "", href="/components/forms/advanced.html")
+                i(class="la la-circle")
+                span Advanced
+        li.has-children(class= activeVal==="tables" ? "active" : "")
+          a(href="javascript:;")
+            i(class="la la-th-large")
+            span Tables
+            .right-container
+              i(class= activeVal==="tables" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
+          ul.tree
+            li.tree-item
+              a(class= activeChild==="simple" ? "active" : "", href="/components/tables/simple.html")
+                i(class="la la-circle")
+                span Simple
+            //- li.tree-item
+            //-   a(class= activeChild==="datatable" ? "active" : "", href="/components/tables/datatable.html")
+            //-     i(class="la la-circle")
+            //-     span Datatable
+        li(class= activeVal==="widgets" ? "active" : "")
+          a(href="/components/widgets.html")
+            i(class="la la-calculator")
+            span Widgets
+            .right-container
+              span.notification 3
+            
+        li.header EXAMPLE
+        li.has-children(class= activeVal==="pages" ? "active" : "")
+          a(href="javascript:;")
+            i(class="la la-columns")
+            span Pages
+            .right-container
+              i(class= activeVal==="pages" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
+          ul.tree
+            li.tree-item
+              a(class= activeChild==="login" ? "active" : "", href="/components/tables/datatable.html")
+                i(class="la la-circle")
+                span Login
+            li.tree-item
+              a(class= activeChild==="register" ? "active" : "", href="/components/tables/datatable.html")
+                i(class="la la-circle")
+                span Register
+            li.tree-item
+              a(class= activeChild==="404" ? "active" : "", href="/components/tables/datatable.html")
+                i(class="la la-circle")
+                span 404

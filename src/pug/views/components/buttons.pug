@@ -1,6 +1,9 @@
 - var baseDir = "../../"
 - var pageTitle="Pugna | Buttons"
 
+include ../../main-content/header
+include ../../sidebar/sidebar
+
 doctype html
 html(lang="en")
   head
@@ -11,15 +14,15 @@ html(lang="en")
     title=pageTitle
 
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
-    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
     link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    include ../../sidebar/sidebar
+    +sidebar("buttons")
     .main-content
-      include ../../main-content/header
+      +header("Buttons", "Components", "Buttons")
       .content-wrapper
         include ../../main-content/chatbox
         .row
@@ -127,16 +130,16 @@ html(lang="en")
                 .row.justify-content-between.p-3
                   .col-md-3.col-2.p-0
                     button.btn.btn-primary.btn-icon.btn-icon--lg
-                      i.fa.fa-star
+                      i.la.la-star
                   .col-md-3.col-2.p-0
                     button.btn.btn-c-primary.btn-icon
-                      i.fa.fa-user
+                      i.la.la-user
                   .col-md-3.col-2.p-0
                     button.btn.btn-c-success.btn-invert.btn-icon.btn-icon--lg.btn-icon--square
-                      i.fa.fa-bookmark
+                      i.la.la-bookmark
                   .col-md-3.col-3.p-0
                     button.btn.btn-c-warning.btn-icon.btn-icon--square
-                      i.fa.fa-phone 
+                      i.la.la-phone 
                       span.ml-1 Call
 
           .col-md-7
@@ -154,19 +157,19 @@ html(lang="en")
                   .col-md-3
                     .btn-group
                       button.btn.btn-c-info.active
-                        i.fa.fa-align-left
+                        i.la.la-align-left
                       button.btn.btn-c-info
-                        i.fa.fa-align-center
+                        i.la.la-align-center
                       button.btn.btn-c-info
-                        i.fa.fa-align-right
+                        i.la.la-align-right
                   .col-md-4
                     .btn-group
                       button.btn.btn-c-danger.btn-lg
-                        i.fa.fa-align-left
+                        i.la.la-align-left
                       button.btn.btn-c-danger.btn-lg.active
-                        i.fa.fa-align-center
+                        i.la.la-align-center
                       button.btn.btn-c-danger.btn-lg
-                        i.fa.fa-align-right
+                        i.la.la-align-right
 
 
     script(src=baseDir +"dist/js/main.js")
