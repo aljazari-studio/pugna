@@ -34,6 +34,7 @@ var mpc = function(element) {
   return new ManipulateClass(element);
 };
 
+// Navigation Searchbox
 var searchboxNav = document.querySelector(".header-item-searchbox");
 var searchbox = searchboxNav.firstElementChild.children[0];
 var searchboxTrigger = searchboxNav.children[1];
@@ -78,6 +79,16 @@ for (let st = 0; st < sidebarTrigger.length; st++) {
   });
 }
 
+var listMenu = sidebar.querySelector(".list-menu");
+
+listMenu.addEventListener("mouseenter", function() {
+  this.classList.add("hovered");
+});
+listMenu.addEventListener("mouseleave", function() {
+  this.classList.remove("hovered");
+});
+
+// Sidebar Tree
 var liChildrenTrigger = document.getElementsByClassName("has-children");
 
 for (var i = 0; i < liChildrenTrigger.length; i++) {

@@ -1550,7 +1550,30 @@ hr {
     .sidebar.collapsed .sidebar-header .sidebar-control {
       margin: auto; }
   .sidebar.collapsed .sidebar-wrapper {
-    padding-top: 43px; }
+    display: flex;
+    flex-direction: column; }
+    .sidebar.collapsed .sidebar-wrapper .list-menu {
+      margin-top: 30px; }
+    .sidebar.collapsed .sidebar-wrapper .list-menu.hovered {
+      position: absolute;
+      flex: 1;
+      padding-bottom: 30px;
+      height: calc(100vh - 100px);
+      width: 260px;
+      background: #434738;
+      overflow-y: auto; }
+      .sidebar.collapsed .sidebar-wrapper .list-menu.hovered .tree {
+        height: unset !important; }
+        .sidebar.collapsed .sidebar-wrapper .list-menu.hovered .tree li.tree-item {
+          padding: 0; }
+      .sidebar.collapsed .sidebar-wrapper .list-menu.hovered span,
+      .sidebar.collapsed .sidebar-wrapper .list-menu.hovered .right-container i {
+        display: block; }
+    .sidebar.collapsed .sidebar-wrapper li a:not(.active) {
+      background: #434738; }
+    .sidebar.collapsed .sidebar-wrapper li a span,
+    .sidebar.collapsed .sidebar-wrapper li a .right-container i {
+      display: none; }
     .sidebar.collapsed .sidebar-wrapper li.has-children .tree {
       height: 0; }
     .sidebar.collapsed .sidebar-wrapper li.has-children .tree-item {
@@ -1560,7 +1583,7 @@ hr {
     .sidebar.collapsed .sidebar-wrapper span {
       display: none; }
   .sidebar.expanded {
-    animation: sidebar-expanded .6s 1 forwards; }
+    animation: sidebar-expanded 0.6s 1 forwards; }
     .sidebar.expanded .sidebar-header .brand {
       animation: brand-move-right 0.6s 1 forwards; }
 
@@ -1615,7 +1638,7 @@ hr {
     background: #434738;
     color: #F7F7F7;
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: hidden; }
     .sidebar .sidebar-wrapper .list-menu {
       list-style-type: none;
       margin: 0;
@@ -1705,7 +1728,7 @@ hr {
         padding-right: 0; }
       .sidebar.collapsed .sidebar-header,
       .sidebar.collapsed .sidebar-wrapper {
-        animation: sidebar-collapsed-mobile .7s 1 forwards; }
+        animation: sidebar-collapsed-mobile 0.7s 1 forwards; }
         .sidebar.collapsed .sidebar-header .brand,
         .sidebar.collapsed .sidebar-wrapper .brand {
           animation: unset; }
