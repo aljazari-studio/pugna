@@ -1551,7 +1551,8 @@ hr {
       margin: auto; }
   .sidebar.collapsed .sidebar-wrapper {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    overflow-y: hidden; }
     .sidebar.collapsed .sidebar-wrapper .list-menu {
       margin-top: 30px; }
     .sidebar.collapsed .sidebar-wrapper .list-menu.hovered {
@@ -1638,7 +1639,7 @@ hr {
     background: #434738;
     color: #F7F7F7;
     overflow-x: hidden;
-    overflow-y: hidden; }
+    overflow-y: auto; }
     .sidebar .sidebar-wrapper .list-menu {
       list-style-type: none;
       margin: 0;

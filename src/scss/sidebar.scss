@@ -48,6 +48,8 @@
       display: flex;
       flex-direction: column;
 
+      overflow-y: hidden;
+
       & .list-menu {
         margin-top: 30px;
       }
@@ -208,7 +210,7 @@
     color: $light;
 
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 
     & .list-menu {
       list-style-type: none;

@@ -59,12 +59,12 @@ gulp.task("serve", function() {
     // open: false,
     files: ["index.html", "**/*.ts"],
     server: {
-      baseDir: "public",
-      index: "./demo/dashboards/ecommerce.html",
-      serveStatic: "./dist",
-      routes: {
-        "/": "public/demo"
-      }
+      // baseDir: "",
+      index: "public/demo/dashboards/ecommerce.html",
+      serveStatic: "public/dist",
+      // routes: {
+      //   "/": "public/demo"
+      // }
     }
   });
 

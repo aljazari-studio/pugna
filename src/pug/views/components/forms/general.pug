@@ -1,4 +1,4 @@
-- var baseDir = "../../../"
+- var distDir = "/public/dist/"
 - var pageTitle="Pugna | General Form"
 
 include ../../../main-content/header
@@ -15,8 +15,8 @@ html(lang="en")
     
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
     link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
-    link(rel="stylesheet", href=baseDir + "dist/css/main.css", type="text/css")
-    link(rel="stylesheet", href=baseDir + "dist/css/choices.min.css", type="text/css")
+    link(rel="stylesheet", href=distDir + "css/main.css", type="text/css")
+    link(rel="stylesheet", href=distDir + "css/choices.min.css", type="text/css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
@@ -276,5 +276,5 @@ html(lang="en")
                       p Namafile.ext
                       progress(value="22", max="100")
 
-    script(src=baseDir +"dist/js/main.js")
-    script(src=baseDir +"dist/js/formDemo.js")
+    script(src=distDir + "js/main.js")
+    script(src=distDir + "js/formDemo.js")
