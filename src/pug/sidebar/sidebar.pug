@@ -78,14 +78,18 @@ mixin sidebar(activeVal, activeChild, level="../")
               i(class= activeVal==="pages" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="login" ? "active" : "", href=level + "components/tables/datatable.html")
+              a(class= activeChild==="login" ? "active" : "", href=level + "pages/login.html")
                 i(class="la la-circle")
                 span Login
+            //- li.tree-item
+            //-   a(class= activeChild==="login" ? "active" : "", href=level + "pages/login-v2.html")
+            //-     i(class="la la-circle")
+            //-     span Login v2
             li.tree-item
-              a(class= activeChild==="register" ? "active" : "", href=level + "components/tables/datatable.html")
+              a(class= activeChild==="register" ? "active" : "", href=level + "pages/register.html")
                 i(class="la la-circle")
                 span Register
-            li.tree-item
-              a(class= activeChild==="404" ? "active" : "", href=level + "components/tables/datatable.html")
-                i(class="la la-circle")
-                span 404
+            //- li.tree-item
+            //-   a(class= activeChild==="404" ? "active" : "", href=level + "pages/404.html")
+            //-     i(class="la la-circle")
+            //-     span 404

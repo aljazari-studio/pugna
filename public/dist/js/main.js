@@ -36,18 +36,22 @@ var mpc = function(element) {
 
 // Navigation Searchbox
 var searchboxNav = document.querySelector(".header-item-searchbox");
-var searchbox = searchboxNav.firstElementChild.children[0];
-var searchboxTrigger = searchboxNav.children[1];
+var searchbox = searchboxNav
+  ? searchboxNav.firstElementChild.children[0]
+  : null;
+var searchboxTrigger = searchboxNav ? searchboxNav.children[1] : null;
 
-searchboxTrigger.addEventListener("click", function() {
-  searchboxNav.classList.toggle("active");
+if (searchboxTrigger) {
+  searchboxTrigger.addEventListener("click", function() {
+    searchboxNav.classList.toggle("active");
 
-  if (!searchbox.classList.contains("show")) {
-    mpc(searchbox).switchClass("hide", "show");
-  } else {
-    mpc(searchbox).switchClass("show", "hide");
-  }
-});
+    if (!searchbox.classList.contains("show")) {
+      mpc(searchbox).switchClass("hide", "show");
+    } else {
+      mpc(searchbox).switchClass("show", "hide");
+    }
+  });
+}
 
 // Sidebar
 var sidebar = document.querySelector(".sidebar");
@@ -79,14 +83,16 @@ for (let st = 0; st < sidebarTrigger.length; st++) {
   });
 }
 
-var listMenu = sidebar.querySelector(".list-menu");
+var listMenu = sidebar ? sidebar.querySelector(".list-menu") : null;
 
-listMenu.addEventListener("mouseenter", function() {
-  this.classList.add("hovered");
-});
-listMenu.addEventListener("mouseleave", function() {
-  this.classList.remove("hovered");
-});
+if (listMenu) {
+  listMenu.addEventListener("mouseenter", function() {
+    this.classList.add("hovered");
+  });
+  listMenu.addEventListener("mouseleave", function() {
+    this.classList.remove("hovered");
+  });
+}
 
 // Sidebar Tree
 var liChildrenTrigger = document.getElementsByClassName("has-children");
@@ -103,32 +109,34 @@ for (var i = 0; i < liChildrenTrigger.length; i++) {
 
 // Chatbox
 var chatbox = document.querySelector(".chatbox");
-var chatboxTrigger = document.querySelector(".trigger-chatbox");
+if (chatbox) {
+  var chatboxTrigger = document.querySelector(".trigger-chatbox");
 
-var chatboxFile = document.querySelector(".chat-form input[type=file]");
-var chatboxFileTrigger = document.querySelector(".chat-form .btn-attach");
+  var chatboxFile = document.querySelector(".chat-form input[type=file]");
+  var chatboxFileTrigger = document.querySelector(".chat-form .btn-attach");
 
-if (chatbox.classList.contains("show")) {
-  mpc(chatboxTrigger).toggleChildClass("la-times", "la-comments");
-}
-
-chatboxTrigger.addEventListener("click", function() {
-  mpc(chatboxTrigger).toggleChildClass("la-comments", "la-times");
-
-  if (!chatbox.classList.contains("show")) {
-    mpc(chatbox).switchClass("hide", "show");
-  } else if (chatbox.classList.contains("show")) {
-    mpc(chatbox).switchClass("show", "hide");
-
-    setTimeout(function() {
-      chatbox.classList.remove("hide");
-    }, 1000);
+  if (chatbox.classList.contains("show")) {
+    mpc(chatboxTrigger).toggleChildClass("la-times", "la-comments");
   }
-});
 
-chatboxFileTrigger.addEventListener("click", function() {
-  chatboxFile.click();
-});
+  chatboxTrigger.addEventListener("click", function() {
+    mpc(chatboxTrigger).toggleChildClass("la-comments", "la-times");
+
+    if (!chatbox.classList.contains("show")) {
+      mpc(chatbox).switchClass("hide", "show");
+    } else if (chatbox.classList.contains("show")) {
+      mpc(chatbox).switchClass("show", "hide");
+
+      setTimeout(function() {
+        chatbox.classList.remove("hide");
+      }, 1000);
+    }
+  });
+
+  chatboxFileTrigger.addEventListener("click", function() {
+    chatboxFile.click();
+  });
+}
 
 // Dropdown
 var dropdownTrigger = document.getElementsByClassName("trigger-dropdown");
@@ -183,23 +191,51 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
   var fromLabelFloat = document.getElementsByClassName("label--floating");
 
   for (var i = 0; i < fromLabelFloat.length; i++) {
-    fromLabelFloat[i].children[1].addEventListener("click", function() {
+    let input = fromLabelFloat[i].querySelector("input");
+    let label = fromLabelFloat[i].querySelector("label");
+    let span = fromLabelFloat[i].querySelector("span");
+
+    label.addEventListener("click", function() {
       this.previousSibling.focus();
     });
 
-    fromLabelFloat[i].children[0].addEventListener("focus", function() {
+    input.addEventListener("focus", function() {
       this.nextElementSibling.classList.add("float");
+
+      if (span) {
+        span.style.borderColor = "#B5D43C";
+      }
     });
 
-    fromLabelFloat[i].children[0].addEventListener("blur", function() {
+    input.addEventListener("blur", function() {
       if (this.value === "") {
         let that = this;
         mpc(this.nextElementSibling).toggleClass("float", "default");
+
+        if (span) {
+          span.style.borderColor = "rgba(67, 71, 56, 0.2)";
+        }
 
         setTimeout(function() {
           that.nextElementSibling.classList.remove("default");
         }, 500);
       }
     });
+
+    if (span) {
+      span.addEventListener("click", function() {
+        if (input.type == "password") {
+          span.firstElementChild.style.color = "#B5D43C";
+          input.type = "text";
+        } else {
+          span.firstElementChild.style.color = "rgba(67, 71, 56, 0.6)";
+          input.type = "password";
+        }
+      });
+
+      input.addEventListener("focusout", function() {
+        span.style.borderColor = "rgba(67, 71, 56, 0.2)";
+      });
+    }
   }
 })();

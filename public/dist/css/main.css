@@ -107,7 +107,6 @@
   border-radius: 3px;
   border: 2px solid transparent;
   color: #434738;
-  text-transform: uppercase;
   cursor: pointer; }
   .btn:hover {
     opacity: .8; }
@@ -697,13 +696,13 @@
 
 @keyframes switch-on {
   from {
-    left: .5px;
-    background: #EDEDED; }
+    left: 0.5px;
+    background: #ededed; }
   to {
     left: 16px;
     background: #B5D43C; } }
     .pgn-switch input[type="checkbox"]:not(:checked) ~ span::before {
-      background: #BBBBBB; }
+      background: #bbbbbb; }
     .pgn-switch input[type="checkbox"]:not(:checked) ~ span::after {
       animation: switch-off 0.5s 1 forwards; }
 
@@ -712,8 +711,8 @@
     left: 16px;
     background: #B5D43C; }
   to {
-    left: .5px;
-    background: #EDEDED; } }
+    left: 0.5px;
+    background: #ededed; } }
   .pgn-switch span {
     margin: 0 !important;
     font-size: 0.8rem; }
@@ -773,6 +772,15 @@
   .form-group.label--floating {
     position: relative;
     padding-top: 0.5rem; }
+    .form-group.label--floating.with-addon span {
+      height: 42px;
+      background: transparent;
+      border: 1.3px solid rgba(67, 71, 56, 0.2);
+      border-left: 0;
+      line-height: 42px; }
+      .form-group.label--floating.with-addon span,
+      .form-group.label--floating.with-addon span i {
+        color: rgba(67, 71, 56, 0.6); }
     .form-group.label--floating label {
       position: absolute;
       top: 22px;
@@ -864,7 +872,7 @@
       .form-group.with-addon input[type="password"]:active,
       .form-group.with-addon input[type="password"]:focus {
         border-color: #B5D43C; }
-  .form-group label {
+  .form-group > label {
     margin-bottom: 6px;
     font-size: 12px;
     font-weight: bold;
@@ -935,6 +943,9 @@
       .form-group .form-checkbox label > span,
       .form-group .form-radio label > span {
         margin: 0 1.5rem 0 1rem; }
+    .form-group .form-checkbox span,
+    .form-group .form-radio span {
+      font-size: 0.8rem; }
   .form-group input[type="file"] {
     display: none; }
   .form-group button.btn-file {
@@ -1209,6 +1220,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  background: #F7F7F7;
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -1233,14 +1245,17 @@ h6,
 
 a[href] {
   text-decoration: none;
-  font-size: .9rem;
-  color: #4FA4F3; }
+  font-size: 0.9rem;
+  color: #B5D43C;
+  cursor: pointer; }
+  a[href]:active, a[href]:focus, a[href]:visited {
+    color: #009A59; }
 
 .font-weight-bold {
   font-weight: bold; }
 
-li {
-  font-size: 14px; }
+.text--center {
+  text-align: center !important; }
 
 hr {
   margin: 0.5rem 0 1rem 0;
@@ -1251,6 +1266,7 @@ hr {
     background: rgba(67, 71, 56, 0.3); }
   hr[data-hr] {
     position: relative;
+    display: flex;
     border: none; }
     hr[data-hr]::before {
       content: "";
@@ -1265,17 +1281,37 @@ hr {
       position: relative;
       top: 0;
       left: 1rem;
-      height: 10px;
-      width: 20px;
+      height: fit-content;
       background: white;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: rgba(67, 71, 56, 0.4); }
+    hr[data-hr].data-hr--centered {
+      justify-content: center;
+      align-items: center;
+      margin: 1rem 0 1rem 0;
+      height: fit-content; }
+      hr[data-hr].data-hr--centered::after {
+        top: 0;
+        left: 0; }
+
+li {
+  font-size: 14px; }
+
+.center-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%; }
+  .center-wrapper .centered-row {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .scroll-x {
   overflow-x: auto; }
 
 .helper-text {
-  font-size: 0.7rem; }
+  font-size: 0.8rem; }
 
 .valign-middle {
   vertical-align: middle; }
@@ -1379,7 +1415,8 @@ hr {
     .dropdown-box.with-header ul.dropdown-body li a {
       flex-direction: row;
       justify-content: flex-start; }
-      .dropdown-box.with-header ul.dropdown-body li a i, .dropdown-box.with-header ul.dropdown-body li a i:hover {
+      .dropdown-box.with-header ul.dropdown-body li a i,
+      .dropdown-box.with-header ul.dropdown-body li a i:hover {
         background: transparent;
         color: rgba(67, 71, 56, 0.6); }
       .dropdown-box.with-header ul.dropdown-body li a span {
@@ -1391,6 +1428,8 @@ hr {
     align-items: center; }
     .dropdown-box li:hover {
       background: rgba(181, 212, 60, 0.1); }
+    .dropdown-box li:last-child {
+      margin-bottom: 0.5rem; }
     .dropdown-box li a {
       flex: 1;
       display: flex;
@@ -1407,7 +1446,7 @@ hr {
         background: inherit; }
       .dropdown-box li a span {
         margin: auto 8px;
-        font-size: 0.775rem;
+        font-size: 0.8rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; }
@@ -1487,6 +1526,18 @@ hr {
   .user-img.user-img--lg {
     height: 55px;
     width: 55px; }
+
+.color--primary {
+  color: #B5D43C; }
+
+.color--secondary {
+  color: #D9EF81; }
+
+.color--light {
+  color: #F7F7F7; }
+
+.color--dark {
+  color: #434738; }
 
 .bg--primary {
   background: #B5D43C !important;

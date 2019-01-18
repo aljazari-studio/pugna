@@ -227,9 +227,9 @@
 
         @keyframes switch-on {
           from {
-            left: .5px;
+            left: 0.5px;
 
-            background: #EDEDED;
+            background: #ededed;
           }
           to {
             left: 16px;
@@ -242,7 +242,7 @@
 
     &:not(:checked) ~ span {
       &::before {
-        background: #BBBBBB;
+        background: #bbbbbb;
       }
 
       &::after {
@@ -255,9 +255,9 @@
             background: $primary;
           }
           to {
-            left: .5px;
+            left: 0.5px;
 
-            background: #EDEDED;
+            background: #ededed;
           }
         }
       }
@@ -397,6 +397,23 @@
 
     padding-top: 0.5rem;
 
+    &.with-addon {
+      span {
+        height: 42px;
+
+        background: transparent;
+        border: 1.3px solid rgba($dark, 0.2);
+        border-left: 0;
+
+        line-height: 42px;
+
+        &,
+        & i {
+          color: rgba($dark, .6);
+        }
+      }
+    }
+
     & label {
       position: absolute;
       top: 22px;
@@ -532,7 +549,7 @@
     }
   }
 
-  & label {
+  & > label {
     margin-bottom: 6px;
 
     font-size: 12px;
@@ -626,6 +643,10 @@
       & > span {
         margin: 0 1.5rem 0 1rem;
       }
+    }
+
+    span {
+      font-size: 0.8rem;
     }
   }
 

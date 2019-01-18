@@ -11,8 +11,11 @@ body {
 
   height: 100vh;
 
+  background: $light;
+
   font-family: "Nunito", sans-serif;
   font-weight: 400;
+
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -39,16 +42,24 @@ h6,
 a[href] {
   text-decoration: none;
 
-  font-size: .9rem;
-  color: $c-primary;
+  font-size: 0.9rem;
+  color: $primary;
+
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:visited {
+    color: $c-success;
+  }
 }
 
 .font-weight-bold {
   font-weight: bold;
 }
 
-li {
-  font-size: 14px;
+.text--center {
+  text-align: center !important;
 }
 
 hr {
@@ -66,6 +77,8 @@ hr {
 
   &[data-hr] {
     position: relative;
+
+    display: flex;
 
     border: none;
 
@@ -89,14 +102,46 @@ hr {
       top: 0;
       left: 1rem;
 
-      height: 10px;
-      width: 20px;
+      height: fit-content;
 
       background: white;
 
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: rgba($dark, 0.4);
     }
+
+    &.data-hr--centered {
+      justify-content: center;
+      align-items: center;
+
+      margin: 1rem 0 1rem 0;
+
+      height: fit-content;
+
+      &::after {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+li {
+  font-size: 14px;
+}
+
+.center-wrapper {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  .centered-row {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -105,7 +150,7 @@ hr {
 }
 
 .helper-text {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .valign-middle {
@@ -265,10 +310,11 @@ hr {
         flex-direction: row;
         justify-content: flex-start;
 
-        & i, i:hover {
+        & i,
+        i:hover {
           background: transparent;
 
-          color: rgba($dark, .6);
+          color: rgba($dark, 0.6);
         }
 
         & span {
@@ -287,6 +333,10 @@ hr {
 
     &:hover {
       background: rgba($primary, 0.1);
+    }
+
+    &:last-child {
+      margin-bottom: 0.5rem;
     }
 
     & a {
@@ -313,7 +363,7 @@ hr {
       & span {
         margin: auto 8px;
 
-        font-size: 0.775rem;
+        font-size: 0.8rem;
 
         white-space: nowrap;
         overflow: hidden;
@@ -441,6 +491,19 @@ hr {
     height: 55px;
     width: 55px;
   }
+}
+
+.color--primary {
+  color: $primary;
+}
+.color--secondary {
+  color: $secondary;
+}
+.color--light {
+  color: $light;
+}
+.color--dark {
+  color: $dark;
 }
 
 .bg--primary {

@@ -1,4 +1,4 @@
-mixin header(titleVal, level0Val, level1Val, level2Val)
+mixin header(titleVal, level0Val, level1Val, level2Val, level="../")
   .header
     .left
       p= titleVal
@@ -93,7 +93,7 @@ mixin header(titleVal, level0Val, level1Val, level2Val)
                 i.la.la-envelope
                 span Messages
             li
-              a
+              a(href=level + "pages/login.html")
                 i.la.la-power-off
                 span Log out
           
