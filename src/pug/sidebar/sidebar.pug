@@ -1,7 +1,4 @@
-//- - var demoDir = "/public/demo/"
-- var demoDir = "../"
-
-mixin sidebar(activeVal, activeChild)
+mixin sidebar(activeVal, activeChild, level="../")
   .sidebar
     include sidebar-header
     .sidebar-wrapper
@@ -15,24 +12,24 @@ mixin sidebar(activeVal, activeChild)
               i(class= activeVal==="dashboards" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="ecommerce" ? "active" : "", href=demoDir + "dashboards/ecommerce.html")
+              a(class= activeChild==="ecommerce" ? "active" : "", href=level + "dashboards/ecommerce.html")
                 i(class="la la-circle")
                 span Ecommerce
             li.tree-item
-              a(class= activeChild==="iot" ? "active" : "", href=demoDir + "dashboards/iot.html")
+              a(class= activeChild==="iot" ? "active" : "", href=level + "dashboards/iot.html")
                 i(class="la la-circle")
                 span IoT
         li.header COMPONENTS
         li(class= activeVal==="colors" ? "active" : "")
-          a(href=demoDir + "components/colors.html")
+          a(href=level + "components/colors.html")
             i(class="la la-tint")
             span Colors
         li(class= activeVal==="icons" ? "active" : "")
-          a(href=demoDir + "components/icons.html")
+          a(href=level + "components/icons.html")
             i(class="la la-star")
             span Icons
         li(class= activeVal==="buttons" ? "active" : "")
-          a(href=demoDir + "components/buttons.html")
+          a(href=level + "components/buttons.html")
             i(class="la la-mouse-pointer")
             span Buttons
         li.has-children(class= activeVal==="forms" ? "active" : "")
@@ -43,11 +40,11 @@ mixin sidebar(activeVal, activeChild)
               i(class= activeVal==="forms" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="general" ? "active" : "", href=demoDir + "components/forms/general.html")
+              a(class= activeChild==="general" ? "active" : "", href=level + "components/forms/general.html")
                 i(class="la la-circle")
                 span General
             li.tree-item
-              a(class= activeChild==="advanced" ? "active" : "", href=demoDir + "components/forms/advanced.html")
+              a(class= activeChild==="advanced" ? "active" : "", href=level + "components/forms/advanced.html")
                 i(class="la la-circle")
                 span Advanced
         li.has-children(class= activeVal==="tables" ? "active" : "")
@@ -58,7 +55,7 @@ mixin sidebar(activeVal, activeChild)
               i(class= activeVal==="tables" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="simple" ? "active" : "", href=demoDir + "components/tables/simple.html")
+              a(class= activeChild==="simple" ? "active" : "", href=level + "components/tables/simple.html")
                 i(class="la la-circle")
                 span Simple
             //- li.tree-item
@@ -66,7 +63,7 @@ mixin sidebar(activeVal, activeChild)
             //-     i(class="la la-circle")
             //-     span Datatable
         li(class= activeVal==="widgets" ? "active" : "")
-          a(href=demoDir + "components/widgets.html")
+          a(href=level + "components/widgets.html")
             i(class="la la-calculator")
             span Widgets
             .right-container
@@ -81,14 +78,14 @@ mixin sidebar(activeVal, activeChild)
               i(class= activeVal==="pages" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="login" ? "active" : "", href=demoDir + "components/tables/datatable.html")
+              a(class= activeChild==="login" ? "active" : "", href=level + "components/tables/datatable.html")
                 i(class="la la-circle")
                 span Login
             li.tree-item
-              a(class= activeChild==="register" ? "active" : "", href=demoDir + "components/tables/datatable.html")
+              a(class= activeChild==="register" ? "active" : "", href=level + "components/tables/datatable.html")
                 i(class="la la-circle")
                 span Register
             li.tree-item
-              a(class= activeChild==="404" ? "active" : "", href=demoDir + "components/tables/datatable.html")
+              a(class= activeChild==="404" ? "active" : "", href=level + "components/tables/datatable.html")
                 i(class="la la-circle")
                 span 404

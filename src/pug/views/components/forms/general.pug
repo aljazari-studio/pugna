@@ -1,4 +1,3 @@
-//- - var distDir = "/public/dist/"
 - var distDir = "../../../dist/"
 - var pageTitle="Pugna | General Form"
 
@@ -22,7 +21,7 @@ html(lang="en")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    +sidebar("forms", "general")
+    +sidebar("forms", "general", "../../")
     .main-content
       +header("General Form", "Components", "Forms", "General")
       .content-wrapper
