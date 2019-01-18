@@ -20,18 +20,33 @@ mixin sidebar(activeVal, activeChild, level="../")
                 i(class="la la-circle")
                 span IoT
         li.header COMPONENTS
-        li(class= activeVal==="colors" ? "active" : "")
-          a(href=level + "components/colors.html")
-            i(class="la la-tint")
-            span Colors
-        li(class= activeVal==="icons" ? "active" : "")
-          a(href=level + "components/icons.html")
-            i(class="la la-star")
-            span Icons
-        li(class= activeVal==="buttons" ? "active" : "")
-          a(href=level + "components/buttons.html")
-            i(class="la la-mouse-pointer")
-            span Buttons
+        li.has-children(class= activeVal==="base" ? "active" : "")
+          a(href="javascript:;")
+            i(class="la la-laptop")
+            span Base
+            .right-container
+              i(class= activeVal==="base" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
+          ul.tree
+            li.tree-item
+              a(class= activeChild==="colors" ? "active" : "", href=level + "base/colors.html")
+                i(class="la la-circle")
+                span Colors
+            li.tree-item
+              a(class= activeChild==="icons" ? "active" : "", href=level + "base/icons.html")
+                i(class="la la-circle")
+                span Icons
+            li.tree-item
+              a(class= activeChild==="buttons" ? "active" : "", href=level + "base/buttons.html")
+                i(class="la la-circle")
+                span Buttons
+            li.tree-item
+              a(class= activeChild==="alerts" ? "active" : "", href=level + "base/alert.html")
+                i(class="la la-circle")
+                span Alerts
+            //- li.tree-item
+            //-   a(class= activeChild==="alert" ? "active" : "", href=level + "base/alert.html")
+            //-     i(class="la la-circle")
+            //-     span Modal
         li.has-children(class= activeVal==="forms" ? "active" : "")
           a(href="javascript:;")
             i(class="la la-pencil-square-o")
@@ -40,11 +55,11 @@ mixin sidebar(activeVal, activeChild, level="../")
               i(class= activeVal==="forms" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="general" ? "active" : "", href=level + "components/forms/general.html")
+              a(class= activeChild==="general" ? "active" : "", href=level + "forms/general.html")
                 i(class="la la-circle")
                 span General
             li.tree-item
-              a(class= activeChild==="advanced" ? "active" : "", href=level + "components/forms/advanced.html")
+              a(class= activeChild==="advanced" ? "active" : "", href=level + "forms/advanced.html")
                 i(class="la la-circle")
                 span Advanced
         li.has-children(class= activeVal==="tables" ? "active" : "")
@@ -55,15 +70,15 @@ mixin sidebar(activeVal, activeChild, level="../")
               i(class= activeVal==="tables" ? "la la-chevron-down tree-icon" : "la la-chevron-right tree-icon")
           ul.tree
             li.tree-item
-              a(class= activeChild==="simple" ? "active" : "", href=level + "components/tables/simple.html")
+              a(class= activeChild==="simple" ? "active" : "", href=level + "tables/simple.html")
                 i(class="la la-circle")
                 span Simple
             //- li.tree-item
-            //-   a(class= activeChild==="datatable" ? "active" : "", href="/components/tables/datatable.html")
+            //-   a(class= activeChild==="datatable" ? "active" : "", href="/tables/datatable.html")
             //-     i(class="la la-circle")
             //-     span Datatable
         li(class= activeVal==="widgets" ? "active" : "")
-          a(href=level + "components/widgets.html")
+          a(href=level + "widgets.html")
             i(class="la la-calculator")
             span Widgets
             .right-container
@@ -89,7 +104,7 @@ mixin sidebar(activeVal, activeChild, level="../")
               a(class= activeChild==="register" ? "active" : "", href=level + "pages/register.html")
                 i(class="la la-circle")
                 span Register
-            //- li.tree-item
-            //-   a(class= activeChild==="404" ? "active" : "", href=level + "pages/404.html")
-            //-     i(class="la la-circle")
-            //-     span 404
+            li.tree-item
+              a(class= activeChild==="error" ? "active" : "", href=level + "pages/error.html")
+                i(class="la la-circle")
+                span Error

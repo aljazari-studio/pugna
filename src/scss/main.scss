@@ -143,6 +143,56 @@ li {
     justify-content: center;
     align-items: center;
   }
+
+  .centered-column {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & h1 {
+    position: relative;
+
+    margin: 0;
+
+    font-size: 8rem;
+    line-height: 8rem;
+
+    z-index: 2;
+
+    &::after {
+      content: attr(data-shadow);
+
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+
+      color: rgba($dark, .3);
+
+      z-index: -1;
+    }
+  }
+
+  p {
+    margin: 1.5rem 0 .5rem 0;
+
+    color: $dark;
+  }
+
+  span {
+    font-family: "Roboto";
+    font-size: .8rem;
+  }
 }
 
 .scroll-x {
@@ -494,16 +544,31 @@ li {
 }
 
 .color--primary {
-  color: $primary;
+  color: $primary !important;
 }
 .color--secondary {
-  color: $secondary;
+  color: $secondary !important;
 }
 .color--light {
-  color: $light;
+  color: $light !important;
 }
 .color--dark {
-  color: $dark;
+  color: $dark !important;
+}
+.color--c-primary {
+  color: $c-primary !important;
+}
+.color--c-success {
+  color: $c-success !important;
+}
+.color--c-info {
+  color: $c-info !important;
+}
+.color--c-warning {
+  color: $c-warning !important;
+}
+.color--c-danger {
+  color: $c-danger !important;
 }
 
 .bg--primary {

@@ -20,9 +20,9 @@ html(lang="en")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    +sidebar("colors")
+    +sidebar("base", "colors")
     .main-content
-      +header("Colors", "Components", "Colors")
+      +header("Colors", "Components", "Base", "Colors")
       .content-wrapper
         include ../../main-content/chatbox
         .row
@@ -73,7 +73,7 @@ html(lang="en")
                     hr(data-hr="additional")
                   .color-box(style="background: #4FA4F3; color: #F7F7F7;") #4FA4F3
                   .color-box(style="background: #C8E3F5; color: #434738;") #C8E3F5
-                  .color-box(style="background: #009A59; color: #F7F7F7;") #009A59
+                  .color-box(style="background: #2BCBBA; color: #F7F7F7;") #2BCBBA
                   .color-box(style="background: #FFCC54; color: #434738;") #FFCC54
                   .color-box(style="background: #F6554D; color: #F7F7F7;") #F6554D
                   .color-box(style="background: #FF8B35; color: #F7F7F7;") #FF8B35

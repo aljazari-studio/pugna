@@ -1,3 +1,67 @@
+.alert {
+  margin-bottom: 1rem;
+  padding: 0.1rem 1rem;
+  height: fit-content;
+  width: 100%;
+  background: #F7F7F7;
+  border: 2px solid transparent;
+  border-radius: 3px; }
+  .alert.alert--dismissible {
+    display: flex;
+    align-items: center; }
+    .alert.alert--dismissible p {
+      flex: 1; }
+    .alert.alert--dismissible .alert-dismiss {
+      width: fit-content; }
+      .alert.alert--dismissible .alert-dismiss .btn {
+        background: transparent; }
+        .alert.alert--dismissible .alert-dismiss .btn:active::after, .alert.alert--dismissible .alert-dismiss .btn:focus::after {
+          animation: none; }
+  .alert.alert--success {
+    background: #2BCBBA; }
+    .alert.alert--success.alert--invert {
+      background: white;
+      border-color: #2BCBBA; }
+      .alert.alert--success.alert--invert p {
+        color: #2BCBBA; }
+    .alert.alert--success p {
+      color: #F7F7F7; }
+  .alert.alert--info {
+    background: #C8E3F5; }
+    .alert.alert--info.alert--invert {
+      background: white;
+      border-color: #C8E3F5; }
+      .alert.alert--info.alert--invert p {
+        color: #C8E3F5; }
+    .alert.alert--info p {
+      color: #434738; }
+  .alert.alert--warning {
+    background: #FFCC54; }
+    .alert.alert--warning.alert--invert {
+      background: white;
+      border-color: #FFCC54; }
+      .alert.alert--warning.alert--invert p {
+        color: #FFCC54; }
+    .alert.alert--warning p {
+      color: #434738; }
+  .alert.alert--danger {
+    background: #F6554D; }
+    .alert.alert--danger.alert--invert {
+      background: white;
+      border-color: #F6554D; }
+      .alert.alert--danger.alert--invert p {
+        color: #F6554D; }
+    .alert.alert--danger p {
+      color: #F7F7F7; }
+  .alert p {
+    font-weight: bold;
+    font-size: 16px;
+    color: #434738; }
+    .alert p span {
+      margin-left: 8px;
+      font-weight: normal;
+      font-size: 13px; }
+
 .badge {
   padding: 2px 6px;
   background: slateblue;
@@ -165,12 +229,12 @@
       border-color: #C8E3F5;
       color: #C8E3F5; }
   .btn.btn-c-success {
-    background: #009A59;
+    background: #2BCBBA;
     color: white; }
     .btn.btn-c-success.btn-invert {
       background: white;
-      border-color: #009A59;
-      color: #009A59; }
+      border-color: #2BCBBA;
+      color: #2BCBBA; }
   .btn.btn-c-warning {
     background: #FFCC54;
     color: #434738; }
@@ -1249,7 +1313,7 @@ a[href] {
   color: #B5D43C;
   cursor: pointer; }
   a[href]:active, a[href]:focus, a[href]:visited {
-    color: #009A59; }
+    color: #2BCBBA; }
 
 .font-weight-bold {
   font-weight: bold; }
@@ -1306,6 +1370,37 @@ li {
     display: flex;
     justify-content: center;
     align-items: center; }
+  .center-wrapper .centered-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .error-wrapper h1 {
+    position: relative;
+    margin: 0;
+    font-size: 8rem;
+    line-height: 8rem;
+    z-index: 2; }
+    .error-wrapper h1::after {
+      content: attr(data-shadow);
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      color: rgba(67, 71, 56, 0.3);
+      z-index: -1; }
+  .error-wrapper p {
+    margin: 1.5rem 0 .5rem 0;
+    color: #434738; }
+  .error-wrapper span {
+    font-family: "Roboto";
+    font-size: .8rem; }
 
 .scroll-x {
   overflow-x: auto; }
@@ -1528,16 +1623,31 @@ li {
     width: 55px; }
 
 .color--primary {
-  color: #B5D43C; }
+  color: #B5D43C !important; }
 
 .color--secondary {
-  color: #D9EF81; }
+  color: #D9EF81 !important; }
 
 .color--light {
-  color: #F7F7F7; }
+  color: #F7F7F7 !important; }
 
 .color--dark {
-  color: #434738; }
+  color: #434738 !important; }
+
+.color--c-primary {
+  color: #4FA4F3 !important; }
+
+.color--c-success {
+  color: #2BCBBA !important; }
+
+.color--c-info {
+  color: #C8E3F5 !important; }
+
+.color--c-warning {
+  color: #FFCC54 !important; }
+
+.color--c-danger {
+  color: #F6554D !important; }
 
 .bg--primary {
   background: #B5D43C !important;
@@ -1564,7 +1674,7 @@ li {
   color: white !important; }
 
 .bg--c-success {
-  background: #009A59 !important;
+  background: #2BCBBA !important;
   color: white !important; }
 
 .bg--c-warning {

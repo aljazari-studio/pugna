@@ -1,8 +1,8 @@
-- var distDir = "../../../dist/"
+- var distDir = "../../dist/"
 - var pageTitle="Pugna | Simple Table"
 
-include ../../../main-content/header
-include ../../../sidebar/sidebar
+include ../../main-content/header
+include ../../sidebar/sidebar
 
 doctype html
 html(lang="en")
@@ -21,11 +21,11 @@ html(lang="en")
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
   body
-    +sidebar("tables", "simple", "../../")
+    +sidebar("tables", "simple")
     .main-content
-      +header("Simple Table", "Components", "Tables", "Simple", "../../")
+      +header("Simple Table", "Components", "Tables", "Simple")
       .content-wrapper
-        include ../../../main-content/chatbox
+        include ../../main-content/chatbox
         .row
           .col-md-6.col-12
             .box

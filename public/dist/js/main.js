@@ -186,56 +186,62 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
   }
 }
 
-// Form
-(function HoldLabelFloat() {
-  var fromLabelFloat = document.getElementsByClassName("label--floating");
+var formLabelFloat = document.getElementsByClassName("label--floating");
 
-  for (var i = 0; i < fromLabelFloat.length; i++) {
-    let input = fromLabelFloat[i].querySelector("input");
-    let label = fromLabelFloat[i].querySelector("label");
-    let span = fromLabelFloat[i].querySelector("span");
+for (var i = 0; i < formLabelFloat.length; i++) {
+  let input = formLabelFloat[i].querySelector("input");
+  let label = formLabelFloat[i].querySelector("label");
+  let span = formLabelFloat[i].querySelector("span");
 
-    label.addEventListener("click", function() {
-      this.previousSibling.focus();
-    });
+  label.addEventListener("click", function() {
+    this.previousSibling.focus();
+  });
 
-    input.addEventListener("focus", function() {
-      this.nextElementSibling.classList.add("float");
-
-      if (span) {
-        span.style.borderColor = "#B5D43C";
-      }
-    });
-
-    input.addEventListener("blur", function() {
-      if (this.value === "") {
-        let that = this;
-        mpc(this.nextElementSibling).toggleClass("float", "default");
-
-        if (span) {
-          span.style.borderColor = "rgba(67, 71, 56, 0.2)";
-        }
-
-        setTimeout(function() {
-          that.nextElementSibling.classList.remove("default");
-        }, 500);
-      }
-    });
+  input.addEventListener("focus", function() {
+    this.nextElementSibling.classList.add("float");
 
     if (span) {
-      span.addEventListener("click", function() {
-        if (input.type == "password") {
-          span.firstElementChild.style.color = "#B5D43C";
-          input.type = "text";
-        } else {
-          span.firstElementChild.style.color = "rgba(67, 71, 56, 0.6)";
-          input.type = "password";
-        }
-      });
-
-      input.addEventListener("focusout", function() {
-        span.style.borderColor = "rgba(67, 71, 56, 0.2)";
-      });
+      span.style.borderColor = "#B5D43C";
     }
+  });
+
+  input.addEventListener("blur", function() {
+    if (this.value === "") {
+      let that = this;
+      mpc(this.nextElementSibling).toggleClass("float", "default");
+
+      if (span) {
+        span.style.borderColor = "rgba(67, 71, 56, 0.2)";
+      }
+
+      setTimeout(function() {
+        that.nextElementSibling.classList.remove("default");
+      }, 500);
+    }
+  });
+
+  if (span) {
+    span.addEventListener("click", function() {
+      if (input.type == "password") {
+        span.firstElementChild.style.color = "#B5D43C";
+        input.type = "text";
+      } else {
+        span.firstElementChild.style.color = "rgba(67, 71, 56, 0.6)";
+        input.type = "password";
+      }
+    });
+
+    input.addEventListener("focusout", function() {
+      span.style.borderColor = "rgba(67, 71, 56, 0.2)";
+    });
   }
-})();
+}
+
+// Dismissible Alert
+var alertsDismissible = document.getElementsByClassName("alert alert--dismissible");
+
+for (var ad = 0; ad < alertsDismissible.length; ad++) {
+  alertsDismissible[ad].querySelector(".alert-dismiss").addEventListener("click", function() {
+    this.parentNode.remove();
+  });
+}
