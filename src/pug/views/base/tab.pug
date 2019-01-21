@@ -1,0 +1,75 @@
+- var distDir = "../../dist/"
+- var pageTitle="Pugna | Tabs"
+
+include ../../main-content/header
+include ../../sidebar/sidebar
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="theme-color", content="#B5D43C")
+    meta(content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport")
+
+    title=pageTitle
+    
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito|Roboto")
+    link(rel="stylesheet", href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css")
+    link(rel="stylesheet", href=distDir + "css/main.css", type="text/css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js")
+  body
+    +sidebar("base", "tabs")
+    .main-content
+      +header("Tabs", "Components", "Base", "Tabs")
+      .content-wrapper
+        include ../../main-content/chatbox
+        .row
+          .col-md-6
+            .tab
+              .tab-header
+                ul.tab__navigation
+                  li.tab__nav-item(data-tab="#tab1-1") Tab 1
+                  li.tab__nav-item(data-tab="#tab1-2") Tab 2
+                  li.tab__nav-item.active(data-tab="#tab1-3") Tab 3
+              .tab-body
+                .tab__content#tab1-1
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fuga harum minus error alias temporibus delectus, iste iusto molestiae maxime reprehenderit laudantium tempora placeat dolores facere est quibusdam id? Magnam.
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ad cum omnis sequi doloremque reprehenderit, harum iusto temporibus odit expedita laborum dolorum sed illo cumque alias assumenda nam sunt rerum.
+                .tab__content#tab1-2
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis possimus laudantium officia perferendis recusandae exercitationem minima dignissimos esse architecto? Non similique asperiores eos ut tempora rerum maiores, fugit ipsum quo.
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem eum doloribus, asperiores voluptatem quidem expedita quae. Autem mollitia, assumenda quasi tenetur veritatis eveniet magnam adipisci reprehenderit soluta asperiores rem?
+                .tab__content#tab1-3
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque fuga nobis deserunt corporis eveniet deleniti odit ut magnam, delectus eius mollitia sequi maiores magni quis? Assumenda quo maxime cupiditate!
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias earum, vitae, vel incidunt aliquam obcaecati ipsum, nesciunt a aperiam ab animi. Quos, autem dolore debitis ad obcaecati perferendis qui corporis?
+
+          .col-md-6
+            .tab
+              .tab-header
+                ul.tab__navigation
+                  li.tab__nav-item.active(data-tab="#tab2-1") Tab 1
+                  li.tab__nav-item(data-tab="#tab2-2") Tab 2
+                  li.tab__nav-item(data-tab="#tab2-3") Tab 3
+              .tab-body
+                .tab__content#tab2-1
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis magni laboriosam optio veniam distinctio blanditiis voluptate odio. Nesciunt soluta asperiores itaque, voluptatibus earum doloremque incidunt tempora vitae omnis est.
+                  .tab
+                    .tab-header
+                      ul.tab__navigation
+                        li.tab__nav-item.active(data-tab="#tab2-1-1") Tab 1 1
+                        li.tab__nav-item(data-tab="#tab2-1-2") Tab 1 2
+                        li.tab__nav-item(data-tab="#tab2-1-3") Tab 1 3
+                    .tab-body
+                      .tab__content#tab2-1-1
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo laborum repellat ipsam deserunt nam nobis? Aperiam dolorem sed officia quaerat pariatur repellat sapiente eligendi eius amet ducimus, fugit vero provident.
+                      .tab__content#tab2-1-2
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio expedita inventore alias necessitatibus soluta odit nostrum pariatur aliquid, eligendi, quia nisi quas, accusantium aliquam adipisci. In quibusdam dignissimos voluptatem cum!
+                      .tab__content#tab2-1-3
+                        p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium sequi nihil enim error optio voluptates provident obcaecati, iste hic praesentium. Dolorum quibusdam voluptatum illo ea eaque consectetur earum dolore quas.
+                .tab__content#tab2-2
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, quos? Nesciunt nemo non praesentium quo quos esse commodi dolores vero deleniti quia ullam reiciendis adipisci, excepturi, quibusdam numquam! Accusamus, iste?
+                .tab__content#tab2-3
+                  p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, commodi? Officiis provident aliquid, laudantium sapiente cum eaque nam? Voluptates vitae accusantium laboriosam atque hic dicta minus exercitationem expedita facilis repellat?
+
+    script(src=distDir +"js/main.js")
