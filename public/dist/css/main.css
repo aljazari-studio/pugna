@@ -1946,7 +1946,8 @@ li {
     background: none;
     box-shadow: none; }
     .tab.vertical > .tab-header {
-      min-width: 10%; }
+      width: fit-content;
+      max-width: 10%; }
       .tab.vertical > .tab-header .tab__navigation {
         display: flex;
         flex-direction: column;
@@ -1963,7 +1964,6 @@ li {
             border-color: transparent #FFA939 transparent transparent; }
     .tab.vertical > .tab-body {
       flex-grow: 1;
-      max-width: 90%;
       background: white;
       border-radius: 0 4px 4px 0;
       box-shadow: 0 1px 5px 1px rgba(9, 38, 74, 0.1); }

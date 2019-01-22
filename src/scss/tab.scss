@@ -16,7 +16,8 @@
     box-shadow: none;
 
     & > .tab-header {
-      min-width: 10%;
+      width: fit-content;
+      max-width: 10%;
 
       & .tab__navigation {
         display: flex;
@@ -48,8 +49,6 @@
 
     & > .tab-body {
       flex-grow: 1;
-
-      max-width: 90%;
 
       background: white;
       border-radius: 0 4px 4px 0;
