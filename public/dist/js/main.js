@@ -1,3 +1,5 @@
+// ----- Helpers
+
 /**
  * Manipulate class of element
  * with forward direction
@@ -23,16 +25,50 @@ function ManipulateClass(element) {
     element.firstElementChild.classList.toggle(to);
   };
 
-  this.showAlert = function() {
-    alert("ea");
-  };
-
   return this;
 }
 
 var mpc = function(element) {
   return new ManipulateClass(element);
 };
+
+// Get Global Color Scheme
+var colorScheme = {
+  primary: getColorScheme("primary"),
+  secondary: getColorScheme("secondary"),
+  light: getColorScheme("light"),
+  dark: getColorScheme("dark")
+};
+
+function getColorScheme(color) {
+  return window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue("--pg-" + color);
+}
+
+// Hex to RGBA
+function hexToRgbA(hex, opacity = 1) {
+  hex = hex.trim();
+
+  var c;
+  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+    c = hex.substring(1).split("");
+    if (c.length == 3) {
+      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    c = "0x" + c.join("");
+    return (
+      "rgba(" +
+      [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") +
+      "," +
+      opacity +
+      ")"
+    );
+  }
+  throw new Error("Bad Hex");
+}
+
+// ----- Pugna Components 
 
 // Navigation Searchbox
 var searchboxNav = document.querySelector(".header-item-searchbox");
@@ -186,6 +222,7 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
   }
 }
 
+// Form Floating Label
 var formLabelFloat = document.getElementsByClassName("label--floating");
 
 for (var i = 0; i < formLabelFloat.length; i++) {
@@ -201,7 +238,7 @@ for (var i = 0; i < formLabelFloat.length; i++) {
     this.nextElementSibling.classList.add("float");
 
     if (span) {
-      span.style.borderColor = "#B5D43C";
+      span.style.borderColor = colorScheme.primary;
     }
   });
 
@@ -211,7 +248,7 @@ for (var i = 0; i < formLabelFloat.length; i++) {
       mpc(this.nextElementSibling).toggleClass("float", "default");
 
       if (span) {
-        span.style.borderColor = "rgba(67, 71, 56, 0.2)";
+        span.style.borderColor = hexToRgbA(colorScheme.primary, 0.2);
       }
 
       setTimeout(function() {
@@ -223,16 +260,16 @@ for (var i = 0; i < formLabelFloat.length; i++) {
   if (span) {
     span.addEventListener("click", function() {
       if (input.type == "password") {
-        span.firstElementChild.style.color = "#B5D43C";
+        span.firstElementChild.style.color = colorScheme.primary;
         input.type = "text";
       } else {
-        span.firstElementChild.style.color = "rgba(67, 71, 56, 0.6)";
+        span.firstElementChild.style.color = hexToRgbA(colorScheme.dark, 0.6);
         input.type = "password";
       }
     });
 
     input.addEventListener("focusout", function() {
-      span.style.borderColor = "rgba(67, 71, 56, 0.2)";
+      span.style.borderColor = hexToRgbA(colorScheme.dark, 0.2);
     });
   }
 }
@@ -257,7 +294,9 @@ var tabNavItem, tabContent;
 tabNavItem = document.getElementsByClassName("tab__nav-item");
 tabContent = document.getElementsByClassName("tab__content");
 
-var tabContentLv1 = [], tabContentLv2 = [], tabNavItemLv2 = [];
+var tabContentLv1 = [],
+  tabContentLv2 = [],
+  tabNavItemLv2 = [];
 
 for (let ftc = 0; ftc < tabContent.length; ftc++) {
   if (

@@ -1,10 +1,3 @@
-var primaryColor = window
-  .getComputedStyle(document.querySelector(".sidebar-control"), null)
-  .getPropertyValue("background-color");
-var secondaryColor = window
-  .getComputedStyle(document.querySelector(".main-content .header"), null)
-  .getPropertyValue("background-color");
-
 // Line Chart
 var ctxLine = document.getElementsByClassName("line-chart");
 var ctxLineMulti = document.getElementsByClassName("line-chart-multi");
@@ -32,10 +25,10 @@ function setOption(arr) {
       datasets: [
         {
           data: arr,
-          backgroundColor: secondaryColor,
-          borderColor: primaryColor,
+          backgroundColor: colorScheme.secondary,
+          borderColor: colorScheme.secondary,
           borderWidth: 2,
-          pointBackgroundColor: primaryColor,
+          pointBackgroundColor: colorScheme.secondary,
           pointBorderWidth: 0,
         }
       ]

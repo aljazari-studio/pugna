@@ -1,7 +1,3 @@
-var primaryColor = window
-  .getComputedStyle(document.querySelector(".sidebar-control"), null)
-  .getPropertyValue("background-color");
-
 // Line Chart
 var ctxLine = document.getElementsByClassName("line-chart");
 
@@ -29,7 +25,7 @@ function setOption(arr) {
         {
           data: arr,
           backgroundColor: "rgba(0, 0, 0, 0)",
-          borderColor: primaryColor,
+          borderColor: colorScheme.secondary,
           borderWidth: 2
         }
       ]

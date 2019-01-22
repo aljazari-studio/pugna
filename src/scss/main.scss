@@ -1,5 +1,25 @@
 @import "_color";
 
+:root {
+  --pg-primary: #{$primary};
+  --pg-secondary: #{$secondary};
+  --pg-light: #{$light};
+  --pg-dark: #{$dark};
+}
+
+// .pg-scheme-primary {
+//   color: $primary;
+// }
+// .pg-scheme-secondary {
+//   color: $secondary;
+// }
+// .pg-scheme-light {
+//   color: $light;
+// }
+// .pg-scheme-dark {
+//   color: $dark;
+// }
+
 * {
   outline: 0;
 }
