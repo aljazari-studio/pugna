@@ -314,7 +314,7 @@ for (let ftc = 0; ftc < tabContent.length; ftc++) {
 
 for (let tbB = 0; tbB < tabContentLv1.length; tbB++) {
   if (tabNavItem[tbB].classList.contains("active")) {
-    tabContentLv1[tbB].style.display = "block";
+    tabContentLv1[tbB].style.display = "flex";
   } else {
     tabContentLv1[tbB].style.display = "none";
   }
@@ -322,7 +322,7 @@ for (let tbB = 0; tbB < tabContentLv1.length; tbB++) {
 
 for (let tbBChild = 0; tbBChild < tabContentLv2.length; tbBChild++) {
   if (tabNavItemLv2[tbBChild].classList.contains("active")) {
-    tabContentLv2[tbBChild].style.display = "block";
+    tabContentLv2[tbBChild].style.display = "flex";
   } else {
     tabContentLv2[tbBChild].style.display = "none";
   }
@@ -344,6 +344,6 @@ for (let tbH = 0; tbH < tabNavItem.length; tbH++) {
 
     this.classList.add("active");
 
-    document.querySelector(this.dataset.tab).style.display = "block";
+    document.querySelector(this.dataset.tab).style.display = "flex";
   });
 }

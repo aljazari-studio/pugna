@@ -1940,6 +1940,33 @@ li {
   background: white;
   border-radius: 4px;
   box-shadow: 0 1px 5px 1px rgba(9, 38, 74, 0.1); }
+  .tab.vertical {
+    display: flex;
+    align-items: flex-start;
+    background: none;
+    box-shadow: none; }
+    .tab.vertical > .tab-header {
+      min-width: 10%; }
+      .tab.vertical > .tab-header .tab__navigation {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+        .tab.vertical > .tab-header .tab__navigation .tab__nav-item {
+          padding: auto 5px;
+          width: 100%;
+          background: white; }
+          .tab.vertical > .tab-header .tab__navigation .tab__nav-item:first-child {
+            border-top-left-radius: 3px; }
+          .tab.vertical > .tab-header .tab__navigation .tab__nav-item:last-child {
+            border-bottom-left-radius: 3px; }
+          .tab.vertical > .tab-header .tab__navigation .tab__nav-item.active {
+            border-color: transparent #FFA939 transparent transparent; }
+    .tab.vertical > .tab-body {
+      flex-grow: 1;
+      max-width: 90%;
+      background: white;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 1px 5px 1px rgba(9, 38, 74, 0.1); }
   .tab .tab-header {
     display: flex;
     align-items: center;
@@ -1960,7 +1987,7 @@ li {
       display: flex; }
       .tab .tab-header .tab__navigation .tab__nav-item {
         margin: 0;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         border: 3px solid rgba(184, 216, 224, 0.1);
         border-bottom-color: transparent;
         cursor: pointer; }
@@ -1969,15 +1996,23 @@ li {
         .tab .tab-header .tab__navigation .tab__nav-item:not(.active) {
           border-color: transparent; }
         .tab .tab-header .tab__navigation .tab__nav-item.active {
-          border-bottom-color: #FFA939; }
+          border-color: transparent transparent #FFA939 transparent;
+          color: #FFA939; }
         .tab .tab-header .tab__navigation .tab__nav-item:first-child {
           border-top-left-radius: 3px; }
         .tab .tab-header .tab__navigation .tab__nav-item:last-child {
           border-top-right-radius: 3px; }
   .tab .tab-body {
-    padding: 0.75rem 1rem; }
+    padding: 1rem 1.5rem; }
     .tab .tab-body.responsive {
       overflow-x: auto; }
+    .tab .tab-body img {
+      max-width: 100%; }
+    .tab .tab-body .tab__content {
+      display: flex;
+      flex-direction: column; }
+      .tab .tab-body .tab__content h3, .tab .tab-body .tab__content p {
+        margin-top: 0; }
   .tab .tab-footer {
     padding: 0.75rem 1rem;
     background: rgba(255, 169, 57, 0.1);

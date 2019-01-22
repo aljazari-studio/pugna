@@ -7,48 +7,59 @@
   border-radius: 4px;
   box-shadow: 0 1px 5px 1px rgba($dark, 0.1);
 
-  // &.tab--dark {
-  //   background: $dark;
+  &.vertical {
+    display: flex;
 
-  //   & .tab-header {
-  //     color: white;
+    align-items: flex-start;
 
-  //     & a {
-  //       & i {
-  //         background: $dark;
+    background: none;
+    box-shadow: none;
 
-  //         color: white;
+    & > .tab-header {
+      min-width: 10%;
 
-  //         &.active,
-  //         &:hover {
-  //           background: rgba($light, 0.1);
-  //         }
-  //       }
-  //     }
-  //   }
+      & .tab__navigation {
+        display: flex;
+        flex-direction: column;
 
-  //   & .pagination-wrapper {
-  //     background: $dark;
+        width: 100%;
 
-  //     & .pagination .pagination-item a {
-  //       background: $light;
+        & .tab__nav-item {
+          padding: auto 5px;
 
-  //       color: $dark;
+          width: 100%;
 
-  //       &.active {
-  //         background: $secondary;
+          background: white;
 
-  //         color: $dark;
-  //       }
-  //     }
-  //   }
-  // }
+          &:first-child {
+            border-top-left-radius: 3px;
+          }
+
+          &:last-child {
+            border-bottom-left-radius: 3px;
+          }
+
+          &.active {
+            border-color: transparent $primary transparent transparent;
+          }
+        }
+      }
+    }
+
+    & > .tab-body {
+      flex-grow: 1;
+
+      max-width: 90%;
+
+      background: white;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 1px 5px 1px rgba($dark, 0.1);
+    }
+  }
 
   & .tab-header {
     display: flex;
     align-items: center;
-
-    // padding: 0.75rem 1rem;
 
     border-bottom: 1px solid rgba($dark, 0.05);
 
@@ -62,71 +73,10 @@
       margin: 0;
     }
 
-    // & form.searchbox {
-    //   display: inline;
-
-    //   & input[type="text"] {
-    //     margin-right: 10px;
-    //     padding: 6px 28px 6px 14px;
-
-    //     height: 25px;
-    //     width: 220px;
-
-    //     border: 1px solid rgba($dark, 0.2);
-    //     background: white;
-    //     border-radius: 20px;
-
-    //     &:active,
-    //     &:focus {
-    //       border-color: $primary;
-    //     }
-    //   }
-    // }
-
     & a {
       margin-left: auto;
       cursor: pointer;
     }
-
-    // & .chip--floating {
-    //   position: absolute;
-    //   top: 3px;
-    //   left: 2rem;
-
-    //   padding: 6px 8px;
-
-    //   width: fit-content;
-
-    //   background: $primary;
-    //   border-radius: 20px 20px;
-
-    //   font-size: 0.75rem !important;
-    //   font-weight: bold;
-    //   color: white;
-    // }
-
-    // & > .toolbox {
-    //   position: relative;
-
-    //   margin-left: auto;
-    //   cursor: pointer;
-
-    //   & > a {
-    //     margin: 0 5px;
-
-    //     & > i {
-    //       padding: 6px;
-
-    //       background: white;
-    //       border-radius: 100%;
-
-    //       &.active,
-    //       &:hover {
-    //         background: rgba($primary, 0.3) !important;
-    //       }
-    //     }
-    //   }
-    // }
 
     & .tab__navigation {
       list-style-type: none;
@@ -138,7 +88,7 @@
 
       & .tab__nav-item {
         margin: 0;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
 
         border: 3px solid rgba($secondary, 0.1);
         border-bottom-color: transparent;
@@ -146,7 +96,7 @@
         cursor: pointer;
 
         &:hover {
-          background: rgba($secondary, .2);
+          background: rgba($secondary, 0.2);
         }
 
         &:not(.active) {
@@ -154,7 +104,9 @@
         }
 
         &.active {
-          border-bottom-color: $primary;
+          border-color: transparent transparent $primary transparent;
+
+          color: $primary;
         }
 
         &:first-child {
@@ -169,10 +121,23 @@
   }
 
   & .tab-body {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.5rem;
 
     &.responsive {
       overflow-x: auto;
+    }
+
+    & img {
+      max-width: 100%;
+    }
+
+    & .tab__content {
+      display: flex;
+      flex-direction: column;
+
+      & h3, & p {
+        margin-top: 0;
+      }
     }
   }
 
