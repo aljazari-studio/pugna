@@ -25,6 +25,21 @@
           }
         }
       }
+
+      & > .toolbox {
+        & > a {
+          & > i {
+            background: white;
+
+            color: $dark;
+
+            &.active,
+            &:hover {
+              background: $secondary !important;
+            }
+          }
+        }
+      }
     }
 
     & .pagination-wrapper {
@@ -86,13 +101,6 @@
     & a {
       margin-left: auto;
       cursor: pointer;
-
-      // & i {
-      //   padding: 6px;
-
-      //   background: white;
-      //   border-radius: 100%;
-      // }
     }
 
     & .chip--floating {

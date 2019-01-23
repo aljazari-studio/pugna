@@ -91,6 +91,11 @@
         color: white; }
         .box.box--dark .box-header a i.active, .box.box--dark .box-header a i:hover {
           background: rgba(252, 245, 239, 0.1); }
+      .box.box--dark .box-header > .toolbox > a > i {
+        background: white;
+        color: #09264A; }
+        .box.box--dark .box-header > .toolbox > a > i.active, .box.box--dark .box-header > .toolbox > a > i:hover {
+          background: #B8D8E0 !important; }
     .box.box--dark .pagination-wrapper {
       background: #09264A; }
       .box.box--dark .pagination-wrapper .pagination .pagination-item a {
