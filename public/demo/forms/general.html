@@ -247,17 +247,147 @@
           <div class="chat-form"><button class="btn-attach"><i class="la la-paperclip"></i></button><input type="text" name="chat" placeholder="Isi pesan Anda..."><input type="file" name="file"></div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="box">
-            <div class="box-header">
-              <h3>Quick Example</h3>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box">
+              <div class="box-header">
+                <h3>Quick Example</h3>
+              </div>
+              <div class="box-body">
+                <div class="form-group label--floating"><input type="text" name=""><label>Full name</label></div>
+                <div class="form-group label--floating"><input type="email" name=""><label>Email address</label></div>
+                <div class="form-group label--floating"><input type="password" name=""><label>Password</label></div>
+                <div class="form-group"><label>File input</label>
+                  <div class="form-file"><button class="btn-file"><i class="la la-upload"></i></button><input type="file" name="">
+                    <div class="file-container">
+                      <p>Namafile.ext</p><progress value="22" max="100"></progress>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer"><button class="btn btn-md btn-primary">Submit</button></div>
             </div>
-            <div class="box-body">
-              <div class="form-group label--floating"><input type="text" name=""><label>Full name</label></div>
-              <div class="form-group label--floating"><input type="email" name=""><label>Email address</label></div>
-              <div class="form-group label--floating"><input type="password" name=""><label>Password</label></div>
-              <div class="form-group"><label>File input</label>
+            <div class="box mt-4">
+              <div class="box-header">
+                <h3>General Elements</h3>
+              </div>
+              <div class="box-body">
+                <hr class="mt-0" data-hr="text">
+                <div class="form-group"><label>Default</label><input type="text" name=""></div>
+                <div class="form-group"><label>Disabled</label><input type="text" name="" disabled></div>
+                <hr data-hr="textarea">
+                <div class="form-group"><label>Default</label><textarea name="" cols="30" rows="4"></textarea></div>
+                <div class="form-group"><label>Disabled</label><textarea name="" cols="30" rows="4" disabled></textarea></div>
+                <hr data-hr="select">
+                <div class="form-group"><label>Default</label><select name="">
+                    <option value="">Option 1</option>
+                    <option value="">Option 2</option>
+                    <option value="">Option 3</option>
+                  </select></div>
+                <div class="form-group"><label>Disabled</label><select name="" disabled>
+                    <option value="" selected>Option 1</option>
+                    <option value="">Option 2</option>
+                    <option value="">Option 3</option>
+                  </select></div>
+                <hr data-hr="checkbox">
+                <div class="form-group">
+                  <div class="form-checkbox"><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div><span>Default horizontal</span>
+                    </label><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 2</span>
+                    </label><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 3</span>
+                    </label></div>
+                </div>
+                <div class="form-group">
+                  <div class="form-checkbox vertical"><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div><span>Vertical</span>
+                    </label><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 2</span>
+                    </label><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 3</span>
+                    </label></div>
+                </div>
+                <div class="form-group">
+                  <div class="form-checkbox"><label>
+                      <div class="pgn-checkbox"><input type="checkbox" name="" disabled><span></span></div><span>Disabled</span>
+                    </label></div>
+                </div>
+                <hr data-hr="radio">
+                <div class="form-group">
+                  <div class="form-radio"><label>
+                      <div class="pgn-radio"><input type="radio" name="horizontal" checked><span></span></div><span>Default horizontal</span>
+                    </label><label>
+                      <div class="pgn-radio"><input type="radio" name="horizontal"><span></span></div><span>Radio 2</span>
+                    </label><label>
+                      <div class="pgn-radio"><input type="radio" name="horizontal"><span></span></div><span>Radio 3</span>
+                    </label></div>
+                </div>
+                <div class="form-group">
+                  <div class="form-radio vertical"><label>
+                      <div class="pgn-radio"><input type="radio" name="vertical" checked><span></span></div><span>Vertical</span>
+                    </label><label>
+                      <div class="pgn-radio"><input type="radio" name="vertical"><span></span></div><span>Radio 2</span>
+                    </label><label>
+                      <div class="pgn-radio"><input type="radio" name="vertical"><span></span></div><span>Radio 3</span>
+                    </label></div>
+                </div>
+                <div class="form-group">
+                  <div class="form-radio"><label>
+                      <div class="pgn-radio"><input type="radio" name="" disabled><span></span></div><span>Disabled</span>
+                    </label></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <div class="box-header">
+                <h3>Input Size & Alignment</h3>
+              </div>
+              <div class="box-body">
+                <hr class="mt-0" data-hr="height">
+                <div class="form-group form-group--lg"><label>Large</label><input type="text" name=""></div>
+                <div class="form-group"><label>Default</label><input type="text" name=""></div>
+                <div class="form-group form-group--sm"><label>Small</label><input type="text" name=""></div>
+                <hr data-hr="width">
+                <div class="form-group"><label>100% (default)</label><input type="text" name=""></div>
+                <div class="form-group w-75"><label>75%</label><input type="text" name=""></div>
+                <div class="form-group w-50"><label>50%</label><input type="text" name=""></div>
+                <div class="form-group w-25"><label>25%</label><input type="text" name=""></div>
+                <hr data-hr="alignment">
+                <div class="form-group"><label>Vertical (default)</label><input type="text" name=""></div>
+                <div class="form-group horizontal"><label>Horizontal</label><input type="text" name=""></div>
+              </div>
+            </div>
+            <div class="box mt-4">
+              <div class="box-header">
+                <h3>Custom Elements</h3>
+              </div>
+              <div class="box-body">
+                <hr class="mt-0" data-hr="custom input">
+                <div class="form-group label--floating"><input type="text" name=""><label>Floating label</label></div>
+                <div class="form-group with-addon"><span>Referral code</span><input type="text" name=""></div>
+                <div class="form-group with-addon"><span><i class="la la-dollar"></i></span><input type="text" name=""></div>
+                <div class="form-group with-addon addon--right"><span>.00</span><input type="text" name=""></div>
+                <div class="form-group with-addon"><span> <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div></span><input type="text" name="">
+              </div>
+              <hr data-hr="custom select dropdown">
+              <div class="form-group">
+                <div class="form-select pgn-select"><select name="">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5" selected>Option 5</option>
+                    <option value="6">Option 6</option>
+                    <option value="7">Option 7</option>
+                    <option value="8">Option 8</option>
+                  </select></div>
+              </div>
+              <hr data-hr="file upload with progress">
+              <div class="form-group">
                 <div class="form-file"><button class="btn-file"><i class="la la-upload"></i></button><input type="file" name="">
                   <div class="file-container">
                     <p>Namafile.ext</p><progress value="22" max="100"></progress>
@@ -265,138 +395,11 @@
                 </div>
               </div>
             </div>
-            <div class="box-footer"><button class="btn btn-md btn-primary">Submit</button></div>
-          </div>
-          <div class="box mt-4">
-            <div class="box-header">
-              <h3>General Elements</h3>
-            </div>
-            <div class="box-body">
-              <hr class="mt-0" data-hr="text">
-              <div class="form-group"><label>Default</label><input type="text" name=""></div>
-              <div class="form-group"><label>Disabled</label><input type="text" name="" disabled></div>
-              <hr data-hr="textarea">
-              <div class="form-group"><label>Default</label><textarea name="" cols="30" rows="4"></textarea></div>
-              <div class="form-group"><label>Disabled</label><textarea name="" cols="30" rows="4" disabled></textarea></div>
-              <hr data-hr="select">
-              <div class="form-group"><label>Default</label><select name="">
-                  <option value="">Option 1</option>
-                  <option value="">Option 2</option>
-                  <option value="">Option 3</option>
-                </select></div>
-              <div class="form-group"><label>Disabled</label><select name="" disabled>
-                  <option value="" selected>Option 1</option>
-                  <option value="">Option 2</option>
-                  <option value="">Option 3</option>
-                </select></div>
-              <hr data-hr="checkbox">
-              <div class="form-group">
-                <div class="form-checkbox"><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div><span>Default horizontal</span>
-                  </label><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 2</span>
-                  </label><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 3</span>
-                  </label></div>
-              </div>
-              <div class="form-group">
-                <div class="form-checkbox vertical"><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name="" checked><span></span></div><span>Vertical</span>
-                  </label><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 2</span>
-                  </label><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div><span>Checkbox 3</span>
-                  </label></div>
-              </div>
-              <div class="form-group">
-                <div class="form-checkbox"><label>
-                    <div class="pgn-checkbox"><input type="checkbox" name="" disabled><span></span></div><span>Disabled</span>
-                  </label></div>
-              </div>
-              <hr data-hr="radio">
-              <div class="form-group">
-                <div class="form-radio"><label>
-                    <div class="pgn-radio"><input type="radio" name="horizontal" checked><span></span></div><span>Default horizontal</span>
-                  </label><label>
-                    <div class="pgn-radio"><input type="radio" name="horizontal"><span></span></div><span>Radio 2</span>
-                  </label><label>
-                    <div class="pgn-radio"><input type="radio" name="horizontal"><span></span></div><span>Radio 3</span>
-                  </label></div>
-              </div>
-              <div class="form-group">
-                <div class="form-radio vertical"><label>
-                    <div class="pgn-radio"><input type="radio" name="vertical" checked><span></span></div><span>Vertical</span>
-                  </label><label>
-                    <div class="pgn-radio"><input type="radio" name="vertical"><span></span></div><span>Radio 2</span>
-                  </label><label>
-                    <div class="pgn-radio"><input type="radio" name="vertical"><span></span></div><span>Radio 3</span>
-                  </label></div>
-              </div>
-              <div class="form-group">
-                <div class="form-radio"><label>
-                    <div class="pgn-radio"><input type="radio" name="" disabled><span></span></div><span>Disabled</span>
-                  </label></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box">
-            <div class="box-header">
-              <h3>Input Size & Alignment</h3>
-            </div>
-            <div class="box-body">
-              <hr class="mt-0" data-hr="height">
-              <div class="form-group form-group--lg"><label>Large</label><input type="text" name=""></div>
-              <div class="form-group"><label>Default</label><input type="text" name=""></div>
-              <div class="form-group form-group--sm"><label>Small</label><input type="text" name=""></div>
-              <hr data-hr="width">
-              <div class="form-group"><label>100% (default)</label><input type="text" name=""></div>
-              <div class="form-group w-75"><label>75%</label><input type="text" name=""></div>
-              <div class="form-group w-50"><label>50%</label><input type="text" name=""></div>
-              <div class="form-group w-25"><label>25%</label><input type="text" name=""></div>
-              <hr data-hr="alignment">
-              <div class="form-group"><label>Vertical (default)</label><input type="text" name=""></div>
-              <div class="form-group horizontal"><label>Horizontal</label><input type="text" name=""></div>
-            </div>
-          </div>
-          <div class="box mt-4">
-            <div class="box-header">
-              <h3>Custom Elements</h3>
-            </div>
-            <div class="box-body">
-              <hr class="mt-0" data-hr="custom input">
-              <div class="form-group label--floating"><input type="text" name=""><label>Floating label</label></div>
-              <div class="form-group with-addon"><span>Referral code</span><input type="text" name=""></div>
-              <div class="form-group with-addon"><span><i class="la la-dollar"></i></span><input type="text" name=""></div>
-              <div class="form-group with-addon addon--right"><span>.00</span><input type="text" name=""></div>
-              <div class="form-group with-addon"><span> <div class="pgn-checkbox"><input type="checkbox" name=""><span></span></div></span><input type="text" name="">
-            </div>
-            <hr data-hr="custom select dropdown">
-            <div class="form-group">
-              <div class="form-select pgn-select"><select name="">
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                  <option value="4">Option 4</option>
-                  <option value="5" selected>Option 5</option>
-                  <option value="6">Option 6</option>
-                  <option value="7">Option 7</option>
-                  <option value="8">Option 8</option>
-                </select></div>
-            </div>
-            <hr data-hr="file upload with progress">
-            <div class="form-group">
-              <div class="form-file"><button class="btn-file"><i class="la la-upload"></i></button><input type="file" name="">
-                <div class="file-container">
-                  <p>Namafile.ext</p><progress value="22" max="100"></progress>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="footer"><span><b>Pugna</b> - Admin Template by <a href="https://github.com/aljazari-studio/pugna" target="_blank">Al Jazari Studio</a></span></div>
   </div>
   </div>
   <script src="../../dist/js/main.js"></script>

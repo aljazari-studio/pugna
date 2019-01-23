@@ -26,19 +26,22 @@ html(lang="en")
       +header("Advanced Form", "Components", "Forms", "Advanced")
       .content-wrapper
         include ../../main-content/chatbox
-        .row
-          .col-md-6
-            .box
-              .box-header
-                h3 Choices.js
-                a(href="https://github.com/jshjohnson/Choices", target="_blank")
-                  i.la.la-github
-              .box-body
-                div.pt-1
-                  input(id="js-choice", type="text", name="")
-                  .form-group
-                    label Result
-                    input(id="js-choice-res", type="text", name="", disabled=true)
+        .container-fluid
+          .row
+            .col-md-6
+              .box
+                .box-header
+                  h3 Choices.js
+                  a(href="https://github.com/jshjohnson/Choices", target="_blank")
+                    i.la.la-github
+                .box-body
+                  div.pt-1
+                    input(id="js-choice", type="text", name="")
+                    .form-group
+                      label Result
+                      input(id="js-choice-res", type="text", name="", disabled=true)
+
+        include ../../main-content/footer
 
     script(src=distDir + "js/main.js")
     script(src=distDir + "js/choices.min.js")

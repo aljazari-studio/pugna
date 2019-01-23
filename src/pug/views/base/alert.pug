@@ -25,84 +25,86 @@ html(lang="en")
       +header("Alerts", "Components", "Base", "Alerts")
       .content-wrapper
         include ../../main-content/chatbox
-        .row
-          .col-md-6
-            .box
-              .box-header
-                h3 Alerts
-              .box-body
-                .alert
-                  p Default
-                    span Hello this is default alert.
-                .alert.alert--success
-                  p Success
-                    span You success alert is showing after successful transaction.
-                .alert.alert--info
-                  p Info
-                    span Just to inform you, this one is info alert.
-                .alert.alert--warning
-                  p Warning
-                    span Your account is not verified yet, the system will automatically remove it in 3 days
-                .alert.alert--danger
-                  p Danger
-                    span Change a few things up and try submitting again.
+        .container-fluid
+          .row
+            .col-md-6
+              .box
+                .box-header
+                  h3 Alerts
+                .box-body
+                  .alert
+                    p Default
+                      span Hello this is default alert.
+                  .alert.alert--success
+                    p Success
+                      span You success alert is showing after successful transaction.
+                  .alert.alert--info
+                    p Info
+                      span Just to inform you, this one is info alert.
+                  .alert.alert--warning
+                    p Warning
+                      span Your account is not verified yet, the system will automatically remove it in 3 days
+                  .alert.alert--danger
+                    p Danger
+                      span Change a few things up and try submitting again.
 
-          .col-md-6
-            .box
-              .box-header
-                h3 Alerts Invert
-              .box-body
-                .alert
-                  p Default
-                    span Hello this is default alert.
-                .alert.alert--success.alert--invert
-                  p Success
-                    span You success alert is showing after successful transaction.
-                .alert.alert--info.alert--invert
-                  p Info
-                    span Just to inform you, this one is info alert.
-                .alert.alert--warning.alert--invert
-                  p Warning
-                    span Your account is not verified yet, the system will automatically remove it in 3 days
-                .alert.alert--danger.alert--invert
-                  p Danger
-                    span Change a few things up and try submitting again.
+            .col-md-6
+              .box
+                .box-header
+                  h3 Alerts Invert
+                .box-body
+                  .alert
+                    p Default
+                      span Hello this is default alert.
+                  .alert.alert--success.alert--invert
+                    p Success
+                      span You success alert is showing after successful transaction.
+                  .alert.alert--info.alert--invert
+                    p Info
+                      span Just to inform you, this one is info alert.
+                  .alert.alert--warning.alert--invert
+                    p Warning
+                      span Your account is not verified yet, the system will automatically remove it in 3 days
+                  .alert.alert--danger.alert--invert
+                    p Danger
+                      span Change a few things up and try submitting again.
 
-          .col-md-6
-            .box
-              .box-header
-                h3 Dismissible Alerts
-              .box-body
-                .alert.alert--dismissible
-                  p Default
-                    span Hello this is default alert.
-                  .alert-dismiss
-                    button.btn.btn-icon
-                      i.la.la-times
-                .alert.alert--success.alert--dismissible
-                  p Success
-                    span You success alert is showing after successful transaction.
-                  .alert-dismiss
-                    button.btn.btn-icon
-                      i.la.la-times
-                .alert.alert--info.alert--dismissible
-                  p Info
-                    span Just to inform you, this one is info alert.
-                  .alert-dismiss
-                    button.btn.btn-icon
-                      i.la.la-times
-                .alert.alert--warning.alert--dismissible
-                  p Warning
-                    span Your account is not verified yet, the system will automatically remove it in 3 days
-                  .alert-dismiss
-                    button.btn.btn-icon
-                      i.la.la-times
-                .alert.alert--danger.alert--dismissible
-                  p Danger
-                    span Change a few things up and try submitting again.
-                  .alert-dismiss
-                    button.btn.btn-icon
-                      i.la.la-times
+            .col-md-6
+              .box
+                .box-header
+                  h3 Dismissible Alerts
+                .box-body
+                  .alert.alert--dismissible
+                    p Default
+                      span Hello this is default alert.
+                    .alert-dismiss
+                      button.btn.btn-icon
+                        i.la.la-times
+                  .alert.alert--success.alert--dismissible
+                    p Success
+                      span You success alert is showing after successful transaction.
+                    .alert-dismiss
+                      button.btn.btn-icon
+                        i.la.la-times
+                  .alert.alert--info.alert--dismissible
+                    p Info
+                      span Just to inform you, this one is info alert.
+                    .alert-dismiss
+                      button.btn.btn-icon
+                        i.la.la-times
+                  .alert.alert--warning.alert--dismissible
+                    p Warning
+                      span Your account is not verified yet, the system will automatically remove it in 3 days
+                    .alert-dismiss
+                      button.btn.btn-icon
+                        i.la.la-times
+                  .alert.alert--danger.alert--dismissible
+                    p Danger
+                      span Change a few things up and try submitting again.
+                    .alert-dismiss
+                      button.btn.btn-icon
+                        i.la.la-times
 
+        include ../../main-content/footer
 
     script(src=distDir +"js/main.js")

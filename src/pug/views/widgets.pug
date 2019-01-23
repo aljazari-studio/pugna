@@ -25,129 +25,132 @@ html(lang="en")
       +header("Widgets", "Component", "Widget", null, "./")
       .content-wrapper
         include ../main-content/chatbox
-        .row
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-area-chart
-                .card-content
-                  h4 Profit
-                  p 45%
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-check-circle
-                .card-content 
-                  h4 Payment
-                  p 1562
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-users
-                .card-content
-                  h4 Verified
-                  p 252
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-bookmark
-                .card-content
-                  h4 Bookmark
-                  p 769
-        
-        .row
-          .col-md-3
-            .card.card-simple-2
-              .card-body
-                i.la.la-area-chart
-                .card-content
-                  h4 Profit
-                  p 45%
-          .col-md-3
-            .card.card-simple-2
-              .card-body
-                i.la.la-check-circle
-                .card-content 
-                  h4 Payment
-                  p 1562
-          .col-md-3
-            .card.card-simple-2
-              .card-body
-                i.la.la-users
-                .card-content
-                  h4 Verified
-                  p 252
-          .col-md-3
-            .card.card-simple-2
-              .card-body
-                i.la.la-bookmark
-                .card-content
-                  h4 Bookmark
-                  p 769
-        
-        .row.card-simple-group
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-area-chart.bg--c-primary
-                .card-content
-                  h4 Profit
-                  p 45%
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-check-circle.bg--c-success
-                .card-content 
-                  h4 Payment
-                  p 1562
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-users.bg--c-warning
-                .card-content
-                  h4 Verified
-                  p 252
-          .col-md-3
-            .card.card-simple-1
-              .card-body
-                i.la.la-bookmark.bg--c-danger
-                .card-content
-                  h4 Bookmark
-                  p 769
-
-        .row
-          .col-md-4
-            .card.card-sales
-              div.canvas-wrapper
-                canvas(class="line-chart")
-              .card-body
-                div
+        .container-fluid
+          .row
+            .col-md-3
+              .card.card-simple-1
+                .card-body
                   i.la.la-area-chart
                   .card-content
-                    h4 Sales
-                    p 3418
-          .col-md-4
-            .card.card-sales
-              div.canvas-wrapper
-                canvas(class="line-chart")
-              .card-body
-                div
+                    h4 Profit
+                    p 45%
+            .col-md-3
+              .card.card-simple-1
+                .card-body
+                  i.la.la-check-circle
+                  .card-content 
+                    h4 Payment
+                    p 1562
+            .col-md-3
+              .card.card-simple-1
+                .card-body
                   i.la.la-users
                   .card-content
-                    h4 Visitors
-                    p 5619
-                      span 
-                        i.la.la-level-up
-          .col-md-4
-            .card.card-sales
-              div.canvas-wrapper
-                canvas(class="line-chart")
-              .card-body
-                div
-                  i.la.la-shopping-cart
+                    h4 Verified
+                    p 252
+            .col-md-3
+              .card.card-simple-1
+                .card-body
+                  i.la.la-bookmark
                   .card-content
-                    h4 Product Sold
-                    p 1238
+                    h4 Bookmark
+                    p 769
+          
+          .row
+            .col-md-3
+              .card.card-simple-2
+                .card-body
+                  i.la.la-area-chart
+                  .card-content
+                    h4 Profit
+                    p 45%
+            .col-md-3
+              .card.card-simple-2
+                .card-body
+                  i.la.la-check-circle
+                  .card-content 
+                    h4 Payment
+                    p 1562
+            .col-md-3
+              .card.card-simple-2
+                .card-body
+                  i.la.la-users
+                  .card-content
+                    h4 Verified
+                    p 252
+            .col-md-3
+              .card.card-simple-2
+                .card-body
+                  i.la.la-bookmark
+                  .card-content
+                    h4 Bookmark
+                    p 769
+          
+          .row.card-simple-group
+            .col-md-3
+              .card.card-simple-1
+                .card-body
+                  i.la.la-area-chart.bg--c-primary
+                  .card-content
+                    h4 Profit
+                    p 45%
+            .col-md-3
+              .card.card-simple-1
+                .card-body
+                  i.la.la-check-circle.bg--c-success
+                  .card-content 
+                    h4 Payment
+                    p 1562
+            .col-md-3
+              .card.card-simple-1
+                .card-body
+                  i.la.la-users.bg--c-warning
+                  .card-content
+                    h4 Verified
+                    p 252
+            .col-md-3
+              .card.card-simple-1
+                .card-body
+                  i.la.la-bookmark.bg--c-danger
+                  .card-content
+                    h4 Bookmark
+                    p 769
+
+          .row
+            .col-md-4
+              .card.card-sales
+                div.canvas-wrapper
+                  canvas(class="line-chart")
+                .card-body
+                  div
+                    i.la.la-area-chart
+                    .card-content
+                      h4 Sales
+                      p 3418
+            .col-md-4
+              .card.card-sales
+                div.canvas-wrapper
+                  canvas(class="line-chart")
+                .card-body
+                  div
+                    i.la.la-users
+                    .card-content
+                      h4 Visitors
+                      p 5619
+                        span 
+                          i.la.la-level-up
+            .col-md-4
+              .card.card-sales
+                div.canvas-wrapper
+                  canvas(class="line-chart")
+                .card-body
+                  div
+                    i.la.la-shopping-cart
+                    .card-content
+                      h4 Product Sold
+                      p 1238
+
+        include ../main-content/footer
 
     script(src=distDir + "js/main.js")
     script(src=distDir + "js/chartDemoWidget.js")

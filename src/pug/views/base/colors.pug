@@ -25,59 +25,62 @@ html(lang="en")
       +header("Colors", "Components", "Base", "Colors")
       .content-wrapper
         include ../../main-content/chatbox
-        .row
-          .col-12
-            .box
-              .box-header
-                h3 Color Scheme
-              .box-body
-                .row.p-3
-                  .col-md-3.col-12.p-0
-                    .color-scheme
-                      .color-inner(style="background: #B5D43C; color: #F7F7F7;") #B5D43C
-                      .color-inner(style="background: #D9EF81; color: #434738;") #D9EF81
-                      .color-inner(style="background: #F7F7F7; color: #434738;") #F7F7F7
-                      .color-inner(style="background: #434738; color: #F7F7F7;") #434738
+        .container-fluid
+          .row
+            .col-12
+              .box
+                .box-header
+                  h3 Color Scheme
+                .box-body
+                  .row.p-3
+                    .col-md-3.col-12.p-0
+                      .color-scheme
+                        .color-inner(style="background: #B5D43C; color: #F7F7F7;") #B5D43C
+                        .color-inner(style="background: #D9EF81; color: #434738;") #D9EF81
+                        .color-inner(style="background: #F7F7F7; color: #434738;") #F7F7F7
+                        .color-inner(style="background: #434738; color: #F7F7F7;") #434738
 
-                  .col-md-3.col-12.p-0
-                    .color-scheme
-                      .color-inner(style="background: #F752A7; color: #FFFFFF;") #F752A7
-                      .color-inner(style="background: #FBDDEC; color: #131E77;") #FBDDEC
-                      .color-inner(style="background: #FFFFFF; color: #131E77;") #FFFFFF
-                      .color-inner(style="background: #131E77; color: #FFFFFF;") #131E77
+                    .col-md-3.col-12.p-0
+                      .color-scheme
+                        .color-inner(style="background: #F752A7; color: #FFFFFF;") #F752A7
+                        .color-inner(style="background: #FBDDEC; color: #131E77;") #FBDDEC
+                        .color-inner(style="background: #FFFFFF; color: #131E77;") #FFFFFF
+                        .color-inner(style="background: #131E77; color: #FFFFFF;") #131E77
 
-                  .col-md-3.col-12.p-0
-                    .color-scheme
-                      .color-inner(style="background: #EB6E3D; color: #F2EFF1;") #EB6E3D
-                      .color-inner(style="background: #FFD764; color: #2D2B36;") #FFD764
-                      .color-inner(style="background: #F2EFF1; color: #2D2B36;") #F2EFF1
-                      .color-inner(style="background: #2D2B36; color: #F2EFF1;") #2D2B36
+                    .col-md-3.col-12.p-0
+                      .color-scheme
+                        .color-inner(style="background: #EB6E3D; color: #F2EFF1;") #EB6E3D
+                        .color-inner(style="background: #FFD764; color: #2D2B36;") #FFD764
+                        .color-inner(style="background: #F2EFF1; color: #2D2B36;") #F2EFF1
+                        .color-inner(style="background: #2D2B36; color: #F2EFF1;") #2D2B36
 
-                  .col-md-3.col-12.p-0
-                    .color-scheme
-                      .color-inner(style="background: #5BD3C7; color: #FFFFFF;") #5BD3C7
-                      .color-inner(style="background: #ECECEC; color: #3B3B3B;") #ECECEC
-                      .color-inner(style="background: #FFFFFF; color: #3B3B3B;") #FFFFFF
-                      .color-inner(style="background: #3B3B3B; color: #FFFFFF;") #3B3B3B
+                    .col-md-3.col-12.p-0
+                      .color-scheme
+                        .color-inner(style="background: #5BD3C7; color: #FFFFFF;") #5BD3C7
+                        .color-inner(style="background: #ECECEC; color: #3B3B3B;") #ECECEC
+                        .color-inner(style="background: #FFFFFF; color: #3B3B3B;") #FFFFFF
+                        .color-inner(style="background: #3B3B3B; color: #FFFFFF;") #3B3B3B
 
-                .row.px-3
-                  .col-12
-                    hr(data-hr="opacity rule")
-                  .color-box(style="background: rgb(181, 212, 60, 1); color: #FFFFFF;") 100% 
-                  .color-box(style="background: rgb(181, 212, 60, .4); color: #434738;") 40%
-                  .color-box(style="background: rgb(181, 212, 60, .2); color: #434738;") 20%
-                  .color-box(style="background: rgb(181, 212, 60, .1); color: #434738;") 10%
-                
-                .row.px-3
-                  .col-12
-                    hr(data-hr="additional")
-                  .color-box(style="background: #4FA4F3; color: #F7F7F7;") #4FA4F3
-                  .color-box(style="background: #C8E3F5; color: #434738;") #C8E3F5
-                  .color-box(style="background: #2BCBBA; color: #F7F7F7;") #2BCBBA
-                  .color-box(style="background: #FFCC54; color: #434738;") #FFCC54
-                  .color-box(style="background: #F6554D; color: #F7F7F7;") #F6554D
-                  .color-box(style="background: #FF8B35; color: #F7F7F7;") #FF8B35
-                  .color-box(style="background: #FF2F6C; color: #F7F7F7;") #FF2F6C
-                  .color-box(style="background: #612D90; color: #F7F7F7;") #612D90
+                  .row.px-3
+                    .col-12
+                      hr(data-hr="opacity rule")
+                    .color-box(style="background: rgb(181, 212, 60, 1); color: #FFFFFF;") 100% 
+                    .color-box(style="background: rgb(181, 212, 60, .4); color: #434738;") 40%
+                    .color-box(style="background: rgb(181, 212, 60, .2); color: #434738;") 20%
+                    .color-box(style="background: rgb(181, 212, 60, .1); color: #434738;") 10%
+                  
+                  .row.px-3
+                    .col-12
+                      hr(data-hr="additional")
+                    .color-box(style="background: #4FA4F3; color: #F7F7F7;") #4FA4F3
+                    .color-box(style="background: #C8E3F5; color: #434738;") #C8E3F5
+                    .color-box(style="background: #2BCBBA; color: #F7F7F7;") #2BCBBA
+                    .color-box(style="background: #FFCC54; color: #434738;") #FFCC54
+                    .color-box(style="background: #F6554D; color: #F7F7F7;") #F6554D
+                    .color-box(style="background: #FF8B35; color: #F7F7F7;") #FF8B35
+                    .color-box(style="background: #FF2F6C; color: #F7F7F7;") #FF2F6C
+                    .color-box(style="background: #612D90; color: #F7F7F7;") #612D90
+
+        include ../../main-content/footer
 
     script(src=distDir +"js/main.js")
