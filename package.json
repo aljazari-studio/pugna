@@ -1,8 +1,27 @@
 {
-  "name": "gulp-pug-sass",
+  "name": "pugna",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pugna is an admin template built with the power of Pug reusable feature and the beauty of Vanilla CSS and Javascript.",
+  "author": "Fathur Hidayat",
+  "license": "MIT",
+  "homepage": "https://github.com/aljazari-studio/pugna",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aljazari-studio/pugna.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "pug",
+    "sass",
+    "template",
+    "admin",
+    "theme",
+    "backend",
+    "responsive"
+  ],
   "dependencies": {
     "choices.js": "^4.1.3",
     "sortablejs": "^1.8.0-rc1"
@@ -18,7 +37,5 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Fathur Hidayat",
-  "license": "ISC"
+  }
 }
