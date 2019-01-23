@@ -167,6 +167,8 @@ li {
   justify-content: center;
   align-items: center;
 
+  padding: 0 2rem;
+
   & h1 {
     position: relative;
 
@@ -200,6 +202,20 @@ li {
     font-family: "Roboto";
     font-size: .8rem;
   }
+}
+
+@media (max-width: 575.98px) {
+  .error-wrapper {
+    text-align: center;
+
+    & h1 {
+      font-size: 4rem;
+    }
+
+    & p {
+      margin: .25rem 0 .75rem 0;
+    }
+  }     
 }
 
 .scroll-x {
