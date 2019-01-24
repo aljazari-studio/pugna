@@ -1,5 +1,3 @@
-@import "_color";
-
 :root {
   --pg-primary: #{$primary};
   --pg-secondary: #{$secondary};
@@ -470,7 +468,7 @@ li {
 
     font-size: 0.8rem;
 
-    &:first-child {
+    &:nth-of-type(2) {
       border-radius: 4px 4px 0 0;
     }
 

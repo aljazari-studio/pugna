@@ -1,0 +1,8 @@
+@import "../_color";
+
+$primary: theme-color("sport", "primary");
+$secondary: theme-color("sport", "secondary");
+$light: theme-color("sport", "light");
+$dark: theme-color("sport", "dark");
+
+@import "../components/*";

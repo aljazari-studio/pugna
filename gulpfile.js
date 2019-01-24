@@ -3,6 +3,7 @@ const browserSync = require("browser-sync");
 const pug = require("gulp-pug");
 const prettyHtml = require("gulp-pretty-html");
 const sass = require("gulp-sass");
+const sassGlob = require("gulp-sass-glob");
 const concat = require("gulp-concat");
 
 gulp.task("pug", function() {
@@ -18,13 +19,18 @@ gulp.task("pug", function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task("sass", function() {
-  return gulp
-    .src("src/scss/*.scss")
-    .pipe(sass())
-    .pipe(concat("main.css"))
-    .pipe(gulp.dest("public/dist/css"))
-    .pipe(browserSync.stream());
+gulp.task("sass", function(clean) {
+  let themes = ["default", "comfort", "candy", "sport", "mint"];
+
+  themes.forEach(function(theme) {
+    return gulp
+      .src(["src/scss/_color.scss", "src/scss/themes/" + theme + ".scss"])
+      .pipe(sassGlob())
+      .pipe(sass())
+      .pipe(concat(theme + ".css"))
+      .pipe(gulp.dest("public/dist/css/themes"))
+      .pipe(browserSync.stream());
+  }, clean());
 });
 
 gulp.task("sass-pkg", function() {

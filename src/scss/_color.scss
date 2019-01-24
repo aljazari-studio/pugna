@@ -4,44 +4,42 @@ $c-success: #2bcbba;
 $c-warning: #ffcc54;
 $c-danger: #f6554d;
 
-// $primary: #B5D43C;
-// $secondary: #D9EF81;
-// $accent: #D1B18E;
-// $light: #F7F7F7;
-// $dark: #434738;
+$accent: #d1b18e;
 
-$primary: #FFA939;
-$secondary: #B8D8E0;
-$accent: #D1B18E;
-$light: #FCF5EF;
-$dark: #09264A;
+$theme-colors: (
+  "default": (
+    "primary": #b5d43c,
+    "secondary": #d9ef81,
+    "light": #f7f7f7,
+    "dark": #434738
+  ),
+  "comfort": (
+    "primary": #ffa939,
+    "secondary": #b8d8e0,
+    "light": #fcf5ef,
+    "dark": #09264a
+  ),
+  "candy": (
+    "primary": #f752a7,
+    "secondary": #fbddec,
+    "light": #ffffff,
+    "dark": #131e77
+  ),
+  "sport": (
+    "primary": #eb6e3d,
+    "secondary": #ffd764,
+    "light": #f2eff1,
+    "dark": #2d2b36
+  ),
+  "mint": (
+    "primary": #5bd3c7,
+    "secondary": #ececec,
+    "light": #ffffff,
+    "dark": #3b3b3b
+  )
+);
 
-// $primary: #F752A7;
-// $secondary: #FBDDEC;
-// $accent: #D1B18E;
-// $light: #FFFFFF;
-// $dark: #131E77;
-
-// $primary: #EB6E3D;
-// $secondary: #FFD764;
-// $accent: #D1B18E;
-// $light: #F2EFF1;
-// $dark: #2D2B36;
-
-// $primary: #5BD3C7;
-// $secondary: #ECECEC;
-// $accent: #D1B18E;
-// $light: #FFFFFF;
-// $dark: #3B3B3B;
-
-// $primary: #FB770D;
-// $secondary: #FFA45B;
-// $accent: #D1B18E;
-// $light: #FFEBDB;
-// $dark: #25424C;
-
-// $primary: #FF0000;
-// $secondary: white;
-// $accent: #D1B18E;
-// $light: white;
-// $dark: #282828;
+@function theme-color($key: "default", $variant: "primary") {
+  $map: map-get($theme-colors, $key);
+  @return map-get($map, $variant);
+}

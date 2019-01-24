@@ -1,0 +1,8 @@
+@import "../_color";
+
+$primary: theme-color("default", "primary");
+$secondary: theme-color("default", "secondary");
+$light: theme-color("default", "light");
+$dark: theme-color("default", "dark");
+
+@import "../components/*";

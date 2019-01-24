@@ -1,0 +1,8 @@
+@import "../_color";
+
+$primary: theme-color("mint", "primary");
+$secondary: theme-color("mint", "secondary");
+$light: theme-color("mint", "light");
+$dark: theme-color("mint", "dark");
+
+@import "../components/*";

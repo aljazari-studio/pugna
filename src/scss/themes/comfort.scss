@@ -1,0 +1,8 @@
+@import "../_color";
+
+$primary: theme-color("comfort", "primary");
+$secondary: theme-color("comfort", "secondary");
+$light: theme-color("comfort", "light");
+$dark: theme-color("comfort", "dark");
+
+@import "../components/*";
