@@ -885,43 +885,21 @@
     .form-group.label--floating input[type="password"] {
       padding: 5px 10px 0 10px;
       height: 42px; }
-      .form-group.label--floating input[type="text"]:active + label, .form-group.label--floating input[type="text"]:focus + label, .form-group.label--floating input[type="text"]:target + label,
+      .form-group.label--floating input[type="text"]:active + label, .form-group.label--floating input[type="text"]:focus + label, .form-group.label--floating input[type="text"]:target + label, .form-group.label--floating input[type="text"]:-webkit-autofill + label,
       .form-group.label--floating input[type="email"]:active + label,
       .form-group.label--floating input[type="email"]:focus + label,
       .form-group.label--floating input[type="email"]:target + label,
+      .form-group.label--floating input[type="email"]:-webkit-autofill + label,
       .form-group.label--floating input[type="password"]:active + label,
       .form-group.label--floating input[type="password"]:focus + label,
-      .form-group.label--floating input[type="password"]:target + label {
+      .form-group.label--floating input[type="password"]:target + label,
+      .form-group.label--floating input[type="password"]:-webkit-autofill + label {
         animation: label-float 0.5s 1 forwards; }
       .form-group.label--floating input[type="text"]:invalid,
       .form-group.label--floating input[type="email"]:invalid,
       .form-group.label--floating input[type="password"]:invalid {
         border-color: #f6554d;
         box-shadow: none; }
-
-@keyframes on-auto-fill-start {
-  from {
-    /**/ }
-  to {
-    /**/ } }
-
-@keyframes on-auto-fill-cancel {
-  from {
-    /**/ }
-  to {
-    /**/ } }
-      .form-group.label--floating input[type="text"]:-moz-autofill, .form-group.label--floating input[type="text"]:-webkit-autofill,
-      .form-group.label--floating input[type="email"]:-moz-autofill,
-      .form-group.label--floating input[type="email"]:-webkit-autofill,
-      .form-group.label--floating input[type="password"]:-moz-autofill,
-      .form-group.label--floating input[type="password"]:-webkit-autofill {
-        animation-name: on-auto-fill-start; }
-      .form-group.label--floating input[type="text"]:not(:-moz-autofill), .form-group.label--floating input[type="text"]:not(:-webkit-autofill),
-      .form-group.label--floating input[type="email"]:not(:-moz-autofill),
-      .form-group.label--floating input[type="email"]:not(:-webkit-autofill),
-      .form-group.label--floating input[type="password"]:not(:-moz-autofill),
-      .form-group.label--floating input[type="password"]:not(:-webkit-autofill) {
-        animation-name: on-auto-fill-cancel; }
   .form-group.with-addon {
     display: flex;
     flex-direction: row; }

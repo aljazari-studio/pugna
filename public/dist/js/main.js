@@ -238,27 +238,7 @@ for (var i = 0; i < formLabelFloat.length; i++) {
     if (input.value) {
       label.classList.add("float");
     }
-  }, 500);
-
-  let onAutoFillStart = function(el) {
-    return el.classList.add("float");
-  };
-  let onAutoFillCancel = function(el) {
-    return el.classList.remove("float");
-  };
-
-  input.addEventListener(
-    "animationstart",
-    function(event) {
-      switch (event.animationName) {
-        case "on-auto-fill-start":
-          return onAutoFillStart(label);
-        case "on-auto-fill-cancel":
-          return onAutoFillCancel(label);
-      }
-    },
-    false
-  );
+  }, 100);
 
   input.addEventListener("focus", function() {
     this.nextElementSibling.classList.add("float");
