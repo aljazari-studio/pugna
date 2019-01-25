@@ -68,7 +68,7 @@ function hexToRgbA(hex, opacity = 1) {
   throw new Error("Bad Hex");
 }
 
-// ----- Pugna Components 
+// ----- Pugna Components
 
 // Navigation Searchbox
 var searchboxNav = document.querySelector(".header-item-searchbox");
@@ -233,6 +233,32 @@ for (var i = 0; i < formLabelFloat.length; i++) {
   label.addEventListener("click", function() {
     this.previousSibling.focus();
   });
+
+  setTimeout(function() {
+    if (input.value) {
+      label.classList.add("float");
+    }
+  }, 500);
+
+  let onAutoFillStart = function(el) {
+    return el.classList.add("float");
+  };
+  let onAutoFillCancel = function(el) {
+    return el.classList.remove("float");
+  };
+
+  input.addEventListener(
+    "animationstart",
+    function(event) {
+      switch (event.animationName) {
+        case "on-auto-fill-start":
+          return onAutoFillStart(label);
+        case "on-auto-fill-cancel":
+          return onAutoFillCancel(label);
+      }
+    },
+    false
+  );
 
   input.addEventListener("focus", function() {
     this.nextElementSibling.classList.add("float");

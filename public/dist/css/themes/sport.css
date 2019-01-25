@@ -893,6 +893,35 @@
       .form-group.label--floating input[type="password"]:focus + label,
       .form-group.label--floating input[type="password"]:target + label {
         animation: label-float 0.5s 1 forwards; }
+      .form-group.label--floating input[type="text"]:invalid,
+      .form-group.label--floating input[type="email"]:invalid,
+      .form-group.label--floating input[type="password"]:invalid {
+        border-color: #f6554d;
+        box-shadow: none; }
+
+@keyframes on-auto-fill-start {
+  from {
+    /**/ }
+  to {
+    /**/ } }
+
+@keyframes on-auto-fill-cancel {
+  from {
+    /**/ }
+  to {
+    /**/ } }
+      .form-group.label--floating input[type="text"]:-moz-autofill, .form-group.label--floating input[type="text"]:-webkit-autofill,
+      .form-group.label--floating input[type="email"]:-moz-autofill,
+      .form-group.label--floating input[type="email"]:-webkit-autofill,
+      .form-group.label--floating input[type="password"]:-moz-autofill,
+      .form-group.label--floating input[type="password"]:-webkit-autofill {
+        animation-name: on-auto-fill-start; }
+      .form-group.label--floating input[type="text"]:not(:-moz-autofill), .form-group.label--floating input[type="text"]:not(:-webkit-autofill),
+      .form-group.label--floating input[type="email"]:not(:-moz-autofill),
+      .form-group.label--floating input[type="email"]:not(:-webkit-autofill),
+      .form-group.label--floating input[type="password"]:not(:-moz-autofill),
+      .form-group.label--floating input[type="password"]:not(:-webkit-autofill) {
+        animation-name: on-auto-fill-cancel; }
   .form-group.with-addon {
     display: flex;
     flex-direction: row; }
@@ -1347,11 +1376,11 @@ a[href] {
   a[href]:active, a[href]:focus, a[href]:visited {
     color: #2bcbba; }
 
-.font-weight-bold {
-  font-weight: bold; }
-
-.text--center {
-  text-align: center !important; }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important; }
 
 hr {
   margin: 0.5rem 0 1rem 0;
@@ -1392,6 +1421,12 @@ hr {
 
 li {
   font-size: 14px; }
+
+.font-weight-bold {
+  font-weight: bold; }
+
+.text--center {
+  text-align: center !important; }
 
 .center-wrapper {
   display: flex;

@@ -59,12 +59,11 @@ a[href] {
   }
 }
 
-.font-weight-bold {
-  font-weight: bold;
-}
-
-.text--center {
-  text-align: center !important;
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 hr {
@@ -133,6 +132,14 @@ hr {
 
 li {
   font-size: 14px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.text--center {
+  text-align: center !important;
 }
 
 .center-wrapper {

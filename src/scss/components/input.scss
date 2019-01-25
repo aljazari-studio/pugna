@@ -472,6 +472,25 @@
           animation: label-float 0.5s 1 forwards;
         }
       }
+
+      &:invalid {
+        border-color: $c-danger;
+        box-shadow: none;
+      }
+
+      @keyframes on-auto-fill-start {  from {/**/}  to {/**/}}
+      @keyframes on-auto-fill-cancel {  from {/**/}  to {/**/}}
+
+      &:-moz-autofill,
+      &:-webkit-autofill {
+        animation-name: on-auto-fill-start;
+      }
+
+      &:not(:-moz-autofill),
+      &:not(:-webkit-autofill) {
+        animation-name: on-auto-fill-cancel;
+
+      }
     }
   }
 
