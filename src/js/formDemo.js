@@ -30,19 +30,19 @@
 // Pugna Select
 var selectsCustom = document.getElementsByClassName("pgn-select");
 for (let sc = 0; sc < selectsCustom.length; sc++) {
-  selElmnt = selectsCustom[sc].getElementsByTagName("select")[0];
+  var selElmnt = selectsCustom[sc].getElementsByTagName("select")[0];
 
-  psd = document.createElement("ul");
+  var psd = document.createElement("ul");
   psd.setAttribute("class", "pgn-select-dropdown hide");
 
-  psdSelected = document.createElement("span");
+  var psdSelected = document.createElement("span");
   psdSelected.setAttribute("class", "pgn-select-selected");
   psdSelected.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
 
   selectsCustom[sc].appendChild(psdSelected);
 
-  for (item = 0; item < selElmnt.length; item++) {
-    psdItem = document.createElement("li");
+  for (let item = 0; item < selElmnt.length; item++) {
+    var psdItem = document.createElement("li");
     psdItem.innerHTML = selElmnt.options[item].innerHTML;
     psdItem.addEventListener("click", function(e) {
       var pgnItems, pgnIndex, selIndex, pgnSelect, nextEl;

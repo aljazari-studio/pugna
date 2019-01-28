@@ -185,7 +185,7 @@ for (var i = 0; i < dropdownTrigger.length; i++) {
     ".dropdown-body"
   );
   if (dropdownBoxBody) {
-    dropdownBoxItems = dropdownBoxBody.querySelectorAll("a");
+    var dropdownBoxItems = dropdownBoxBody.querySelectorAll("a");
   }
 
   currentTrigger.addEventListener("click", function() {
@@ -240,12 +240,8 @@ for (var i = 0; i < formLabelFloat.length; i++) {
     }
   }, 100);
 
-  input.addEventListener("focus", function() {
+  input.addEventListener("click", function() {
     this.nextElementSibling.classList.add("float");
-
-    if (span) {
-      span.style.borderColor = colorScheme.primary;
-    }
   });
 
   input.addEventListener("blur", function() {
@@ -253,30 +249,28 @@ for (var i = 0; i < formLabelFloat.length; i++) {
       let that = this;
       mpc(this.nextElementSibling).toggleClass("float", "default");
 
-      if (span) {
-        span.style.borderColor = hexToRgbA(colorScheme.primary, 0.2);
-      }
-
       setTimeout(function() {
         that.nextElementSibling.classList.remove("default");
       }, 500);
     }
   });
 
-  if (span) {
-    span.addEventListener("click", function() {
-      if (input.type == "password") {
-        span.firstElementChild.style.color = colorScheme.primary;
-        input.type = "text";
-      } else {
-        span.firstElementChild.style.color = hexToRgbA(colorScheme.dark, 0.6);
-        input.type = "password";
-      }
-    });
+  passwordToggle();
 
-    input.addEventListener("focusout", function() {
-      span.style.borderColor = hexToRgbA(colorScheme.dark, 0.2);
-    });
+  function passwordToggle() {
+    if (span) {
+      span.addEventListener("click", function() {
+        if (input.type == "password") {
+          mpc(span).toggleChildClass("fa-eye", "fa-eye-slash");
+          span.firstElementChild.style.color = colorScheme.primary;
+          input.type = "text";
+        } else {
+          mpc(span).toggleChildClass("fa-eye-slash", "fa-eye");
+          span.firstElementChild.style.color = hexToRgbA(colorScheme.dark, 0.6);
+          input.type = "password";
+        }
+      });
+    }
   }
 }
 

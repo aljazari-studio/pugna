@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Trigger input file
  * @param {node} element
@@ -11,7 +13,7 @@
     var id = setInterval(frame, 10);
 
     for (var i = 0; i < inpFileTrigger.length; i++) {
-      inpFileTrigger[i].addEventListener("click", function() {
+      inpFileTrigger[i].addEventListener("click", function () {
         this.nextElementSibling.click();
       });
     }
@@ -25,37 +27,32 @@
       progress.value = progressVal + "";
     }
   }
-})();
+})(); // Pugna Select
 
-// Pugna Select
+
 var selectsCustom = document.getElementsByClassName("pgn-select");
-for (let sc = 0; sc < selectsCustom.length; sc++) {
-  selElmnt = selectsCustom[sc].getElementsByTagName("select")[0];
 
-  psd = document.createElement("ul");
+for (var sc = 0; sc < selectsCustom.length; sc++) {
+  var selElmnt = selectsCustom[sc].getElementsByTagName("select")[0];
+  var psd = document.createElement("ul");
   psd.setAttribute("class", "pgn-select-dropdown hide");
-
-  psdSelected = document.createElement("span");
+  var psdSelected = document.createElement("span");
   psdSelected.setAttribute("class", "pgn-select-selected");
   psdSelected.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-
   selectsCustom[sc].appendChild(psdSelected);
 
-  for (item = 0; item < selElmnt.length; item++) {
-    psdItem = document.createElement("li");
+  for (var item = 0; item < selElmnt.length; item++) {
+    var psdItem = document.createElement("li");
     psdItem.innerHTML = selElmnt.options[item].innerHTML;
-    psdItem.addEventListener("click", function(e) {
+    psdItem.addEventListener("click", function (e) {
       var pgnItems, pgnIndex, selIndex, pgnSelect, nextEl;
-
       pgnSelect = this.parentNode.parentNode.getElementsByTagName("select")[0];
       nextEl = this.parentNode.previousSibling;
 
       for (selIndex = 0; selIndex < pgnSelect.length; selIndex++) {
         if (pgnSelect.options[selIndex].innerHTML == this.innerHTML) {
           pgnSelect.selectedIndex = selIndex;
-
           nextEl.innerHTML = this.innerHTML;
-
           pgnItems = this.parentNode.children;
 
           for (pgnIndex = 0; pgnIndex < pgnItems.length; pgnIndex++) {
@@ -65,36 +62,30 @@ for (let sc = 0; sc < selectsCustom.length; sc++) {
           this.parentNode.parentNode.classList.toggle("clicked");
           this.parentNode.classList.toggle("hide");
           this.setAttribute("class", "selected");
-
           break;
         }
       }
+
       nextEl.click();
     });
     psd.appendChild(psdItem);
   }
 
-  psd.children[
-    selectsCustom[sc].getElementsByTagName("select")[0].selectedIndex
-  ].classList.add("selected");
-
+  psd.children[selectsCustom[sc].getElementsByTagName("select")[0].selectedIndex].classList.add("selected");
   selectsCustom[sc].appendChild(psd);
-  selectsCustom[sc].addEventListener("click", function(e) {
+  selectsCustom[sc].addEventListener("click", function (e) {
     e.stopPropagation();
-
     closeAllSelect(this);
-
     this.classList.toggle("clicked");
     this.children[2].classList.toggle("hide");
   });
 }
 
 function closeAllSelect(elmnt) {
-  let selectsCustom,
-    psd,
-    i,
-    arrNo = [];
-
+  var selectsCustom,
+      psd,
+      i,
+      arrNo = [];
   selectsCustom = document.getElementsByClassName("pgn-select");
   psd = document.getElementsByClassName("pgn-select-dropdown");
 
@@ -105,6 +96,7 @@ function closeAllSelect(elmnt) {
       selectsCustom[i].classList.remove("clicked");
     }
   }
+
   for (i = 0; i < psd.length; i++) {
     if (arrNo.indexOf(i)) {
       psd[i].classList.add("hide");

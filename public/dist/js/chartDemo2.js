@@ -1,6 +1,7 @@
+"use strict";
+
 // Line Chart
 var ctxLine = document.getElementsByClassName("line-chart");
-
 var lineData1 = [42, 31, 15, 64, 61, 72, 70, 84];
 var lineData2 = [13, 19, 34, 57, 72, 73, 78, 65];
 var lineData3 = [42, 31, 15, 64, 61, 72, 70, 84];
@@ -11,45 +12,29 @@ function setOption(arr) {
   var options = {
     type: "line",
     data: {
-      labels: [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August"
-      ],
-      datasets: [
-        {
-          data: arr,
-          backgroundColor: "rgba(0, 0, 0, 0)",
-          borderColor: colorScheme.secondary,
-          borderWidth: 2
-        }
-      ]
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August"],
+      datasets: [{
+        data: arr,
+        backgroundColor: "rgba(0, 0, 0, 0)",
+        borderColor: colorScheme.secondary,
+        borderWidth: 2
+      }]
     },
     options: {
       maintainAspectRatio: false,
       scales: {
-        yAxes: [
-          {
-            display: false
-          }
-        ],
-        xAxes: [
-          {
-            display: false
-          }
-        ]
+        yAxes: [{
+          display: false
+        }],
+        xAxes: [{
+          display: false
+        }]
       },
       legend: {
         display: false
       }
     }
   };
-
   return options;
 }
 

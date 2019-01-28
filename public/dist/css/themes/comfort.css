@@ -850,6 +850,8 @@
       .form-group.label--floating.with-addon span,
       .form-group.label--floating.with-addon span i {
         color: rgba(9, 38, 74, 0.6); }
+      .form-group.label--floating.with-addon span i {
+        margin-top: 12px; }
     .form-group.label--floating label {
       position: absolute;
       top: 22px;
@@ -912,14 +914,17 @@
       .form-group.with-addon.addon--right input[type="text"],
       .form-group.with-addon.addon--right input[type="email"],
       .form-group.with-addon.addon--right input[type="password"] {
-        border-radius: 3px 0 0 3px;
-        border-left: 1.3px solid rgba(9, 38, 74, 0.2);
-        border-right: #ffa939; }
+        border-radius: 3px 0 0 3px; }
+    .form-group.with-addon:not(.addon--right) input[type="text"],
+    .form-group.with-addon:not(.addon--right) input[type="email"],
+    .form-group.with-addon:not(.addon--right) input[type="password"] {
+      border-radius: 0 3px 3px 0; }
     .form-group.with-addon > span {
-      padding: 0 8px;
+      position: relative;
+      padding: 0 10px;
       height: 33px;
-      min-width: 33px;
       width: fit-content;
+      min-width: 33px;
       background: #ffa939;
       border-radius: 3px 0 0 3px;
       font-size: 12px;
@@ -932,7 +937,7 @@
         font-size: 16px; }
       .form-group.with-addon > span .pgn-checkbox {
         top: 6px;
-        left: -3px; }
+        margin: 0 -2px; }
       .form-group.with-addon > span .pgn-radio {
         top: 8px;
         left: -1px; }
@@ -940,8 +945,7 @@
     .form-group.with-addon input[type="email"],
     .form-group.with-addon input[type="password"] {
       flex: 1;
-      border-radius: 0 3px 3px 0;
-      border-left: #ffa939; }
+      border-radius: 0 3px 3px 0; }
       .form-group.with-addon input[type="text"]:active, .form-group.with-addon input[type="text"]:focus,
       .form-group.with-addon input[type="email"]:active,
       .form-group.with-addon input[type="email"]:focus,

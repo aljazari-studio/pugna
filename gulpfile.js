@@ -3,8 +3,12 @@ const browserSync = require("browser-sync");
 const pug = require("gulp-pug");
 const prettyHtml = require("gulp-pretty-html");
 const sass = require("gulp-sass");
+const csso = require("gulp-csso");
 const sassGlob = require("gulp-sass-glob");
+const babel = require("gulp-babel");
+const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
+const rename = require("gulp-rename");
 
 gulp.task("pug", function() {
   return gulp
@@ -33,6 +37,22 @@ gulp.task("sass", function(clean) {
   }, clean());
 });
 
+gulp.task("sass-min", function(clean) {
+  let themes = ["default", "comfort", "candy", "sport", "mint"];
+
+  themes.forEach(function(theme) {
+    return gulp
+      .src(["src/scss/_color.scss", "src/scss/themes/" + theme + ".scss"])
+      .pipe(sassGlob())
+      .pipe(sass())
+      .pipe(concat(theme + ".css"))
+      .pipe(csso())
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(gulp.dest("public/dist/css/themes"))
+      .pipe(browserSync.stream());
+  }, clean());
+});
+
 gulp.task("sass-pkg", function() {
   return gulp
     .src(["node_modules/choices.js/public/assets/styles/choices.min.css"])
@@ -41,7 +61,26 @@ gulp.task("sass-pkg", function() {
 
 gulp.task("js", function() {
   return gulp
-    .src("src/js/*.js")
+    .src(["src/js/*.js"])
+    .pipe(
+      babel({
+        presets: ["@babel/env"]
+      })
+    )
+    .pipe(gulp.dest("public/dist/js"))
+    .pipe(browserSync.stream());
+});
+
+gulp.task("js-min", function() {
+  return gulp
+    .src(["src/js/*.js"])
+    .pipe(
+      babel({
+        presets: ["@babel/env"]
+      })
+    )
+    .pipe(uglify())
+    .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest("public/dist/js"))
     .pipe(browserSync.stream());
 });
