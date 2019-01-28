@@ -214,8 +214,8 @@ var _loop = function _loop() {
       label.classList.add("float");
     }
   }, 100);
-  input.addEventListener("click", function () {
-    this.nextElementSibling.classList.add("float");
+  input.addEventListener("focus", function () {
+    label.classList.add("float");
   });
   input.addEventListener("blur", function () {
     if (this.value === "") {

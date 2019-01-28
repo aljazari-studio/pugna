@@ -240,8 +240,8 @@ for (var i = 0; i < formLabelFloat.length; i++) {
     }
   }, 100);
 
-  input.addEventListener("click", function() {
-    this.nextElementSibling.classList.add("float");
+  input.addEventListener("focus", function() {
+    label.classList.add("float");
   });
 
   input.addEventListener("blur", function() {
