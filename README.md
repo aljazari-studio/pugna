@@ -6,7 +6,7 @@ Pugna is an admin template built with the power of [Pug](https://pugjs.org) reus
 
 ## Usage
 
-Copy component / page directly from example provided in public / demo folder.
+Copy/paste component or page directly from example provided in [public/demo](https://github.com/aljazari-studio/pugna/tree/master/public/demo) folder. If you want to change the theme, there are 5 provided in [public/dist/css/themes](https://github.com/aljazari-studio/pugna/tree/master/public/dist/css/themes) (default, comfort, candy, sport, mint) you can use it by changing external css value to one of it (default is default.css).
 
 ## Contributing
 
