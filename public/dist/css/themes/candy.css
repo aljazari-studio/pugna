@@ -1835,11 +1835,15 @@ li {
     box-shadow: 0 0 5px 3px rgba(19, 30, 119, 0.05);
     z-index: 9; }
     .sidebar .sidebar-header .brand {
+      max-width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       font-family: "Nunito", sans-serif;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #131e77;
-      line-height: 1rem; }
+      line-height: 1.4rem; }
     .sidebar .sidebar-header .sidebar-control {
       display: flex;
       flex-direction: column;
