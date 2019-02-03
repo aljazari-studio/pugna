@@ -729,7 +729,7 @@
     background: white;
     border-radius: 4px;
     box-shadow: 0 0 10px 2px rgba(45, 43, 54, 0.15);
-    animation: show-dropdown 0.8s 1 forwards;
+    animation: show-dropdown 0.3s 1 forwards;
     overflow: hidden auto; }
     .pgn-select ul.pgn-select-dropdown.hide {
       display: none; }
