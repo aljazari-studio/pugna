@@ -3,7 +3,7 @@
 
   background: white;
   border-radius: 4px;
-  box-shadow: 0 1px 5px 1px rgba($dark, 0.1);
+  box-shadow: 0 0 5px 1px rgba($dark, 0.04);
 
   &.vertical {
     display: flex;
@@ -50,7 +50,7 @@
 
       background: white;
       border-radius: 0 4px 4px 0;
-      box-shadow: 0 1px 5px 1px rgba($dark, 0.1);
+      box-shadow: 0 0 5px 1px rgba($dark, 0.04);
     }
   }
 

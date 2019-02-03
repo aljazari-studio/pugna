@@ -81,7 +81,7 @@
   margin: 1rem 0;
   background: white;
   border-radius: 4px;
-  box-shadow: 0 1px 5px 1px rgba(67, 71, 56, 0.1); }
+  box-shadow: 0 0 5px 1px rgba(67, 71, 56, 0.04); }
   .box.box--dark {
     background: #434738; }
     .box.box--dark .box-header {
@@ -282,7 +282,7 @@
   margin: 1rem 0;
   background: white;
   border-radius: 4px;
-  box-shadow: 0 1px 5px 1px rgba(67, 71, 56, 0.075); }
+  box-shadow: 0 0 5px 1px rgba(67, 71, 56, 0.04); }
   .card h3,
   .card h4,
   .card h5,
@@ -485,7 +485,7 @@
   height: calc(100vh - 70px);
   width: 694px;
   background: #f7f7f7;
-  box-shadow: 0 -7px 15px 4px rgba(67, 71, 56, 0.1);
+  box-shadow: 0 -7px 15px 4px rgba(67, 71, 56, 0.045);
   z-index: 8;
   transform: translateX(100%); }
   .chatbox.show {
@@ -1138,7 +1138,7 @@ progress[value] {
     padding: 0 1rem;
     height: 70px;
     background: #d9ef81;
-    box-shadow: 0 0 5px 3px rgba(67, 71, 56, 0.1);
+    box-shadow: 0 0 5px 3px rgba(67, 71, 56, 0.06);
     z-index: 9; }
     .main-content .header .left {
       margin-left: 0.5rem;
@@ -1490,7 +1490,7 @@ li {
   padding: 0;
   background: white;
   border-radius: 4px;
-  box-shadow: 0 0 10px 1px rgba(67, 71, 56, 0.15);
+  box-shadow: 0 0 10px 1px rgba(67, 71, 56, 0.075);
   list-style-type: none;
   animation: show-dropdown 0.3s 1 forwards; }
   .dropdown-box::before {
@@ -1861,7 +1861,7 @@ li {
       cursor: pointer; }
   .sidebar .sidebar-wrapper {
     flex: 1;
-    box-shadow: 0 0 5px 3px rgba(67, 71, 56, 0.05);
+    box-shadow: 0 0 5px 3px rgba(67, 71, 56, 0.045);
     background: #434738;
     color: #f7f7f7;
     overflow-x: hidden;
@@ -1998,7 +1998,7 @@ li {
   margin: 1rem 0;
   background: white;
   border-radius: 4px;
-  box-shadow: 0 1px 5px 1px rgba(67, 71, 56, 0.1); }
+  box-shadow: 0 0 5px 1px rgba(67, 71, 56, 0.04); }
   .tab.vertical {
     display: flex;
     align-items: flex-start;
@@ -2025,7 +2025,7 @@ li {
       flex-grow: 1;
       background: white;
       border-radius: 0 4px 4px 0;
-      box-shadow: 0 1px 5px 1px rgba(67, 71, 56, 0.1); }
+      box-shadow: 0 0 5px 1px rgba(67, 71, 56, 0.04); }
   .tab .tab-header {
     display: flex;
     align-items: center;
