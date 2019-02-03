@@ -398,7 +398,7 @@
   .card.card-with-list {
     padding: 0; }
     .card.card-with-list .list-group {
-      max-height: 320px;
+      max-height: 310px;
       overflow-y: auto; }
     .card.card-with-list.sm .list-group {
       max-height: 195px;
@@ -1110,6 +1110,9 @@ progress[value] {
       flex-direction: column;
       flex: 1;
       margin-left: 1rem; }
+      .list-group .list-group-item .center-item * {
+        font-family: "Roboto";
+        font-weight: normal; }
       .list-group .list-group-item .center-item h5 {
         margin: 0;
         font-size: 0.8rem; }

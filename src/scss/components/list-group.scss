@@ -30,6 +30,11 @@
 
       margin-left: 1rem;
 
+      & * {
+        font-family: "Roboto";
+        font-weight: normal;
+      }
+
       & h5 {
         margin: 0;
 
