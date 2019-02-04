@@ -970,7 +970,7 @@ a[role="button"][href]:visited {
     font-weight: bold;
     color: rgba(59, 59, 59, 0.6); }
     .form-group > label a {
-      margin-top: 3px;
+      margin-top: 1px;
       font-size: 11px;
       font-family: "Roboto" !important;
       font-weight: normal;
