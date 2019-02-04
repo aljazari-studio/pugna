@@ -47,6 +47,10 @@ mixin sidebar(activeVal, activeChild, level="../")
               a(class= activeChild==="tabs" ? "active" : "", href=level + "base/tab.html")
                 i(class="la la-circle")
                 span Tabs
+            li.tree-item
+              a(class= activeChild==="modals" ? "active" : "", href=level + "base/modals.html")
+                i(class="la la-circle")
+                span Modals
         li.has-children(class= activeVal==="forms" ? "active" : "")
           a(href="javascript:;")
             i(class="la la-pencil-square-o")
