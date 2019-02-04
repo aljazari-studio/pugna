@@ -268,6 +268,9 @@
       border-radius: 2px; }
     .btn.btn-icon i {
       padding: 0 !important; }
+  .btn.btn-ghost {
+    background: transparent;
+    border-color: transparent; }
 
 .btn-group .btn {
   border-radius: 0; }
@@ -277,6 +280,11 @@
     border-radius: 0 4px 4px 0; }
   .btn-group .btn:not(.active) {
     opacity: .6; }
+
+a[role="button"][href]:active,
+a[role="button"][href]:focus,
+a[role="button"][href]:visited {
+  color: #2d2b36 !important; }
 
 .card {
   margin: 1rem 0;
@@ -831,6 +839,10 @@
   .form-group.horizontal {
     flex-direction: row;
     align-items: center; }
+    .form-group.horizontal.w-25 input {
+      max-width: 25%; }
+    .form-group.horizontal.w-50 input {
+      max-width: 50%; }
     .form-group.horizontal label {
       margin: 0;
       min-width: 25%;
@@ -957,6 +969,15 @@
     font-size: 12px;
     font-weight: bold;
     color: rgba(45, 43, 54, 0.6); }
+    .form-group > label a {
+      margin-top: 3px;
+      font-size: 11px;
+      font-family: "Roboto" !important;
+      font-weight: normal;
+      color: #eb6e3d;
+      cursor: pointer; }
+      .form-group > label a i {
+        margin-right: 3px; }
   .form-group input[type="text"],
   .form-group input[type="email"],
   .form-group input[type="password"],
@@ -1059,6 +1080,11 @@
         margin: 0 0 4px 0;
         font-size: 0.7rem;
         color: #2d2b36; }
+  .form-group .form-group.with-addon {
+    margin: 0 0 0 6px;
+    flex: 1; }
+    .form-group .form-group.with-addon input {
+      margin: 0; }
 
 progress[value] {
   -webkit-appearance: none;
@@ -1410,6 +1436,9 @@ li {
 .font-weight-bold {
   font-weight: bold; }
 
+.font-style-italic {
+  font-style: italic; }
+
 .text--center {
   text-align: center !important; }
 
@@ -1682,6 +1711,18 @@ li {
   .user-img.user-img--lg {
     height: 55px;
     width: 55px; }
+
+.w-50px {
+  width: 50px; }
+
+.w-75px {
+  width: 75px; }
+
+.w-100px {
+  width: 100px; }
+
+.w-125px {
+  width: 125px; }
 
 .color--primary {
   color: #eb6e3d !important; }
@@ -2082,6 +2123,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 0.8rem; }
+  table.fixed-height tbody {
+    display: block;
+    max-height: 330px;
+    overflow-y: auto; }
+  table.fixed-height thead,
+  table.fixed-height tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
   table.table--dark thead tr {
     background: rgba(242, 239, 241, 0.1);
     color: white; }
@@ -2105,13 +2155,19 @@ table {
   table th,
   table td {
     padding: 0.75rem 1rem;
-    border: 1px solid transparent; }
+    border: 1px solid transparent;
+    font-family: "Roboto"; }
     table th:first-child,
     table td:first-child {
       border-left: none; }
     table th:last-child,
     table td:last-child {
       border-right: none; }
+    table th img,
+    table td img {
+      height: 80px;
+      width: 80px;
+      object-fit: cover; }
 
 .table-row-handle {
   display: flex;

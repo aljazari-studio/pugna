@@ -349,6 +349,14 @@
     flex-direction: row;
     align-items: center;
 
+    &.w-25 input {
+      max-width: 25%;
+    }
+  
+    &.w-50 input {
+      max-width: 50%;
+    }
+
     & label {
       margin: 0;
 
@@ -544,6 +552,21 @@
     font-size: 12px;
     font-weight: bold;
     color: rgba($dark, 0.6);
+
+    & a {
+      margin-top: 3px;
+      
+      font-size: 11px;
+      font-family: "Roboto" !important;
+      font-weight: normal;
+      color: $primary;
+
+      cursor: pointer;
+
+      & i {
+        margin-right: 3px;
+      }
+    }
   }
 
   & input[type="text"],
@@ -693,6 +716,16 @@
         font-size: 0.7rem;
         color: $dark;
       }
+    }
+  }
+
+  & .form-group.with-addon {
+    margin: 0 0 0 6px;
+
+    flex: 1;
+
+    & input {
+      margin: 0;
     }
   }
 }

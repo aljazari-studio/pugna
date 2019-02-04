@@ -138,6 +138,10 @@ li {
   font-weight: bold;
 }
 
+.font-style-italic {
+  font-style: italic;
+}
+
 .text--center {
   text-align: center !important;
 }
@@ -569,6 +573,22 @@ li {
     height: 55px;
     width: 55px;
   }
+}
+
+.w-50px {
+  width: 50px;
+}
+
+.w-75px {
+  width: 75px;
+}
+
+.w-100px {
+  width: 100px;
+}
+
+.w-125px {
+  width: 125px;
 }
 
 .color--primary {

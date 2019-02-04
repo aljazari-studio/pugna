@@ -9,7 +9,6 @@
   border: 2px solid transparent;
 
   color: $dark;
-  // text-transform: uppercase;
 
   cursor: pointer;
 
@@ -168,6 +167,11 @@
       padding: 0 !important;
     }
   }
+
+  &.btn-ghost {
+    background: transparent;
+    border-color: transparent;
+  }
 }
 
 .btn-group {
@@ -186,4 +190,11 @@
       opacity: .6;
     }
   }
+}
+
+
+a[role="button"][href]:active,
+a[role="button"][href]:focus,
+a[role="button"][href]:visited {
+  color: $dark !important;
 }

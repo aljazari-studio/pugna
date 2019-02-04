@@ -258,6 +258,15 @@ html(lang="en")
                         input(type="checkbox", name="")
                         span
                     input(type="text", name="")
+                  .form-group.w-50
+                    label Price
+                      a.pull-right
+                        i.la.la-pencil 
+                        span Change currency
+                    .form-group.with-addon.ml-0
+                      span Rp.
+                      input(type="text", name="")
+
                   hr(data-hr="custom select dropdown")
                   .form-group
                     .form-select.pgn-select
@@ -270,6 +279,22 @@ html(lang="en")
                         option(value="6") Option 6
                         option(value="7") Option 7
                         option(value="8") Option 8
+                  .form-group
+                    label Unit of Measure
+                      a.pull-right
+                        i.la.la-plus
+                        span New UOM
+                    .form-select.pgn-select
+                      select(name="")
+                        option(value="1") Option 1
+                        option(value="2") Option 2
+                        option(value="3") Option 3
+                        option(value="4") Option 4
+                        option(value="5", selected=true) Option 5
+                        option(value="6") Option 6
+                        option(value="7") Option 7
+                        option(value="8") Option 8
+
                   hr(data-hr="file upload with progress")
                   .form-group
                     .form-file
