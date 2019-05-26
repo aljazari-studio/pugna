@@ -1,13 +1,4 @@
-// Line Chart
-var ctxLine = document.getElementsByClassName("line-chart");
-var ctxLineMulti = document.getElementsByClassName("line-chart-multi");
-
-var lineData1 = [42, 31, 15, 64, 61, 72, 70, 84];
-var lineData2 = [13, 19, 34, 57, 72, 73, 78, 65];
-
-var lineDataMulti1 = [56, 67, 87, 89, 89, 97, 135, 132];
-var lineDataMulti2 = [62, 83, 117, 130, 112, 124, 167, 178];
-
+// Chart Configs
 function setOption(arr) {
   var options = {
     type: "line",
@@ -101,18 +92,31 @@ function setOptionMulti(arr1, arr2) {
   return options;
 }
 
-new Chart(ctxLine[0].getContext("2d"), setOption(lineData1));
-new Chart(ctxLine[1].getContext("2d"), setOption(lineData2));
+// Ecommerce Line Chart
+let ctxLineFeedback = document.getElementById("line-chart-feedback");
+let ctxLineSales = document.getElementById("line-chart-sales");
+let ctxLineVisit = document.getElementById("line-chart-visit");
 
-new Chart(
-  ctxLineMulti[0].getContext("2d"),
+var lineData1 = [42, 31, 15, 64, 61, 72, 70, 84];
+var lineData2 = [13, 19, 34, 57, 72, 73, 78, 65];
+
+var lineDataMulti1 = [56, 67, 87, 89, 89, 97, 135, 132];
+var lineDataMulti2 = [62, 83, 117, 130, 112, 124, 167, 178];
+
+ctxLineFeedback && new Chart(ctxLineFeedback.getContext("2d"), setOption(lineData1));
+ctxLineSales && new Chart(ctxLineSales.getContext("2d"), setOption(lineData2));
+
+ctxLineVisit && new Chart(
+  ctxLineVisit.getContext("2d"),
   setOptionMulti(lineDataMulti1, lineDataMulti2)
 );
 
-var ctxPie = document.getElementsByClassName("pie-chart")[0];
-if (typeof ctxPie != "undefined") {
-  ctxPie.width = 229;
-  ctxPie.height = 229;
+// Ecommerce Pie Chart
+let ctxPieCategory = document.getElementById("pie-chart-category");
+
+if (ctxPieCategory) {
+  ctxPieCategory.width = 229;
+  ctxPieCategory.height = 229;
 
   var pieData = {
     type: "pie",
@@ -138,5 +142,5 @@ if (typeof ctxPie != "undefined") {
     }
   };
 
-  new Chart(ctxPie.getContext("2d"), pieData);
+  new Chart(ctxPieCategory.getContext("2d"), pieData);
 }

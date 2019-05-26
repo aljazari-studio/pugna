@@ -61,19 +61,23 @@ gulp.task("sass-pkg", function() {
 
 gulp.task("js", function() {
   return gulp
-    .src(["src/js/*.js"])
-    .pipe(
-      babel({
-        presets: ["@babel/env"]
-      })
-    )
+    .src(["src/js/components/*.js"])
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("public/dist/js"))
+    .pipe(browserSync.stream());
+});
+
+gulp.task("js-demo", function() {
+  return gulp
+    .src(["src/js/demo/*.js"])
+    .pipe(concat("demo.js"))
     .pipe(gulp.dest("public/dist/js"))
     .pipe(browserSync.stream());
 });
 
 gulp.task("js-min", function() {
   return gulp
-    .src(["src/js/*.js"])
+    .src(["public/dist/js/main.js", "public/dist/js/demo.js"])
     .pipe(
       babel({
         presets: ["@babel/env"]
@@ -91,7 +95,7 @@ gulp.task("js-pkg", function() {
       "node_modules/choices.js/public/assets/scripts/choices.min.js",
       "node_modules/sortablejs/Sortable.min.js"
     ])
-    .pipe(gulp.dest("public/dist/js"))
+    .pipe(gulp.dest("public/dist/js/lib"))
     .pipe(browserSync.stream());
 });
 
@@ -109,5 +113,5 @@ gulp.task("serve", function() {
 
   gulp.watch("src/pug/**", gulp.series("pug"));
   gulp.watch("src/scss/**", gulp.series("sass"));
-  gulp.watch("src/js/**", gulp.series("js"));
+  gulp.watch("src/js/**", gulp.series(["js", "js-demo"]));
 });
